@@ -1,0 +1,27 @@
+import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../login.service';
+import { Router } from "@angular/router"
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
+})
+export class LoginComponent {
+  email: string = "";
+  password: string = "";
+  mensaje: string = "";
+  nombre: string = '';
+  constructor(public loginService: LoginService, private router: Router) { }
+
+  async comprobarUsuario() {
+    this.mensaje = await this.loginService.comprobarUsuario(this.email, this.password)
+    console.log(this.mensaje)
+    // if (this.mensaje === "denegado") {
+    //   console.log(this.mensaje)
+    // } else {
+    //   this.nombre = this.mensaje
+    //   console.log(`tu nombre es ${this.nombre}`)
+    // }
+  }
+}

@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+  }
+
+
+.inicioImagenTexto {
+    display: flex;
+    flex-direction: row;
+} 
+.inicioImagenTexto img{
+    width: 50vw;
+}
+
+.textoInicio{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Libre Caslon Display', serif;
+    justify-content: center;
+
+}
+
+.textoInicio h1{
+    margin: 0px 0px 10px 0px;
+    font-size: 115px;
+    font-weight: normal;
+    color: #B4BEA5;
+    width: 50vw;
+}
+
+.unProducto img{
+    width: 250px;
+}
+
+.unProducto{
+    font-family: 'Roboto Slab', serif;
+}
+
+.inicioNovedades{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

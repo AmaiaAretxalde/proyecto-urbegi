@@ -13,7 +13,11 @@ import { TeOolongComponent } from './te-oolong/te-oolong.component';
 import { InfusionesComponent } from './infusiones/infusiones.component';
 import { RooibosComponent } from './rooibos/rooibos.component';
 import { LoginComponent} from './login/login.component';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RegistroComponent } from './registro/registro.component';
+import { LoginRegistroComponent } from './login-registro/login-registro.component';
+
 
 
 @NgModule({
@@ -30,11 +34,14 @@ import { HttpClientModule } from '@angular/common/http';
     InfusionesComponent,
     RooibosComponent,
     LoginComponent,
-    HttpClientModule
+    RegistroComponent,
+    LoginRegistroComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

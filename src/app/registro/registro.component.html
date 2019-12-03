@@ -1,0 +1,20 @@
+<div>
+    <h1>SING UP</h1>
+    <input type="text" [(ngModel)]="nombre" name="nombre" placeholder="Nombre" />
+    <input type="text" [(ngModel)]="apellido" name="apellido" placeholder="Apellido" />
+    <input type="text" [(ngModel)]="email" name="email" placeholder="Email" />
+    <input type="text" name="direccion" [(ngModel)]="direccion" placeholder="Direccion" required="required" />
+    <input type="text" name="localidad" [(ngModel)]="localidad" placeholder="localidad" required="required" />
+    <input type="text" name="provincia" [(ngModel)]="provincia" placeholder="provincia" required="required" />
+    <input type="text" name="cp" [(ngModel)]="cp" placeholder="cp" required="required" />
+    <input type="text" name="telefono" [(ngModel)]="telefono" placeholder="telefono" required="required" />
+    <input type="password" name="p" [(ngModel)]="password" placeholder="Password" required="required" />
+    <button (click)="registrarUsuario()">SING UP</button>
+</div>
+
+<div>
+    <p>Ya estoy registrado</p>
+    <a routerLink="../login">SING IN</a>
+    <p>{{mensaje}}
+    </p>
+</div>

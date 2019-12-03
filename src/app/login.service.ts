@@ -22,4 +22,11 @@ export class LoginService {
       return response.mensaje;
     }
   }
+
+  async registrarUsuario(nombre:string, apellido:string, email:string, direccion:string, localidad:string, provincia:string, cp:string, telefono:string, password:string) {
+    let response: any = await this.http.post('/api/usuario/registro', { nombre, apellido, email, direccion, localidad, provincia, cp, telefono, password },{headers:{"Content-Type":"application/json"}})
+      .toPromise()
+      console.log(response.mensaje)
+    return response.mensaje;
+  }
 }

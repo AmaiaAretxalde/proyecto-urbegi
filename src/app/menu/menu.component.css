@@ -1,0 +1,42 @@
+.menu {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-around;
+    padding: 20px 0px 20px 0px;
+    margin:0px;
+    background: peru;
+}
+
+header{
+    width:100%;
+    margin:0;
+}
+
+header nav ul{
+    list-style: none;
+}
+
+header nav ul li{
+    display:inline-block;
+    position:relative;
+    padding: 5px 0px 5px 0px;
+}
+
+
+header nav ul li a{
+    text-decoration: none;
+    display:block;
+}
+
+header nav ul ul{
+ display: none;
+ width:100px;
+}
+
+header nav ul li:hover ul{
+    display: block;
+    position: absolute;
+    padding: 0;
+}
+

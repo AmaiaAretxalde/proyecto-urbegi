@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './inicio/inicio.component';
@@ -13,6 +12,9 @@ import { TeDecafComponent } from './te-decaf/te-decaf.component';
 import { TeOolongComponent } from './te-oolong/te-oolong.component';
 import { InfusionesComponent } from './infusiones/infusiones.component';
 import { RooibosComponent } from './rooibos/rooibos.component';
+import { LoginComponent} from './login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { RooibosComponent } from './rooibos/rooibos.component';
     TeDecafComponent,
     TeOolongComponent,
     InfusionesComponent,
-    RooibosComponent
+    RooibosComponent,
+    LoginComponent,
+    HttpClientModule
   ],
   imports: [
     BrowserModule,

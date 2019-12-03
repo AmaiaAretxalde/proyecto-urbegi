@@ -15,12 +15,15 @@ header{
 
 header nav ul{
     list-style: none;
+    text-decoration-color: none;
 }
 
 header nav ul li{
     display:inline-block;
     position:relative;
+    list-style: none;
     padding: 5px 0px 5px 0px;
+    text-decoration-color: none;
 }
 
 
@@ -38,5 +41,10 @@ header nav ul li:hover ul{
     display: block;
     position: absolute;
     padding: 0;
+    text-decoration: none;
 }
 
+
+a:-webkit-any-link {
+    color:none;
+}

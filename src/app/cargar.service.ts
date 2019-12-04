@@ -9,8 +9,9 @@ export class CargarService {
   constructor(public http: HttpClient) { }
 
   async cargarNovedades(palabra1:string, palabra2:string){
-    let response: any = await this.http.post('/api/cargar/novedades', { palabra1, palabra2 }, { headers: { "Content-Type": "application/json" } })
+    let response = await this.http.post('/api/cargar/novedades', { palabra1, palabra2 }, { headers: { "Content-Type": "application/json" } })
     .toPromise();
-    console.log(response)
+    console.log(response);
+    return response;
   }
 }

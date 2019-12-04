@@ -29,4 +29,11 @@ export class LoginService {
       console.log(response.mensaje)
     return response.mensaje;
   }
+
+  async anayadirGustosUsuario(sabores:string[], funciones:string[]) {
+    let response: any = await this.http.post('/api/usuario/registro/gustos', {sabores, funciones},{headers:{"Content-Type":"application/json"}})
+      .toPromise()
+      console.log(response.mensaje)
+    return response.mensaje;
+  }
 }

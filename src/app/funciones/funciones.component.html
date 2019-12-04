@@ -1,0 +1,45 @@
+
+<h2>¿Qué tipo de función buscas?</h2>
+
+<label for="estimulante">
+    <button (click)="cambiarEstimulante()" id="estimulante" hidden></button>
+    <img class="img" src="/assets/estimulante.svg" alt="estimulante">
+    <p>Estimulante</p>
+</label>
+
+<label for="digestivo">
+    <button (click)="cambiarDigestivo()" id="digestivo" hidden></button>
+    <img class="img" src="/assets/digestivo.svg" alt="digestivo">
+    <p>Digestivo</p>
+</label>
+
+<label for="relajante">
+    <button (click)="cambiarRelajante()" id="relajante" hidden></button>
+    <img class="img" src="/assets/relajante.svg" alt="Relajante">
+    <p>Relajante</p>
+</label>
+
+<label for="antioxidante">
+    <button (click)="cambiarAntioxidante()" id="antioxidante" hidden></button>
+    <img class="img" src="/assets/antioxidante.svg" alt="Antioxidante">
+    <p>Antioxidante</p>
+</label>
+
+<label for="isotonico">
+    <button (click)="cambiarIsotonico()" id="isotonico" hidden></button>
+    <img class="img" src="/assets/isotonico.svg" alt="Isotonico">
+    <p>Isotonico</p>
+</label>
+
+<label for="depurativo">
+        <button (click)="cambiarDepurativo()" id="depurativo" hidden></button>
+        <img class="img" src="/assets/depurativo.svg" alt="Depurativo">
+        <p>Depurativo</p>
+    </label>
+
+<button (click)="guardarFunciones()">Siguiente paso</button>
+
+<ng-container *ngFor="let funcion of funcionesElegidas">
+   {{funcion.nombre}}
+</ng-container>
+

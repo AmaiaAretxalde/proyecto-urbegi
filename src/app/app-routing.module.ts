@@ -10,6 +10,7 @@ import { TeOolongComponent } from './te-oolong/te-oolong.component';
 import { InfusionesComponent } from './infusiones/infusiones.component';
 import { RooibosComponent } from './rooibos/rooibos.component';
 import { LoginRegistroComponent } from './login-registro/login-registro.component';
+import { EncuestaComponent } from './encuesta/encuesta.component';
 
 
 
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: 'infusiones', component:InfusionesComponent},
   {path: 'rooibos', component:RooibosComponent},
   {path: 'iniciosesion', component:LoginRegistroComponent},
+  {path: 'usuario/encuesta', component:EncuestaComponent},
 ];
 
 @NgModule({

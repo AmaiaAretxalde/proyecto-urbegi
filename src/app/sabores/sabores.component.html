@@ -1,0 +1,38 @@
+
+<h2>¿Qué tipo de sabor prefieres?</h2>
+
+<label for="dulce">
+    <button (click)="cambiarDulce()" id="dulce" hidden></button>
+    <img class="img" src="/assets/dulce.svg" alt="Dulce">
+    <p>Dulce</p>
+</label>
+
+<label for="citrico">
+    <button (click)="cambiarCitrico()" id="citrico" hidden></button>
+    <img class="img" src="/assets/citric.svg" alt="Cítrico">
+    <p>Cítrico</p>
+</label>
+
+<label for="floral">
+    <button (click)="cambiarFloral()" id="floral" hidden></button>
+    <img class="img" src="/assets/floral.svg" alt="Floral">
+    <p>Floral</p>
+</label>
+
+<label for="especiado">
+    <button (click)="cambiarEspeciado()" id="especiado" hidden></button>
+    <img class="img" src="/assets/especiado.svg" alt="Especiado">
+    <p>Especiado</p>
+</label>
+
+<label for="fruit">
+    <button (click)="cambiarAfrutado()" id="fruit" hidden></button>
+    <img class="img" src="/assets/fruit.svg" alt="Afrutado">
+    <p>Afrutado</p>
+</label>
+
+<button (click)="guardarSabores()">Siguiente paso</button>
+
+<ng-container *ngFor="let sabor of saboresElegidos">
+   {{sabor.nombre}}
+</ng-container>

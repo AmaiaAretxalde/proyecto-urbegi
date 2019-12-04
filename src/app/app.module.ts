@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RegistroComponent } from './registro/registro.component';
 import { LoginRegistroComponent } from './login-registro/login-registro.component';
+import { NovedadComponent } from './novedad/novedad.component';
 
 
 
@@ -35,7 +36,8 @@ import { LoginRegistroComponent } from './login-registro/login-registro.componen
     RooibosComponent,
     LoginComponent,
     RegistroComponent,
-    LoginRegistroComponent
+    LoginRegistroComponent,
+    NovedadComponent
   ],
   imports: [
     BrowserModule,

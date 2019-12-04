@@ -1,5 +1,16 @@
 .registroInicioSesion{
     display:flex;
     flex-direction: row;
+    justify-content: space-around;
 }
 
+
+
+.registro input{
+    border: 0;
+}
+
+.registro input:active{
+    border-bottom: rosybrown;
+    border-bottom: 3px;
+}

@@ -20,6 +20,8 @@ import { LoginRegistroComponent } from './login-registro/login-registro.componen
 import { NovedadComponent } from './novedad/novedad.component';
 import { ColorComponent } from './color/color.component';
 import { EncuestaComponent } from './encuesta/encuesta.component';
+import { SaboresComponent } from './sabores/sabores.component';
+import { FuncionesComponent } from './funciones/funciones.component';
 
 
 
@@ -41,7 +43,9 @@ import { EncuestaComponent } from './encuesta/encuesta.component';
     LoginRegistroComponent,
     NovedadComponent,
     ColorComponent,
-    EncuestaComponent
+    EncuestaComponent,
+    SaboresComponent,
+    FuncionesComponent
   ],
   imports: [
     BrowserModule,

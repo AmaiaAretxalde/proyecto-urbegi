@@ -5,11 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './encuesta.component.html',
   styleUrls: ['./encuesta.component.css']
 })
-export class EncuestaComponent implements OnInit {
-  sabor:string[] =[];
+export class EncuestaComponent {
+ 
   constructor() { }
 
-  ngOnInit() {
-  }
+  
 
 }

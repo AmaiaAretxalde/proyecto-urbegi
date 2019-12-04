@@ -1,0 +1,24 @@
+.imagenTeRojo{
+    width:50%;
+    height: 10%;
+}
+
+.texto{
+    display: flex;
+    flex-direction: column;
+}
+
+.textoImagen{
+    display:flex;
+    flex-direction: row;
+}
+
+.texto h1{
+    font-family: 'Playfair Display', serif;
+    font-size: 20pt;
+    color: #D9848B;
+}
+
+.texto p{
+    font-family: 'Montserrat', sans-serif;
+}

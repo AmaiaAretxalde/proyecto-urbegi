@@ -1,4 +1,32 @@
 .registro{
     display:flex;
     flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.registro h1{
+    font-family: 'Playfair Display', serif;
+    color: #7D8472
+}
+
+.registro input{
+    border:0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12pt;
+    margin-top: 5px;
+    border-bottom: #B4BEA6;
+    border:none;
+    border-bottom: 2px solid #D9848B;
+}
+
+.registro button{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12pt;
+    margin-top: 20px;
+    border-radius: 3px;
+    border-style: none;
+    background-color: #B4BEA6 ;
+    width: 300px;
+    height: 30px;
 }

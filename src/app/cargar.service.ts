@@ -14,4 +14,12 @@ export class CargarService {
     console.log(response);
     return response;
   }
+
+  async cargarPorColor(color:string){
+    let url = '/api/cargar/'+ color;
+    let response = await this.http.get(url)
+    .toPromise();
+    console.log(response);
+    return response;
+  }
 }

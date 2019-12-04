@@ -18,6 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegistroComponent } from './registro/registro.component';
 import { LoginRegistroComponent } from './login-registro/login-registro.component';
 import { NovedadComponent } from './novedad/novedad.component';
+import { ColorComponent } from './color/color.component';
+import { EncuestaComponent } from './encuesta/encuesta.component';
 
 
 
@@ -37,7 +39,9 @@ import { NovedadComponent } from './novedad/novedad.component';
     LoginComponent,
     RegistroComponent,
     LoginRegistroComponent,
-    NovedadComponent
+    NovedadComponent,
+    ColorComponent,
+    EncuestaComponent
   ],
   imports: [
     BrowserModule,

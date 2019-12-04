@@ -2,30 +2,31 @@ import { Component, OnInit, Input } from '@angular/core';
 import { CargarService } from '../cargar.service';
 
 @Component({
-  selector: 'app-novedad',
-  templateUrl: './novedad.component.html',
-  styleUrls: ['./novedad.component.css']
+  selector: 'app-color',
+  templateUrl: './color.component.html',
+  styleUrls: ['./color.component.css']
 })
-export class NovedadComponent implements OnInit {
+export class ColorComponent implements OnInit {
   src: string = '';
   nombre: string = '';
   precio: Number;
-  palabra1: string = 'navidad';
-  palabra2: string = 'Christmas';
   datos: any;
-  @Input() posicion: number;
+  @Input() color: string;
+  @Input() posicion: string;
 
   constructor(public cargarService: CargarService) { }
 
   async ngOnInit() {
-    this.datos = await this.cargarService.cargarNovedades(this.palabra1, this.palabra2)
+    this.datos = await this.cargarService.cargarPorColor(this.color)
+    console.log(this.datos)
 
     this.nombre = this.datos[this.posicion].name.toUpperCase();
     this.src = this.datos[this.posicion].mainImage;
     this.precio = Math.floor(this.datos[this.posicion].basePrice*100)/100;
-  
+    console.log(this.nombre)
+    console.log(this.precio)
+    console.log(this.src)
 
   }
+
 }
-
-

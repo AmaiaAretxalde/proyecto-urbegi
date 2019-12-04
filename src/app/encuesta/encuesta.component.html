@@ -1,0 +1,34 @@
+<h1> PERSONALIZA TU EXPERIENCIA</h1>
+<h2>¿Qué tipo de sabor prefieres?</h2>
+
+<label for="dulce">
+    <input id="dulce" type="checkbox" value="Dulce" [(ngModel)]="dulce" hidden />
+    <img class="img" src="/assets/dulce.svg" alt="Dulce">
+    <p>Dulce</p>
+</label>
+
+<label for="citrico">
+    <input id="citrico" type="checkbox" value="Cítrico" [(ngModel)]="citrico" hidden />
+    <img class="img" src="/assets/citric.svg" alt="Cítrico">
+    <p>Cítrico</p>
+</label>
+
+<label for="floral">
+    <input id="floral" type="checkbox" value="Floral" [(ngModel)]="floral" hidden />
+    <img class="img" src="/assets/floral.svg" alt="Floral">
+    <p>Floral</p>
+</label>
+
+<label for="especiado">
+    <input id="especiado" type="checkbox" value="Especiado" [(ngModel)]="sabor" hidden />
+    <img class="img" src="/assets/especiado.svg" alt="Especiado">
+    <p>Especiado</p>
+</label>
+
+<label for="fruit">
+    <input id="fruit" type="checkbox" value="Afrutado" [(ngModel)]="sabor" hidden />
+    <img class="img" src="/assets/fruit.svg" alt="Afrutado">
+    <p>Afrutado</p>
+</label>
+
+Sabor:{{sabor}}

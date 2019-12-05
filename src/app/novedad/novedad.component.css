@@ -33,7 +33,15 @@
 }
 
 .unProducto{
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Montserrat', serif;
+}
+
+.unProducto h3{
+    font-size: 14pt;
+}
+
+.infoProducto{
+    text-align: center;
 }
 
 .inicioNovedades{

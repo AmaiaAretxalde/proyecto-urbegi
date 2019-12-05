@@ -11,6 +11,7 @@ import { InfusionesComponent } from './infusiones/infusiones.component';
 import { RooibosComponent } from './rooibos/rooibos.component';
 import { LoginRegistroComponent } from './login-registro/login-registro.component';
 import { EncuestaComponent } from './encuesta/encuesta.component';
+import { CestaComponent } from './cesta/cesta.component';
 
 
 
@@ -26,6 +27,8 @@ const routes: Routes = [
   {path: 'rooibos', component:RooibosComponent},
   {path: 'iniciosesion', component:LoginRegistroComponent},
   {path: 'usuario/encuesta', component:EncuestaComponent},
+  {path: 'cesta', component:CestaComponent},
+  
 ];
 
 @NgModule({

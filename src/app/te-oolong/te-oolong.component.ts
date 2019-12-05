@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./te-oolong.component.css']
 })
 export class TeOolongComponent implements OnInit {
-
+  color:string = "Oolong";
   constructor() { }
 
   ngOnInit() {

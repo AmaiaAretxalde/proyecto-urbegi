@@ -1,16 +1,16 @@
-.teVerde{
+.tipoTe{
     display:flex;
     flex-direction: row;
 }
 
-.teVerdeTexto{
+.tipoTeTexto{
     display:flex;
     flex-direction: column;
-    width: 200px;;
+    width: 50vw;;
 }
 
-.teVerde img{
-    width: 30vw;
+.tipoTe img{
+    width: 50vw;
 }
 
 

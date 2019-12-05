@@ -16,14 +16,15 @@ export class NovedadComponent implements OnInit {
   datos: any;
 
   te:any;
+  producto:any;
 
   @Input() posicion: number;
 
   constructor(public cargarService: CargarService, private comprarService:ComprarService) { }
 
-  async anyadirALaCesta(){
+  async anyadirALaCesta(producto){
     console.log('añadir')
-    await this.comprarService.anyadirALaCesta();
+    await this.comprarService.anyadirALaCesta(this.producto);
   }
 
   async ngOnInit() {

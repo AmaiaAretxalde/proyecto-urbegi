@@ -52,23 +52,26 @@
 }
 
 .parrafoNavidad img{
-    height: 29vw;
+    height: 21vw;
     overflow: hidden;
 }
 
 .textoNavidad{
     display: flex;
     flex-direction: column;
+    margin-left: 20px;
+    align-self: center;
 }
 
 .textoNavidad h6{
     font-family: 'Playfair Display', serif;
-    font-size: 22pt;
+    font-size: 20pt;
+    margin-bottom: 10px;
 }
 
 .textoNavidad p{
     font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
+    font-size: 12pt;
 }
 
 .fondoParrafoNavidad{

@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./infusiones.component.css']
 })
 export class InfusionesComponent implements OnInit {
-
+  color:string = "Infusión";
   constructor( public router:Router) { }
 
   ngOnInit() {

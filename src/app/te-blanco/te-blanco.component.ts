@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./te-blanco.component.css']
 })
 export class TeBlancoComponent implements OnInit {
-
+  color:string = "blanco";
   constructor() { }
 
   ngOnInit() {

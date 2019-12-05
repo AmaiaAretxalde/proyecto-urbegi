@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginService {
   nombre: string;
+  email:string;
   constructor(public http: HttpClient) { }
 
   async comprobarUsuario(email: string, password: string) {
@@ -26,12 +27,23 @@ export class LoginService {
   async registrarUsuario(nombre:string, apellido:string, email:string, direccion:string, localidad:string, provincia:string, cp:string, telefono:string, password:string) {
     let response: any = await this.http.post('/api/usuario/registro', { nombre, apellido, email, direccion, localidad, provincia, cp, telefono, password },{headers:{"Content-Type":"application/json"}})
       .toPromise()
+      this.email=response.user.email;
+    return response.mensaje;
+  }
+
+  async anayadirSaborUsuario(sabores:string[]) {
+    let email = this.email;
+    console.log(`el email es ${this.email}`)
+    let response: any = await this.http.post('/api/usuario/registro/sabores', {email, sabores},{headers:{"Content-Type":"application/json"}})
+      .toPromise()
       console.log(response.mensaje)
     return response.mensaje;
   }
 
-  async anayadirGustosUsuario(sabores:string[], funciones:string[]) {
-    let response: any = await this.http.post('/api/usuario/registro/gustos', {sabores, funciones},{headers:{"Content-Type":"application/json"}})
+  async anayadirFuncionUsuario(funciones:string[]) {
+    let email = this.email;
+    console.log(`el email es ${this.email}`)
+    let response: any = await this.http.post('/api/usuario/registro/funciones', {email, funciones},{headers:{"Content-Type":"application/json"}})
       .toPromise()
       console.log(response.mensaje)
     return response.mensaje;

@@ -29,15 +29,16 @@
 }
 
 .unProducto img{
-    width: 250px;
+    width: 300px;
 }
 
 .unProducto{
     font-family: 'Roboto Slab', serif;
+    width: 300px;
+    padding: 25px;
 }
 
-.inicioNovedades{
+.productos{
     display:flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-wrap: wrap;
 }

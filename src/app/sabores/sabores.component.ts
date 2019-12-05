@@ -16,6 +16,7 @@ export class SaboresComponent {
   saboresElegidos: any[] = [];
   nombre: string;
   email: string;
+  mensaje:string;
   constructor(public loginService: LoginService) { }
 
   cambiarDulce() {
@@ -53,10 +54,12 @@ export class SaboresComponent {
         return false;
       }
     })
+    this.registrarSabores();
   }
   
   async registrarSabores() {
-    let response = await this.loginService.anayadirSaborUsuario(this.email, this.saboresElegidos);
-    return response.mensaje;
+    let response = await this.loginService.anayadirSaborUsuario(this.saboresElegidos);
+    this.mensaje=response.mensaje;
+    return this.mensaje;
   }
 }

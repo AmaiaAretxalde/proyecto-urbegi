@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-funciones',
@@ -15,8 +16,9 @@ export class FuncionesComponent {
   funcionesInicio:any[]=[];
   funcionesElegidas:any[]=[];
   nombre:string;
+  mensaje:string;
 
-  constructor() { }
+  constructor(public loginService: LoginService) { }
 
   cambiarEstimulante() {
     this.estimulante = !this.estimulante;
@@ -59,6 +61,13 @@ export class FuncionesComponent {
         return false;
       }
     })
+    this.registrarFunciones();
+  }
+
+  async registrarFunciones() {
+    let response = await this.loginService.anayadirFuncionUsuario(this.funcionesElegidas);
+    this.mensaje=response.mensaje;
+    return this.mensaje;
   }
 
 }

@@ -1,0 +1,17 @@
+.teVerde{
+    display:flex;
+    flex-direction: row;
+}
+
+.teVerdeTexto{
+    display:flex;
+    flex-direction: column;
+    width: 200px;;
+}
+
+.teVerde img{
+    width: 30vw;
+}
+
+
+

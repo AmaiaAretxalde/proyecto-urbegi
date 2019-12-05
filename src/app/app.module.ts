@@ -22,6 +22,7 @@ import { ColorComponent } from './color/color.component';
 import { EncuestaComponent } from './encuesta/encuesta.component';
 import { SaboresComponent } from './sabores/sabores.component';
 import { FuncionesComponent } from './funciones/funciones.component';
+import { TipoComponent } from './tipo/tipo.component';
 
 
 
@@ -45,7 +46,8 @@ import { FuncionesComponent } from './funciones/funciones.component';
     ColorComponent,
     EncuestaComponent,
     SaboresComponent,
-    FuncionesComponent
+    FuncionesComponent,
+    TipoComponent
   ],
   imports: [
     BrowserModule,

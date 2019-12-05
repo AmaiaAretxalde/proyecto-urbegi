@@ -22,4 +22,12 @@ export class CargarService {
     console.log(response);
     return response;
   }
+
+  async cargarInfoPorTipo(tipo:string){
+    let url = '/api/cargar/info/'+ tipo;
+    let response = await this.http.get(url)
+    .toPromise();
+    console.log(response);
+    return response;
+  }
 }

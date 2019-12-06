@@ -8,10 +8,10 @@ import { TeRojoComponent } from './te-rojo/te-rojo.component';
 import { TeVerdeComponent } from './te-verde/te-verde.component';
 import { TeNegroComponent } from './te-negro/te-negro.component';
 import { TeBlancoComponent } from './te-blanco/te-blanco.component';
-import { TeDecafComponent } from './te-decaf/te-decaf.component';
+
 import { TeOolongComponent } from './te-oolong/te-oolong.component';
 import { InfusionesComponent } from './infusiones/infusiones.component';
-import { RooibosComponent } from './rooibos/rooibos.component';
+
 import { LoginComponent} from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -39,10 +39,10 @@ import { TipoComponent } from './tipo/tipo.component';
     TeVerdeComponent,
     TeNegroComponent,
     TeBlancoComponent,
-    TeDecafComponent,
+
     TeOolongComponent,
     InfusionesComponent,
-    RooibosComponent,
+
     LoginComponent,
     RegistroComponent,
     LoginRegistroComponent,

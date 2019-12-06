@@ -24,7 +24,7 @@ export class NovedadComponent implements OnInit {
 
   async anyadirALaCesta(producto){
     console.log('añadir')
-    await this.comprarService.anyadirALaCesta(this.producto);
+    await this.comprarService.anyadirALaCesta(producto);
   }
 
   async ngOnInit() {
@@ -33,7 +33,7 @@ export class NovedadComponent implements OnInit {
     this.nombre = this.datos[this.posicion].name.toUpperCase();
     this.src = this.datos[this.posicion].mainImage;
     this.precio = Math.floor(this.datos[this.posicion].basePrice*100)/100;
-
+    this.producto = this.datos[this.posicion];
   }
 }
 

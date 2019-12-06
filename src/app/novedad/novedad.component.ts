@@ -13,6 +13,8 @@ export class NovedadComponent implements OnInit {
   palabra1: string = 'navidad';
   palabra2: string = 'Christmas';
   datos: any;
+  id:string;
+  ruta:string;
   @Input() posicion: number;
 
   constructor(public cargarService: CargarService) { }
@@ -23,6 +25,8 @@ export class NovedadComponent implements OnInit {
     this.nombre = this.datos[this.posicion].name.toUpperCase();
     this.src = this.datos[this.posicion].mainImage;
     this.precio = Math.floor(this.datos[this.posicion].basePrice*100)/100;
+    this.id = this.datos[this.posicion].id;
+    this.ruta = "/producto/" + this.id;
   
 
   }

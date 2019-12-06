@@ -12,7 +12,6 @@ export class ColorComponent implements OnInit {
   precio: Number;
   datos: any;
   @Input() color: string;
-  @Input() posicion: string;
 
   constructor(public cargarService: CargarService) { }
 

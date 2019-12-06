@@ -30,4 +30,12 @@ export class CargarService {
     console.log(response);
     return response;
   }
+
+  async cargarInfoProducto(id:string){
+    let url = '/api/cargar/producto/'+ id;
+    let response = await this.http.get(url)
+    .toPromise();
+    console.log(response);
+    return response;
+  }
 }

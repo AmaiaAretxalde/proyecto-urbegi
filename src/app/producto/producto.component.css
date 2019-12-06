@@ -1,0 +1,28 @@
+img{
+    width: 45vw;
+    padding: 25px;
+}
+.texto{
+    display: flex;
+    flex-direction: column;
+    width: 45vw;
+    padding: 25px;
+}
+.info{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.icono{
+    width: 70px;
+}
+
+.caracteristica{
+    display: flex;
+    flex-direction: row;
+}
+
+.caracteristicas{
+    display: flex;
+    flex-direction: column;
+}

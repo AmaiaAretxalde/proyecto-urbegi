@@ -1,0 +1,31 @@
+<div class="info">
+    <div class="foto">
+        <img src="{{producto[0].mainImage}}" />
+    </div>
+    <div class="texto">
+        <!-- <img src="{{producto[0].características.aroma.imagen}}" /> -->
+        <h3>{{nombre.toUpperCase()}}</h3>
+        <div *ngFor="let dato of longDescription">
+            <p>{{dato}}</p>
+        </div>
+    </div>
+</div>
+<div>
+    <p>{{producto[0].basePrice}}€/ 100gr</p>
+    <input type="number" [(ngModel)]="unidades" />
+    <button>AÑADIR A LA CESTA</button>
+</div>
+<div class = "caracteristicas">
+    <div class="caracteristica">
+        <img class="icono" src="{{iconoAroma}}" />
+        <p>Aroma :{{aroma}}</p>
+    </div>
+    <div class="caracteristica">
+        <img class="icono" src="{{iconoSabor}}" />
+        <p>Sabor :{{sabor}}</p>
+    </div>
+    <div class="caracteristica">
+        <img class="icono" src="{{iconoColor}}" />
+        <p>Color :{{color}}</p>
+    </div>
+</div>

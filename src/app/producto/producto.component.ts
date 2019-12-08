@@ -8,7 +8,7 @@ import { CargarService } from '../cargar.service';
 })
 export class ProductoComponent implements OnInit {
   producto:any;
-  id:string="1";
+  id:string;
   nombre:string;
   descripcion:string;
   longDescription:string[] = [];
@@ -21,11 +21,15 @@ export class ProductoComponent implements OnInit {
   sabor:string;
   iconoColor:string;
   color:string;
+  src:string;
+
   constructor(public cargarService:CargarService) { }
 
   async ngOnInit() {
-    this.producto = await this.cargarService.cargarInfoProducto(this.id)
-    console.log(this.producto)
+
+    this.id = await this.cargarService.pasarId();
+    this.producto = await this.cargarService.cargarInfoProducto(this.id);
+    this.src = this.producto[0].mainImage;
     this.nombre = this.producto[0].name;
     this.precio = this.producto[0].basePrice
     this.descripcion = this.producto[0].descripcion;
@@ -38,7 +42,5 @@ export class ProductoComponent implements OnInit {
     this.iconoColor = this.producto[0].caracteristicas.color.image;
     this.color = this.producto[0].caracteristicas.color.texto;
 
-    console.log(this.iconoSabor)
   }
-
 }

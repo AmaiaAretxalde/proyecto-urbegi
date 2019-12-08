@@ -1,0 +1,19 @@
+h1{
+      color: #B4BEA5;
+      text-align: center;
+ }
+p{
+    display: inline;
+    border-style: ridge;
+    border-radius: 55%;
+    padding: 20px;
+    color: #B4BEA5;
+}
+.pasos{
+    display: flex;
+    justify-content: space-around;
+}
+.selected{
+    background-color: #B4BEA5;
+    color: white;
+}

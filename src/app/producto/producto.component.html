@@ -1,31 +1,35 @@
-<div class="info">
-    <div class="foto">
-        <img src="{{producto[0].mainImage}}" />
-    </div>
-    <div class="texto">
-        <!-- <img src="{{producto[0].características.aroma.imagen}}" /> -->
-        <h3>{{nombre.toUpperCase()}}</h3>
-        <div *ngFor="let dato of longDescription">
-            <p>{{dato}}</p>
+<div class="producto">
+    <div class="info">
+        <div class="foto">
+            <img src="{{producto[0].mainImage}}" />
+        </div>
+        <div class="texto">
+            <h3>{{nombre.toUpperCase()}}</h3>
+            <div *ngFor="let dato of longDescription">
+                <p>{{dato}}</p>
+            </div>
         </div>
     </div>
-</div>
-<div>
-    <p>{{producto[0].basePrice}}€/ 100gr</p>
-    <input type="number" [(ngModel)]="unidades" />
-    <button>AÑADIR A LA CESTA</button>
-</div>
-<div class = "caracteristicas">
-    <div class="caracteristica">
-        <img class="icono" src="{{iconoAroma}}" />
-        <p>Aroma :{{aroma}}</p>
-    </div>
-    <div class="caracteristica">
-        <img class="icono" src="{{iconoSabor}}" />
-        <p>Sabor :{{sabor}}</p>
-    </div>
-    <div class="caracteristica">
-        <img class="icono" src="{{iconoColor}}" />
-        <p>Color :{{color}}</p>
+    <div class="abajo">
+
+        <div class="caracteristicas">
+            <div class="caracteristica">
+                <img class="icono" src="{{iconoAroma}}" />
+                <p>Aroma :{{aroma}}</p>
+            </div>
+            <div class="caracteristica">
+                <img class="icono" src="{{iconoSabor}}" />
+                <p>Sabor :{{sabor}}</p>
+            </div>
+            <div class="caracteristica">
+                <img class="icono" src="{{iconoColor}}" />
+                <p>Color :{{color}}</p>
+            </div>
+        </div>
+        <div class="compra">
+            <h2>{{precio}}€/ 100gr</h2>
+            <input type="number" [(ngModel)]="unidades" placeholder=1 />
+            <button>AÑADIR A LA CESTA</button>
+        </div>
     </div>
 </div>

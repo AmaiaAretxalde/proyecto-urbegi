@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-sabores',
@@ -17,26 +18,59 @@ export class SaboresComponent {
   nombre: string;
   email: string;
   mensaje:string;
-  constructor(public loginService: LoginService) { }
+  classDulce:string;
+  classCitrico:string;
+  classFruit:string;
+  classFloral:string;
+  classEspeciado:string;
+
+  constructor(public loginService: LoginService, private router: Router) { }
 
   cambiarDulce() {
     this.dulce = !this.dulce;
+    if(this.dulce){
+      this.classDulce="activo";
+    }else{
+      this.classDulce="no-activo";
+    }
     console.log(this.dulce)
+    console.log(this.classDulce)
+
   }
   cambiarCitrico() {
     this.citrico = !this.citrico;
+    if(this.citrico){
+      this.classCitrico="activo";
+    }else{
+      this.classCitrico="no-activo";
+    }
     console.log(this.citrico)
   }
   cambiarAfrutado() {
     this.afrutado = !this.afrutado;
+    if(this.afrutado){
+      this.classFruit="activo";
+    }else{
+      this.classFruit="no-activo";
+    }
     console.log(this.afrutado)
   }
   cambiarEspeciado() {
     this.especiado = !this.especiado;
+    if(this.especiado){
+      this.classEspeciado="activo";
+    }else{
+      this.classEspeciado="no-activo";
+    }
     console.log(this.especiado)
   }
   cambiarFloral() {
     this.floral = !this.floral;
+    if(this.floral){
+      this.classFloral="activo";
+    }else{
+      this.classFloral="no-activo";
+    }
     console.log(this.floral)
   }
   guardarSabores() {
@@ -55,6 +89,7 @@ export class SaboresComponent {
       }
     })
     this.registrarSabores();
+    this.router.navigate(['../usuario/encuesta/paso2'])
   }
   
   async registrarSabores() {
@@ -62,4 +97,5 @@ export class SaboresComponent {
     this.mensaje=response.mensaje;
     return this.mensaje;
   }
+  
 }

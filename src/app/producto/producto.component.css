@@ -1,11 +1,11 @@
 img{
-    width: 45vw;
+    width: 40vw;
     padding: 25px;
 }
 .texto{
     display: flex;
     flex-direction: column;
-    width: 45vw;
+    width: 55vw;
     padding: 25px;
 }
 .info{
@@ -14,7 +14,7 @@ img{
     justify-content: center;
 }
 .icono{
-    width: 70px;
+    width: 80px;
 }
 
 .caracteristica{
@@ -25,4 +25,26 @@ img{
 .caracteristicas{
     display: flex;
     flex-direction: column;
+}
+.compra{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.abajo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.producto{
+    display: flex;
+    flex-direction: column;
+}
+input{
+    margin: 25px;
+    width: 80px;
+    text-align: center;
+}
+button{
+    width: 200px;
 }

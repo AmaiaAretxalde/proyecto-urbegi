@@ -51,15 +51,20 @@ export class LoginService {
     return response.mensaje;
   }
 
-  async buscarGustos() {
-    let email = this.email;
-    let sabores;
-    let funciones;
-    console.log(`el email es ${this.email}`)
-    let response: any = await this.http.post('/api/usuario/gustos', {email},{headers:{"Content-Type":"application/json"}})
-      .toPromise()
-      console.log(response)
-    return response;
+  // async buscarGustos() {
+  //   let email = this.email;
+  //   let sabores;
+  //   let funciones;
+  //   console.log(`el email es ${this.email}`)
+  //   let response: any = await this.http.post('/api/usuario/gustos', {email},{headers:{"Content-Type":"application/json"}})
+  //     .toPromise()
+  //     console.log(response)
+  //   return response;
+  // }
+
+  obtenerNombre(){
+    console.log(this.nombre)
+    return this.nombre;
   }
 
 }

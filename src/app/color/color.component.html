@@ -1,6 +1,6 @@
 <div class="productos">
-    <button (click)="mandarId()">
-        <div *ngFor="let dato of datos">
+    <div *ngFor="let dato of datos">
+        <button (click)="mandarId(dato.id)">
             <div class="unProducto">
                 <img src="{{dato.mainImage}}" />
                 <h3>{{dato.name.toUpperCase()}}</h3>
@@ -8,6 +8,6 @@
                 {{id}}
                 <button>COMPRAR</button>
             </div>
-        </div>
-    </button>
+        </button>
+    </div>
 </div>

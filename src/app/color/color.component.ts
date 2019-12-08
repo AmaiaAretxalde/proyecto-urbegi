@@ -12,7 +12,7 @@ export class ColorComponent implements OnInit {
   nombre: string = '';
   precio: Number;
   datos: any;
-  id: string;
+  // id: string;
   @Input() color: string;
   dato: string;
   ruta: string;
@@ -23,18 +23,11 @@ export class ColorComponent implements OnInit {
 
   async ngOnInit() {
     this.datos = await this.cargarService.cargarPorColor(this.color);
-    this.id= this.datos[this.position].id;
-    console.log(this.id)
-    this.ruta = "/producto/" + this.id;
   }
 
-  buscarId() {
-
-
-  }
-  async mandarId() {
-
-    this.dato = await this.cargarService.mandarId(this.id);
+  async mandarId(id:string) {
+    this.dato = await this.cargarService.mandarId(id);
+    this.ruta = "/producto/" + this.dato;
     this.router.navigate([this.ruta])
     return this.dato;
   }

@@ -8,16 +8,6 @@ body {
     margin: 0;
 }
 
-.footer {
-    background-color: tomato;
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
 .text {
     margin-top: 200px;
 }

@@ -67,14 +67,8 @@ import { Error404Component } from './error404/error404.component';
     Encuesta1Component,
     Encuesta2Component,
     Encuesta3Component,
-<<<<<<< HEAD
-
-=======
->>>>>>> master
     CestaComponent,
-
     TipoComponent,
-
     Error404Component
 
 

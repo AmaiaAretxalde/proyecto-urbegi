@@ -1,5 +1,17 @@
-<app-menu></app-menu>
+<app-menu-usuario></app-menu-usuario>
 
-<div *ngFor="let te of cesta">
-    <img src="{{te.producto.mainImage}}" alt="">
+<div class="containerProductos">
+    <div class="producto" *ngFor="let te of cesta">
+        <img src="{{te.mainImage}}" alt="te">
+        <p>{{te.name}}</p>
+        <p>{{te.basePrice}}€</p>
+        <button (click) = "eliminarDeCesta(te)">Borrar</button>
+    </div>
+
+
+<div>
+    <p>Total a pagar:{{precioTotal}}€</p>
+    <button>Pagar</button>
+</div>
+
 </div>

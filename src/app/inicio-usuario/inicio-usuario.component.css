@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+  }
+
+
+.inicioImagenTexto {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+} 
+.inicioImagenTexto img{
+    width: 100vw;
+    overflow: hidden;
+}
+
+.textoInicio{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Playfair Display', serif;
+    padding-left: 50px;
+    justify-content: center;
+
+}
+
+.textoInicio h1{
+    margin: 0px 0px 10px 0px;
+    font-size: 72px;
+    font-weight: 900;
+    color: #B4BEA5;
+    width: 50vw;
+}
+
+.unProducto img{
+    width: 250px;
+}
+
+.unProducto{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.inicioNovedades{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.parrafoNavidad{
+    display: flex;
+    flex-direction: row;
+    font-weight: 900;
+    color:#F0EFE2;
+}
+
+.parrafoNavidad img{
+    height: 29vw;
+    overflow: hidden;
+}
+
+.textoNavidad{
+    display: flex;
+    flex-direction: column;
+}
+
+.textoNavidad h6{
+    font-family: 'Playfair Display', serif;
+    font-size: 22pt;
+}
+
+.textoNavidad p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+
+.fondoParrafoNavidad{
+    background-color: #7D8472;
+}
+
+
+.parrafoTextoNavidad{
+    width:600px;
+}

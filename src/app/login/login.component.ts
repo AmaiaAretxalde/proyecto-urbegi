@@ -17,11 +17,11 @@ export class LoginComponent {
   async comprobarUsuario() {
     this.mensaje = await this.loginService.comprobarUsuario(this.email, this.password)
     console.log(this.mensaje)
-    // if (this.mensaje === "denegado") {
-    //   console.log(this.mensaje)
-    // } else {
-    //   this.nombre = this.mensaje
-    //   console.log(`tu nombre es ${this.nombre}`)
-    // }
+    if (this.mensaje === "denegado") {
+      location.reload(); 
+    } else {
+      this.nombre = this.mensaje
+      this.router.navigate(['../usuario'])
+    }
   }
 }

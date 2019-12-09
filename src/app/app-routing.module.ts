@@ -14,6 +14,7 @@ import { Encuesta1Component } from './encuesta1/encuesta1.component';
 import { Encuesta2Component } from './encuesta2/encuesta2.component';
 import { Encuesta3Component } from './encuesta3/encuesta3.component';
 import { CestaComponent } from './cesta/cesta.component';
+import { Error404Component } from './error404/error404.component';
 
 
 
@@ -35,6 +36,7 @@ const routes: Routes = [
   {path: 'producto/:id', component:ProductoComponent},
 
   {path: 'cesta', component:CestaComponent},
+  {path: 'error404', component:Error404Component},
   
 
 ];

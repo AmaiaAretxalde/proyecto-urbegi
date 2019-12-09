@@ -32,6 +32,7 @@ import { ProductoComponent } from './producto/producto.component';
 import { Encuesta1Component } from './encuesta1/encuesta1.component';
 import { Encuesta2Component } from './encuesta2/encuesta2.component';
 import { Encuesta3Component } from './encuesta3/encuesta3.component';
+import { Error404Component } from './error404/error404.component';
 
 
 
@@ -69,7 +70,9 @@ import { Encuesta3Component } from './encuesta3/encuesta3.component';
 
     CestaComponent,
 
-    TipoComponent
+    TipoComponent,
+
+    Error404Component
 
   ],
   imports: [

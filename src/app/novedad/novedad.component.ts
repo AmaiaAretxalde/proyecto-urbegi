@@ -34,6 +34,7 @@ export class NovedadComponent implements OnInit {
     this.src = this.datos[this.posicion].mainImage;
     this.precio = Math.floor(this.datos[this.posicion].basePrice*100)/100;
     this.id = this.datos[this.posicion].id;
+    this.producto = this.datos[this.posicion];
     this.ruta = "/producto/" + this.id;
   }
 
@@ -42,15 +43,14 @@ export class NovedadComponent implements OnInit {
     this.dato = await this.cargarService.mandarId(this.id);
     this.router.navigate([this.ruta])
     return this.dato;
-    
-    this.producto = this.datos[this.posicion];
 
   }
   
-   async anyadirALaCesta(producto){
+   async anyadirALaCesta(){
     console.log('añadir')
+    console.log(this.producto)
     await this.comprarService.anyadirALaCesta(this.producto);
-     this.producto = this.datos[this.posicion];
+    
   }
   
 }

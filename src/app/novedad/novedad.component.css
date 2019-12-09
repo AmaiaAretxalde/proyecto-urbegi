@@ -37,7 +37,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    border-style: none;
+    background-color: white;
+    width: 30vw;
 }
 
 .unProducto button{
@@ -47,6 +49,7 @@
     font-size: 11pt;
     font-family: 'Montserrat', serif;
     border: none;
+
 }
 
 .unProducto h3{
@@ -62,3 +65,7 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+
+
+

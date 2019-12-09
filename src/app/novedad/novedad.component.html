@@ -1,12 +1,9 @@
+<button class="unProducto" (click)="mandarId()">
 
-<button (click)="mandarId()">
-   
-        <img [src]="src" [alt]="nombre" />
-        <div class="infoProducto">
+    <img [src]="src" [alt]="nombre" />
+    <div class="infoProducto">
         <h3>{{nombre}}</h3>
         <p>{{precio}}€ / 100gr</p>
-        <button (click)="anyadirALaCesta(producto)">COMPRAR</button>
-          
     </div>
 </button>
-
+<button (click)="anyadirALaCesta()">COMPRAR</button>

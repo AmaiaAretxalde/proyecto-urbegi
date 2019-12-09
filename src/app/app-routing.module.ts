@@ -8,14 +8,23 @@ import { TeBlancoComponent } from './te-blanco/te-blanco.component';
 import { TeOolongComponent } from './te-oolong/te-oolong.component';
 import { InfusionesComponent } from './infusiones/infusiones.component';
 import { LoginRegistroComponent } from './login-registro/login-registro.component';
+<<<<<<< HEAD
 
 import { CestaComponent } from './cesta/cesta.component';
 
+=======
+>>>>>>> 9e964558b277df57a3d2f49a72408e8e37d950d5
 import { InicioUsuarioComponent } from './inicio-usuario/inicio-usuario.component';
 import { ProductoComponent } from './producto/producto.component';
 import { Encuesta1Component } from './encuesta1/encuesta1.component';
 import { Encuesta2Component } from './encuesta2/encuesta2.component';
 import { Encuesta3Component } from './encuesta3/encuesta3.component';
+<<<<<<< HEAD
+=======
+import { CestaComponent } from './cesta/cesta.component';
+
+
+>>>>>>> 9e964558b277df57a3d2f49a72408e8e37d950d5
 
 
 const routes: Routes = [
@@ -27,13 +36,23 @@ const routes: Routes = [
   {path: 'te-oolong', component:TeOolongComponent},
   {path: 'infusiones', component:InfusionesComponent},
   {path: 'iniciosesion', component:LoginRegistroComponent},
+<<<<<<< HEAD
   {path: 'cesta', component:CestaComponent},
+=======
+
+>>>>>>> 9e964558b277df57a3d2f49a72408e8e37d950d5
   {path: 'usuario/encuesta/paso1', component:Encuesta1Component},
   {path: 'usuario/encuesta/paso2', component:Encuesta2Component},
   {path: 'usuario/encuesta/paso3', component:Encuesta3Component},
   {path: 'usuario', component:InicioUsuarioComponent},
   {path: 'producto/:id', component:ProductoComponent},
 
+<<<<<<< HEAD
+=======
+  {path: 'cesta', component:CestaComponent},
+  
+
+>>>>>>> 9e964558b277df57a3d2f49a72408e8e37d950d5
 ];
 
 @NgModule({

@@ -8,6 +8,10 @@ import { TeRojoComponent } from './te-rojo/te-rojo.component';
 import { TeVerdeComponent } from './te-verde/te-verde.component';
 import { TeNegroComponent } from './te-negro/te-negro.component';
 import { TeBlancoComponent } from './te-blanco/te-blanco.component';
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9e964558b277df57a3d2f49a72408e8e37d950d5
 import { TeOolongComponent } from './te-oolong/te-oolong.component';
 import { InfusionesComponent } from './infusiones/infusiones.component';
 import { LoginComponent} from './login/login.component';
@@ -56,7 +60,11 @@ import { Encuesta3Component } from './encuesta3/encuesta3.component';
     EncuestaComponent,
     SaboresComponent,
     FuncionesComponent,
+<<<<<<< HEAD
     CestaComponent,
+=======
+
+>>>>>>> 9e964558b277df57a3d2f49a72408e8e37d950d5
     TipoComponent,
     RecomendacionComponent,
     InicioUsuarioComponent,
@@ -65,6 +73,14 @@ import { Encuesta3Component } from './encuesta3/encuesta3.component';
     Encuesta1Component,
     Encuesta2Component,
     Encuesta3Component
+<<<<<<< HEAD
+=======
+
+
+    CestaComponent,
+
+    TipoComponent
+>>>>>>> 9e964558b277df57a3d2f49a72408e8e37d950d5
 
   ],
   imports: [

@@ -3,6 +3,7 @@ import { CargarService } from '../cargar.service';
 import { ComprarService } from '../comprar.service';
 import { Router } from "@angular/router";
 
+
 @Component({
   selector: 'app-producto',
   templateUrl: './producto.component.html',
@@ -25,7 +26,9 @@ export class ProductoComponent implements OnInit {
   color: string;
   src: string;
 
+
   constructor(public cargarService: CargarService, public comprarService: ComprarService, private router: Router) { }
+
 
   async ngOnInit() {
 
@@ -51,6 +54,7 @@ export class ProductoComponent implements OnInit {
   }
 
   async anyadirACestaDesdeProducto() {
+
     let productoAnyadido=  await this.comprarService.anyadirALaCesta(this.producto);
   }
 }

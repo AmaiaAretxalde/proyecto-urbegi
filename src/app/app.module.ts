@@ -8,7 +8,6 @@ import { TeRojoComponent } from './te-rojo/te-rojo.component';
 import { TeVerdeComponent } from './te-verde/te-verde.component';
 import { TeNegroComponent } from './te-negro/te-negro.component';
 import { TeBlancoComponent } from './te-blanco/te-blanco.component';
-
 import { TeOolongComponent } from './te-oolong/te-oolong.component';
 import { InfusionesComponent } from './infusiones/infusiones.component';
 import { LoginComponent} from './login/login.component';
@@ -58,6 +57,7 @@ import { Error404Component } from './error404/error404.component';
     EncuestaComponent,
     SaboresComponent,
     FuncionesComponent,
+    CestaComponent,
 
     TipoComponent,
     RecomendacionComponent,
@@ -67,12 +67,16 @@ import { Error404Component } from './error404/error404.component';
     Encuesta1Component,
     Encuesta2Component,
     Encuesta3Component,
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
     CestaComponent,
 
     TipoComponent,
 
     Error404Component
+
 
   ],
   imports: [

@@ -1,5 +1,6 @@
 <div class="productos">
     <div *ngFor="let dato of datos">
+
         <button (click)="mandarId(dato.id)">
             <div class="unProducto">
                 <img src="{{dato.mainImage}}" />

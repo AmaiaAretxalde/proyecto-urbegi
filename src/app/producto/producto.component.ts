@@ -54,8 +54,7 @@ export class ProductoComponent implements OnInit {
   }
 
   async anyadirACestaDesdeProducto() {
-    console.log(this.producto)
-    await this.comprarService.anyadirALaCestaDesdeProducto(this.producto);
+    await this.comprarService.anyadirALaCesta(this.producto);
 
   }
 }

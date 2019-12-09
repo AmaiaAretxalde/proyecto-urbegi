@@ -2,25 +2,6 @@
     box-sizing: border-box;
   }
 
-  .circulo-ure{
-    animation:rotar 3s infinite ease-in-out;
-
-    transform-origin: center;
-  }
-
-  .spinner{
-      width:100px;
-  }
-
-  @keyframes rotar{
-      80%{
-        transform: rotate(360deg);
-      }
-      100%{
-          transform: rotate(360deg);
-      }
-  }
-
   
 .inicioImagenTexto {
     display: flex;
@@ -66,7 +47,6 @@
     height: 21vw;
     width: 50vw;
     object-fit: cover;
-
 }
 
 .textoNavidad{

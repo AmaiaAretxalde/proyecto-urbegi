@@ -7,8 +7,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-style: none;
+    background-color: white;
+    width: 30vw;
 }
-
 
 .inicioImagenTexto {
     display: flex;
@@ -47,5 +49,38 @@
 
 .productos{
     display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+button{
+    width: 10vw;
+}
+.productosxColor{
+    display: flex;
     flex-wrap: wrap;
 }
+
+
+.circulo-ure{
+    animation:rotar 3s infinite ease-in-out;
+
+    transform-origin: center;
+  }
+
+  .spinner{
+      width: 30vw;
+      text-align: center;
+      position: absolute;
+      top:30%;
+      left:35%;
+      background-size: 100%;
+  }
+
+  @keyframes rotar{
+      80%{
+        transform: rotate(360deg);
+      }
+      100%{
+          transform: rotate(360deg);
+      }
+  }

@@ -3,7 +3,7 @@ import { CargarService } from '../cargar.service';
 
 import { ComprarService } from '../comprar.service';
 
-import {Router} from "@angular/router";
+import { Router } from "@angular/router";
 
 
 
@@ -20,45 +20,52 @@ export class NovedadComponent implements OnInit {
   palabra2: string = 'Christmas';
   datos: any;
 
-  id:string;
-  ruta:string;
-  dato:string;
-  producto:string[]=[]
-  cesta:string[]=[]
+  id: string;
+  ruta: string;
+  dato: string;
+  producto: string[] = []
+  cesta: string[] = [];
+  mounted:boolean = false;
+
 
   @Input() posicion: number;
 
-  constructor(public cargarService: CargarService, private comprarService:ComprarService, private router: Router) { }
+  constructor(public cargarService: CargarService, private comprarService: ComprarService, private router: Router) { }
 
   async ngOnInit() {
-    this.datos = await this.cargarService.cargarNovedades(this.palabra1, this.palabra2)
-    this.nombre = this.datos[this.posicion].name.toUpperCase();
-    this.src = this.datos[this.posicion].mainImage;
-    this.precio = Math.floor(this.datos[this.posicion].basePrice*100)/100;
+    this.datos = await this.cargarService.cargarNovedades(this.palabra1, this.palabra2);
+    if (this.datos.mensaje === '404') {
+      this.router.navigate(['../error404']);
+    } else {
 
-    this.producto = this.datos[this.posicion];
+      this.nombre = this.datos[this.posicion].name.toUpperCase();
+      this.src = this.datos[this.posicion].mainImage;
+      this.precio = Math.floor(this.datos[this.posicion].basePrice * 100) / 100;
 
-    this.id = this.datos[this.posicion].id;
-    this.ruta = "/producto/" + this.id;
+      this.producto = this.datos[this.posicion];
+
+      this.id = this.datos[this.posicion].id;
+      this.producto = this.datos[this.posicion];
+      this.ruta = "/producto/" + this.id;
+      this.mounted = true;
+    }
   }
 
-  async mandarId()
-  {
+  async mandarId() {
     this.dato = await this.cargarService.mandarId(this.id);
-    this.router.navigate([this.ruta])
+    this.router.navigate([this.ruta]);
     return this.dato;
-
-    
-    this.producto = this.datos[this.posicion];
-
   }
-  
-   async anyadirALaCesta(producto){
+
+
+  async anyadirALaCesta() {
     console.log('añadir')
+    console.log(this.producto)
     await this.comprarService.anyadirALaCesta(this.producto);
-     this.producto = this.datos[this.posicion];
+
+
   }
-  
+
 }
 
 

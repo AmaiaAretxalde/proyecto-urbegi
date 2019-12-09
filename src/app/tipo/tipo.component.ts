@@ -12,6 +12,7 @@ export class TipoComponent implements OnInit {
   src:string;
   descripcion:string;
   @Input() tipo: string;
+  mounted:boolean = false;
 
   constructor(public cargarService:CargarService) { }
 
@@ -21,5 +22,6 @@ export class TipoComponent implements OnInit {
     this.nombre = this.datos[0].nombre;
     this.src = this.datos[0].foto;
     this.descripcion = this.datos[0].descripcion;
+    this.mounted = true;
   }
 }

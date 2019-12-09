@@ -51,6 +51,6 @@ export class ProductoComponent implements OnInit {
   }
 
   async anyadirACestaDesdeProducto() {
-
+    let productoAnyadido=  await this.comprarService.anyadirALaCesta(this.producto);
   }
 }

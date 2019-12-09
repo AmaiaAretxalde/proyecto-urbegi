@@ -9,8 +9,7 @@ export class ComprarService {
   producto:any;
   constructor(public http: HttpClient) { }
 
-  async anyadirALaCesta(producto) {
-    console.log(producto)
+  async anyadirALaCesta(producto:any) {
     let teAnyadido = await this.http.post('/api/cesta', {producto}, { headers: { "Content-Type": "application/json" } })
     .toPromise();
     console.log(teAnyadido)

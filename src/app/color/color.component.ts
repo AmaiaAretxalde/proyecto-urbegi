@@ -19,12 +19,14 @@ export class ColorComponent implements OnInit {
   dato: string;
   ruta: string;
   position:number;
+  mounted:boolean = false;
 
 
   constructor(public cargarService: CargarService, private router: Router, public comprarService:ComprarService) { }
 
   async ngOnInit() {
     this.datos = await this.cargarService.cargarPorColor(this.color);
+    this.mounted = true;
   }
 
   async mandarId(id:string) {

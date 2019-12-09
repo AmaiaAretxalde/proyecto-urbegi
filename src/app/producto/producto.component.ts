@@ -25,6 +25,7 @@ export class ProductoComponent implements OnInit {
   iconoColor: string;
   color: string;
   src: string;
+  mounted:boolean = false;
 
 
   constructor(public cargarService: CargarService, public comprarService: ComprarService, private router: Router) { }
@@ -32,6 +33,7 @@ export class ProductoComponent implements OnInit {
 
   async ngOnInit() {
 
+    console.log(this.mounted)
     this.id = await this.cargarService.pasarId();
     this.producto = await this.cargarService.cargarInfoProducto(this.id);
     console.log(this.producto);
@@ -50,6 +52,8 @@ export class ProductoComponent implements OnInit {
       this.sabor = this.producto[0].caracteristicas.sabor.texto;
       this.iconoColor = this.producto[0].caracteristicas.color.image;
       this.color = this.producto[0].caracteristicas.color.texto;
+      this.mounted = true;
+      console.log(this.mounted)
     }
   }
 

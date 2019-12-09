@@ -12,7 +12,6 @@ export class ComprarService {
 
   async anyadirALaCesta(producto:any) {
     let teAnyadido:any = await this.http.post('/api/cesta', {producto}, { headers: { "Content-Type": "application/json" } })
-
     .toPromise();
     console.log(teAnyadido.logged)
     console.log(teAnyadido.mensaje)

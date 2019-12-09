@@ -25,6 +25,7 @@ export class NovedadComponent implements OnInit {
   dato: string;
   producto: string[] = []
   cesta: string[] = [];
+  mounted:boolean = false;
 
 
   @Input() posicion: number;
@@ -46,6 +47,7 @@ export class NovedadComponent implements OnInit {
       this.id = this.datos[this.posicion].id;
       this.producto = this.datos[this.posicion];
       this.ruta = "/producto/" + this.id;
+      this.mounted = true;
     }
   }
 

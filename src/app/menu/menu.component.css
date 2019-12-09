@@ -38,6 +38,7 @@ header nav ul li{
     padding: 5px 0px 5px 0px;
     text-decoration-color: none;
     color: #B4BEA5;
+    background-color: white;
 }
 
 
@@ -111,6 +112,7 @@ a:-webkit-any-link {
         position: relative;
         padding: 0;
         text-decoration: none;
+        background-color: white;
     }
     .menu li{
         opacity:0;

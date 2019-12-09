@@ -15,8 +15,9 @@ export class NovedadComponent implements OnInit {
   palabra2: string = 'Christmas';
   datos: any;
 
-  te:any;
-  producto:any;
+
+  producto:string[]=[]
+  cesta:string[]=[]
 
   @Input() posicion: number;
 
@@ -24,7 +25,7 @@ export class NovedadComponent implements OnInit {
 
   async anyadirALaCesta(producto){
     console.log('añadir')
-    await this.comprarService.anyadirALaCesta(producto);
+    await this.comprarService.anyadirALaCesta(this.producto);
   }
 
   async ngOnInit() {

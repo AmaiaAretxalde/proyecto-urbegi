@@ -10,7 +10,7 @@ export class ComprarService {
   constructor(public http: HttpClient) { }
 
   async anyadirALaCesta(producto) {
-    let teAnyadido = await this.http.post('/api/cesta', {cesta: producto}, { headers: { "Content-Type": "application/json" }, responseType: "text" })
+    let teAnyadido = await this.http.post('/api/cesta', {cesta:producto}, { headers: { "Content-Type": "application/json" }, responseType: "text" })
     .toPromise();
     await console.log(this.cesta)
   }

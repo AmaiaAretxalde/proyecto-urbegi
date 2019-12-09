@@ -65,8 +65,7 @@ import { Encuesta3Component } from './encuesta3/encuesta3.component';
     ProductoComponent,
     Encuesta1Component,
     Encuesta2Component,
-    Encuesta3Component
-
+    Encuesta3Component,
 
     CestaComponent,
 

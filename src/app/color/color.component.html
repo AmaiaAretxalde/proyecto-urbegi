@@ -1,14 +1,10 @@
-<div class="productos">
-    <div *ngFor="let dato of datos">
-
-        <button (click)="mandarId(dato.id)">
-            <div class="unProducto">
-                <img src="{{dato.mainImage}}" />
-                <h3>{{dato.name.toUpperCase()}}</h3>
-                <p>{{dato.basePrice}}€/ 100gr</p>
-                {{id}}
-                <button (click) = anyadirACestaDesdeColor(dato)>COMPRAR</button>
-            </div>
+<div class= "productosxColor">
+    <div class="productos" *ngFor="let dato of datos">
+        <button class="unProducto" (click)="mandarId(dato.id)">
+            <img src="{{dato.mainImage}}" />
+            <h3>{{dato.name.toUpperCase()}}</h3>
+            <p>{{dato.basePrice}}€/ 100gr</p>
         </button>
+        <button (click)=anyadirACestaDesdeColor(dato)>COMPRAR</button>
     </div>
 </div>

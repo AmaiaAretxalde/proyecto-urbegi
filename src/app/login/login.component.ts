@@ -7,15 +7,18 @@ import { Router } from "@angular/router"
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent{
   email: string = "";
   password: string = "";
   mensaje: string = "";
   nombre: string = '';
+  montado:boolean = true;
+
   constructor(public loginService: LoginService, private router: Router) { }
 
+
   async comprobarUsuario() {
-    this.mensaje = await this.loginService.comprobarUsuario(this.email, this.password)
+    this.mensaje = await this.loginService.comprobarUsuario(this.email, this.password);
     console.log(this.mensaje)
     if (this.mensaje === "denegado") {
       location.reload(); 

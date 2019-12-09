@@ -15,8 +15,9 @@ export class NovedadComponent implements OnInit {
   palabra2: string = 'Christmas';
   datos: any;
 
-  te:any;
-  producto:any;
+
+  producto:string[]=[]
+  cesta:string[]=[]
 
   @Input() posicion: number;
 
@@ -33,7 +34,7 @@ export class NovedadComponent implements OnInit {
     this.nombre = this.datos[this.posicion].name.toUpperCase();
     this.src = this.datos[this.posicion].mainImage;
     this.precio = Math.floor(this.datos[this.posicion].basePrice*100)/100;
-
+    this.producto = this.datos[this.posicion];
   }
 }
 

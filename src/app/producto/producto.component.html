@@ -17,21 +17,21 @@
         <div class="caracteristicas">
             <div class="caracteristica">
                 <img class="icono" src="{{iconoAroma}}" />
-                <p>Aroma :{{aroma}}</p>
+                <p>Aroma: {{aroma}}</p>
             </div>
             <div class="caracteristica">
                 <img class="icono" src="{{iconoSabor}}" />
-                <p>Sabor :{{sabor}}</p>
+                <p>Sabor: {{sabor}}</p>
             </div>
             <div class="caracteristica">
                 <img class="icono" src="{{iconoColor}}" />
-                <p>Color :{{color}}</p>
+                <p>Color: {{color}}</p>
             </div>
         </div>
         <div class="compra">
             <h2>{{precio}}€/ 100gr</h2>
             <input type="number" [(ngModel)]="unidades" placeholder=1 />
-            <button>AÑADIR A LA CESTA</button>
+            <button (click) = "anyadirACestaDesdeProducto()">AÑADIR A LA CESTA</button>
         </div>
     </div>
 </div>

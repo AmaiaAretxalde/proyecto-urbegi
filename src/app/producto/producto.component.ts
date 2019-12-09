@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CargarService } from '../cargar.service';
+import {ComprarService} from '../comprar.service';
 
 @Component({
   selector: 'app-producto',
@@ -23,7 +24,7 @@ export class ProductoComponent implements OnInit {
   color:string;
   src:string;
 
-  constructor(public cargarService:CargarService) { }
+  constructor(public cargarService:CargarService, public comprarService:ComprarService) { }
 
   async ngOnInit() {
 
@@ -41,6 +42,9 @@ export class ProductoComponent implements OnInit {
     this.sabor = this.producto[0].caracteristicas.sabor.texto;
     this.iconoColor = this.producto[0].caracteristicas.color.image;
     this.color = this.producto[0].caracteristicas.color.texto;
+  }
 
+  async anyadirACestaDesdeProducto() {
+    
   }
 }

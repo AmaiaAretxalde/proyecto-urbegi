@@ -5,12 +5,18 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ComprarService {
-  cesta:string[]=[]
-  producto:string[]=[]
+  cesta:any;
+  producto:any;
   constructor(public http: HttpClient) { }
 
   async anyadirALaCesta(producto) {
-    let teAnyadido = await this.http.post('/api/cesta', {cesta:producto}, { headers: { "Content-Type": "application/json" }, responseType: "text" })
+    let teAnyadido = await this.http.post('/api/cesta', {producto}, { headers: { "Content-Type": "application/json" }, responseType: "text" })
+    .toPromise();
+    await console.log(this.cesta)
+  }
+
+  async anyadirALaCestaDesdeColor(dato) {
+    let teAnyadido = await this.http.post('/api/color/cesta', {dato}, { headers: { "Content-Type": "application/json" }, responseType: "text" })
     .toPromise();
     await console.log(this.cesta)
   }

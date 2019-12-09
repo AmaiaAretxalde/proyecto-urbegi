@@ -48,12 +48,6 @@ export class NovedadComponent implements OnInit {
     this.dato = await this.cargarService.mandarId(this.id);
     this.router.navigate([this.ruta])
     return this.dato;
-<<<<<<< HEAD
-=======
-
-    
-    this.producto = this.datos[this.posicion];
->>>>>>> master
 
   }
   
@@ -61,7 +55,7 @@ export class NovedadComponent implements OnInit {
     console.log('añadir')
     console.log(this.producto)
     await this.comprarService.anyadirALaCesta(this.producto);
-    
+
   }
   
 }

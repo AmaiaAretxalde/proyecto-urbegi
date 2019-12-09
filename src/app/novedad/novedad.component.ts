@@ -48,15 +48,12 @@ export class NovedadComponent implements OnInit {
     this.router.navigate([this.ruta])
     return this.dato;
 
-    
-    this.producto = this.datos[this.posicion];
 
   }
   
-   async anyadirALaCesta(producto){
+   async anyadirALaCesta(){
     console.log('añadir')
     await this.comprarService.anyadirALaCesta(this.producto);
-     this.producto = this.datos[this.posicion];
   }
   
 }

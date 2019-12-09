@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CargarService } from '../cargar.service';
 import { Router } from '@angular/router';
+import{ComprarService} from '../comprar.service';
+
 
 @Component({
   selector: 'app-color',
@@ -19,7 +21,7 @@ export class ColorComponent implements OnInit {
   position:number;
 
 
-  constructor(public cargarService: CargarService, private router: Router) { }
+  constructor(public cargarService: CargarService, private router: Router, public comprarService:ComprarService) { }
 
   async ngOnInit() {
     this.datos = await this.cargarService.cargarPorColor(this.color);
@@ -30,5 +32,10 @@ export class ColorComponent implements OnInit {
     this.ruta = "/producto/" + this.dato;
     this.router.navigate([this.ruta])
     return this.dato;
+  }
+
+  async anyadirACestaDesdeColor(dato) {
+    console.log(dato);
+   let teColor=  await this.comprarService.anyadirALaCestaDesdeColor(dato);
   }
 }

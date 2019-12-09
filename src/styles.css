@@ -1,8 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
 * {
     box-sizing: border-box;
-  }
+}
 
-  body{
-      margin:0;
-  }
+body {
+    margin: 0;
+}
+
+.text {
+    margin-top: 200px;
+}
+
+.aboutUs {
+    margin-top: 60px
+}
+
+.horario {
+    margin-top: 90px;
+}

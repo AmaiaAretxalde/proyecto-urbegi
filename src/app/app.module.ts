@@ -32,6 +32,7 @@ import { Encuesta1Component } from './encuesta1/encuesta1.component';
 import { Encuesta2Component } from './encuesta2/encuesta2.component';
 import { Encuesta3Component } from './encuesta3/encuesta3.component';
 import { Error404Component } from './error404/error404.component';
+import { PieDePaginaComponent } from './pie-de-pagina/pie-de-pagina.component';
 
 
 
@@ -69,7 +70,8 @@ import { Error404Component } from './error404/error404.component';
     Encuesta3Component,
     CestaComponent,
     TipoComponent,
-    Error404Component
+    Error404Component,
+    PieDePaginaComponent
 
 
   ],

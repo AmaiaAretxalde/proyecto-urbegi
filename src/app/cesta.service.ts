@@ -5,13 +5,19 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CestaService {
+  cesta: any;
 
   constructor(public http: HttpClient) { }
   async obtenerCesta() {
-    let cesta: any = await this.http.get('/api/cesta')
+    this.cesta = await this.http.get('/api/cesta')
       .toPromise();
-    console.log(cesta);
-    return cesta;
+    console.log(this.cesta);
+    return this.cesta;
+}
+
+async eliminarDeCesta(te){
+  let productoEliminado = await this.http.delete('/api/cesta/'+te._id).toPromise();
+console.log(productoEliminado)
 }
 
   

@@ -1,0 +1,14 @@
+.producto img{
+    width:300px;
+}
+
+.producto{
+    display:flex;
+    flex-direction: column;
+}
+
+.containerProductos{
+    display: flex;
+    flex-wrap: wrap;
+
+}

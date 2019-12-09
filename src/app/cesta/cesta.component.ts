@@ -10,12 +10,20 @@ import { Router } from '@angular/router';
 })
 
 export class CestaComponent implements OnInit {
-  cesta:[]=[]
+ cesta:any;
+ precioTotal:number;
 
   constructor(public cestaService:CestaService, private route: Router) { }
 
   async ngOnInit() {
     this.cesta = await this.cestaService.obtenerCesta();
+    this.precioTotal = this.cesta.reduce(function(total:any,actual:any){
+      return total += actual.basePrice;
+      }, 0)
+  }
+
+  async eliminarDeCesta(te){
+    await this.cestaService.eliminarDeCesta(te)
   }
 
 }

@@ -28,6 +28,7 @@ export class LoginService {
   async registrarUsuario(nombre:string, apellido:string, email:string, direccion:string, localidad:string, provincia:string, cp:string, telefono:string, password:string) {
     let response: any = await this.http.post('/api/usuario/registro', { nombre, apellido, email, direccion, localidad, provincia, cp, telefono, password },{headers:{"Content-Type":"application/json"}})
       .toPromise()
+      console.log(response)
       this.nombre=response.user.nombre;
       this.email=response.user.email;
     return response.mensaje;

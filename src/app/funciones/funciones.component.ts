@@ -91,11 +91,11 @@ export class FuncionesComponent {
       {booleano:this.isotonico, nombre:"isotonico"},
       {booleano:this.depurativo, nombre:"depurativo"}];
 
-    this.funcionesElegidas = this.funcionesInicio.filter(function(funcion){
-      if(funcion.booleano){
-        return true;
-      }else{
-        return false;
+    this.funcionesElegidas = this.funcionesInicio.map(function(funcion){
+      if (funcion.booleano) {
+        return ({ nombre: funcion.nombre, puntuacion: 1 });
+      } else {
+        return ({ nombre: funcion.nombre, puntuacion: 0 });
       }
     })
     this.registrarFunciones();

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login.service';
-import {Router} from "@angular/router";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-sabores',
@@ -17,21 +17,21 @@ export class SaboresComponent {
   saboresElegidos: any[] = [];
   nombre: string;
   email: string;
-  mensaje:string;
-  classDulce:string;
-  classCitrico:string;
-  classFruit:string;
-  classFloral:string;
-  classEspeciado:string;
+  mensaje: string;
+  classDulce: string;
+  classCitrico: string;
+  classFruit: string;
+  classFloral: string;
+  classEspeciado: string;
 
   constructor(public loginService: LoginService, private router: Router) { }
 
   cambiarDulce() {
     this.dulce = !this.dulce;
-    if(this.dulce){
-      this.classDulce="activo";
-    }else{
-      this.classDulce="no-activo";
+    if (this.dulce) {
+      this.classDulce = "activo";
+    } else {
+      this.classDulce = "no-activo";
     }
     console.log(this.dulce)
     console.log(this.classDulce)
@@ -39,37 +39,37 @@ export class SaboresComponent {
   }
   cambiarCitrico() {
     this.citrico = !this.citrico;
-    if(this.citrico){
-      this.classCitrico="activo";
-    }else{
-      this.classCitrico="no-activo";
+    if (this.citrico) {
+      this.classCitrico = "activo";
+    } else {
+      this.classCitrico = "no-activo";
     }
     console.log(this.citrico)
   }
   cambiarAfrutado() {
     this.afrutado = !this.afrutado;
-    if(this.afrutado){
-      this.classFruit="activo";
-    }else{
-      this.classFruit="no-activo";
+    if (this.afrutado) {
+      this.classFruit = "activo";
+    } else {
+      this.classFruit = "no-activo";
     }
     console.log(this.afrutado)
   }
   cambiarEspeciado() {
     this.especiado = !this.especiado;
-    if(this.especiado){
-      this.classEspeciado="activo";
-    }else{
-      this.classEspeciado="no-activo";
+    if (this.especiado) {
+      this.classEspeciado = "activo";
+    } else {
+      this.classEspeciado = "no-activo";
     }
     console.log(this.especiado)
   }
   cambiarFloral() {
     this.floral = !this.floral;
-    if(this.floral){
-      this.classFloral="activo";
-    }else{
-      this.classFloral="no-activo";
+    if (this.floral) {
+      this.classFloral = "activo";
+    } else {
+      this.classFloral = "no-activo";
     }
     console.log(this.floral)
   }
@@ -81,21 +81,21 @@ export class SaboresComponent {
       { booleano: this.afrutado, nombre: "afrutado" },
       { booleano: this.especiado, nombre: "especiado" }];
 
-    this.saboresElegidos = this.saboresInicio.filter(function (sabor) {
+    this.saboresElegidos = this.saboresInicio.map(function (sabor) {
       if (sabor.booleano) {
-        return true;
+        return ({ nombre: sabor.nombre, puntuacion: 1 });
       } else {
-        return false;
+        return ({ nombre: sabor.nombre, puntuacion: 0 });
       }
     })
     this.registrarSabores();
     this.router.navigate(['../usuario/encuesta/paso2'])
   }
-  
+
   async registrarSabores() {
     let response = await this.loginService.anayadirSaborUsuario(this.saboresElegidos);
-    this.mensaje=response.mensaje;
+    this.mensaje = response.mensaje;
     return this.mensaje;
   }
-  
+
 }

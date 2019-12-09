@@ -24,7 +24,7 @@ export class RegistroComponent {
     this.mensaje = await this.loginService.registrarUsuario(this.nombre, this.apellido, this.email, this.direccion, this.localidad, this.provincia, this.cp, this.telefono, this.password)
     console.log(this.mensaje)
     if (this.mensaje === 'Usuario registrado correctamente')
-      this.router.navigate(['../usuario/encuesta'])
+      this.router.navigate(['../usuario/encuesta/paso1'])
   }
 
 }

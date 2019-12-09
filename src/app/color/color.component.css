@@ -2,6 +2,13 @@
     box-sizing: border-box;
   }
 
+  .unProducto{
+    font-family: 'Montserrat', serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 .inicioImagenTexto {
     display: flex;
@@ -33,7 +40,7 @@
 }
 
 .unProducto{
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Montserrat', sans-serif;
     width: 300px;
     padding: 25px;
 }

@@ -1,13 +1,12 @@
 <div class="productos">
     <div *ngFor="let dato of datos">
-        <button (click)="mandarId(dato.id)">
-            <div class="unProducto">
-                <img src="{{dato.mainImage}}" />
-                <h3>{{dato.name.toUpperCase()}}</h3>
-                <p>{{dato.basePrice}}€/ 100gr</p>
-                {{id}}
-                <button>COMPRAR</button>
-            </div>
-        </button>
+
+        <div class="unProducto">
+            <img src="{{dato.mainImage}}" />
+            <h3>{{dato.name.toUpperCase()}}</h3>
+            <p>{{dato.basePrice.toFixed(2)}}€/ 100gr</p>
+            <button>COMPRAR</button>
+        </div>
+
     </div>
 </div>

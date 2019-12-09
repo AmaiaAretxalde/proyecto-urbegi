@@ -33,11 +33,32 @@
 }
 
 .unProducto{
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Montserrat', serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.unProducto button{
+    border-radius: 4px;
+    background-color: #B4BEA5;
+    height: 30px;
+    font-size: 11pt;
+    font-family: 'Montserrat', serif;
+    border: none;
+}
+
+.unProducto h3{
+    font-size: 14pt;
+}
+
+.infoProducto{
+    text-align: center;
 }
 
 .inicioNovedades{
     display:flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
 }

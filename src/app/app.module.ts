@@ -8,6 +8,7 @@ import { TeRojoComponent } from './te-rojo/te-rojo.component';
 import { TeVerdeComponent } from './te-verde/te-verde.component';
 import { TeNegroComponent } from './te-negro/te-negro.component';
 import { TeBlancoComponent } from './te-blanco/te-blanco.component';
+
 import { TeOolongComponent } from './te-oolong/te-oolong.component';
 import { InfusionesComponent } from './infusiones/infusiones.component';
 import { LoginComponent} from './login/login.component';
@@ -20,6 +21,9 @@ import { ColorComponent } from './color/color.component';
 import { EncuestaComponent } from './encuesta/encuesta.component';
 import { SaboresComponent } from './sabores/sabores.component';
 import { FuncionesComponent } from './funciones/funciones.component';
+
+import { CestaComponent } from './cesta/cesta.component';
+
 import { TipoComponent } from './tipo/tipo.component';
 import { RecomendacionComponent } from './recomendacion/recomendacion.component';
 import { InicioUsuarioComponent } from './inicio-usuario/inicio-usuario.component';
@@ -28,6 +32,7 @@ import { ProductoComponent } from './producto/producto.component';
 import { Encuesta1Component } from './encuesta1/encuesta1.component';
 import { Encuesta2Component } from './encuesta2/encuesta2.component';
 import { Encuesta3Component } from './encuesta3/encuesta3.component';
+
 
 
 
@@ -40,8 +45,10 @@ import { Encuesta3Component } from './encuesta3/encuesta3.component';
     TeVerdeComponent,
     TeNegroComponent,
     TeBlancoComponent,
+
     TeOolongComponent,
     InfusionesComponent,
+
     LoginComponent,
     RegistroComponent,
     LoginRegistroComponent,
@@ -50,6 +57,7 @@ import { Encuesta3Component } from './encuesta3/encuesta3.component';
     EncuestaComponent,
     SaboresComponent,
     FuncionesComponent,
+
     TipoComponent,
     RecomendacionComponent,
     InicioUsuarioComponent,
@@ -58,6 +66,12 @@ import { Encuesta3Component } from './encuesta3/encuesta3.component';
     Encuesta1Component,
     Encuesta2Component,
     Encuesta3Component
+
+
+    CestaComponent,
+
+    TipoComponent
+
   ],
   imports: [
     BrowserModule,

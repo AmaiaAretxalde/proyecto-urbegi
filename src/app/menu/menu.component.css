@@ -38,6 +38,7 @@ header nav ul li{
     padding: 5px 0px 5px 0px;
     text-decoration-color: none;
     color: #B4BEA5;
+    background-color: white;
 }
 
 
@@ -94,6 +95,7 @@ a:-webkit-any-link {
         transform: translateX(100%);
         transition: transform 0.5s ease-in;
         text-align: center;
+        display: none;
     }
 
     header nav ul li:hover ul{
@@ -110,6 +112,7 @@ a:-webkit-any-link {
         position: relative;
         padding: 0;
         text-decoration: none;
+        background-color: white;
     }
     .menu li{
         opacity:0;
@@ -124,7 +127,8 @@ a:-webkit-any-link {
 }
 
 .nav-active{
-    transform: translateX(0%)
+    transform: translateX(0%);
+    display: flex;
 }
 
 @keyframes navLinkFade {

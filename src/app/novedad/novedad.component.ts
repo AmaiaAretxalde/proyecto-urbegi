@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CargarService } from '../cargar.service';
 import {Router} from "@angular/router";
+import { ComprarService } from '../comprar.service';
+
 
 @Component({
   selector: 'app-novedad',
@@ -17,9 +19,14 @@ export class NovedadComponent implements OnInit {
   id:string;
   ruta:string;
   dato:string;
+  producto:string[]=[]
+  cesta:string[]=[]
+
   @Input() posicion: number;
 
-  constructor(public cargarService: CargarService, private router: Router) { }
+  constructor(public cargarService: CargarService, private comprarService:ComprarService, private router: Router) { }
+
+ 
 
   async ngOnInit() {
     this.datos = await this.cargarService.cargarNovedades(this.palabra1, this.palabra2)
@@ -35,6 +42,15 @@ export class NovedadComponent implements OnInit {
     this.dato = await this.cargarService.mandarId(this.id);
     this.router.navigate([this.ruta])
     return this.dato;
+    
+    this.producto = this.datos[this.posicion];
+
+  }
+  
+   async anyadirALaCesta(producto){
+    console.log('añadir')
+    await this.comprarService.anyadirALaCesta(this.producto);
+     this.producto = this.datos[this.posicion];
   }
   
 }

@@ -21,5 +21,10 @@ export class ComprarService {
     .toPromise();
     console.log(teAnyadido)
   }
-
+  async anyadirALaCestaDesdeProducto(producto) {
+    let teAnyadido = await this.http.post('/api/te/cesta', {producto}, { headers: { "Content-Type": "application/json" } })
+    .toPromise();
+    await console.log(this.cesta)
+  }
+  
 }

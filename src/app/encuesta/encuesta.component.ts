@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./encuesta.component.css']
 })
 export class EncuestaComponent {
- 
+
   constructor() { }
 
   

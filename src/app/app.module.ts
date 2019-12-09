@@ -11,7 +11,6 @@ import { TeBlancoComponent } from './te-blanco/te-blanco.component';
 
 import { TeOolongComponent } from './te-oolong/te-oolong.component';
 import { InfusionesComponent } from './infusiones/infusiones.component';
-
 import { LoginComponent} from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -26,6 +25,13 @@ import { FuncionesComponent } from './funciones/funciones.component';
 import { CestaComponent } from './cesta/cesta.component';
 
 import { TipoComponent } from './tipo/tipo.component';
+import { RecomendacionComponent } from './recomendacion/recomendacion.component';
+import { InicioUsuarioComponent } from './inicio-usuario/inicio-usuario.component';
+import { MenuUsuarioComponent } from './menu-usuario/menu-usuario.component';
+import { ProductoComponent } from './producto/producto.component';
+import { Encuesta1Component } from './encuesta1/encuesta1.component';
+import { Encuesta2Component } from './encuesta2/encuesta2.component';
+import { Encuesta3Component } from './encuesta3/encuesta3.component';
 
 
 
@@ -51,6 +57,16 @@ import { TipoComponent } from './tipo/tipo.component';
     EncuestaComponent,
     SaboresComponent,
     FuncionesComponent,
+
+    TipoComponent,
+    RecomendacionComponent,
+    InicioUsuarioComponent,
+    MenuUsuarioComponent,
+    ProductoComponent,
+    Encuesta1Component,
+    Encuesta2Component,
+    Encuesta3Component
+
 
     CestaComponent,
 

@@ -10,6 +10,7 @@ export class ComprarService {
   producto:any;
   constructor(public http: HttpClient, public router:Router) { }
 
+  
   async anyadirALaCesta(producto) {
     console.log(producto)
     let teAnyadido:any = await this.http.post('/api/cesta', {producto}, { headers: { "Content-Type": "application/json" } })

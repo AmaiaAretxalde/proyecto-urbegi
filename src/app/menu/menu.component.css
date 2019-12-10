@@ -110,6 +110,7 @@ a:-webkit-any-link {
         display: flex;
         flex-direction: column;
         position: relative;
+width: 150px;
         padding: 0;
         text-decoration: none;
         background-color: white;

@@ -12,7 +12,7 @@
     background-image: url(https://images.pexels.com/photos/734983/pexels-photo-734983.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
 } 
 .inicioImagenTexto img{
-    width: 100vw;
+    width: 200px;
     overflow: hidden;
 }
 
@@ -52,14 +52,16 @@
 .textoNavidad{
     display: flex;
     flex-direction: column;
-    margin-left: 20px;
     align-self: center;
+    margin-left:50px;
+    width: 400px;
 }
 
 .textoNavidad h6{
-    font-family: 'Playfair Display', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 20pt;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .textoNavidad p{
@@ -74,4 +76,47 @@
 
 .parrafoTextoNavidad{
     width:600px;
+}
+
+
+@media screen and (max-width: 850px){
+  
+    .inicioNovedades{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .textoInicio h1{
+        font-size: 20pt;
+        font-weight: 900;
+        color: #B4BEA5;
+    }
+    .inicioImagenTexto {
+        display: flex;
+        background-size: cover;
+        background-position-y: center;
+        height: 300px;
+        justify-content: center;
+        background-image: url(https://images.pexels.com/photos/734983/pexels-photo-734983.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    } 
+    .parrafoNavidad{
+        display: flex;
+        flex-direction: column;
+        color:#F0EFE2;
+    }
+    .parrafoNavidad img{
+        height: 300px;
+        width: 100vw;
+        object-fit: cover;
+    }
+    .textoNavidad h6{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16pt;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .textoNavidad p {
+        width: 400px;
+    }
 }

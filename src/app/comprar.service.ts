@@ -12,9 +12,9 @@ export class ComprarService {
 
 
   
-  async anyadirALaCesta(producto:any) {
+  async anyadirALaCesta(producto:any, unidades:number) {
     console.log(producto)
-    let teAnyadido:any = await this.http.post('/api/cesta', {producto}, { headers: { "Content-Type": "application/json" } })
+    let teAnyadido:any = await this.http.post('/api/cesta', {producto, unidades}, { headers: { "Content-Type": "application/json" } })
     .toPromise();
     console.log(teAnyadido.logged)
     console.log(teAnyadido.mensaje)
@@ -24,14 +24,14 @@ export class ComprarService {
     console.log(teAnyadido)
   }
 
-  async anyadirALaCestaDesdeColor(dato) {
-    let teAnyadido:any = await this.http.post('/api/color/cesta', {dato}, { headers: { "Content-Type": "application/json" }})
-    .toPromise();
-    console.log(teAnyadido.logged)
-    if(teAnyadido.logged===false){
-      this.router.navigate(['../iniciosesion'])
-    }
-    console.log(teAnyadido)
-  }
+  // async anyadirALaCestaDesdeColor(dato) {
+  //   let teAnyadido:any = await this.http.post('/api/cesta/color', {dato}, { headers: { "Content-Type": "application/json" }})
+  //   .toPromise();
+  //   console.log(teAnyadido.logged)
+  //   if(teAnyadido.logged===false){
+  //     this.router.navigate(['../iniciosesion'])
+  //   }
+  //   console.log(teAnyadido)
+  // }
   
 }

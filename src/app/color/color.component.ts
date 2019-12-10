@@ -18,9 +18,9 @@ export class ColorComponent implements OnInit {
   @Input() color: string;
   dato: string;
   ruta: string;
-  position:number;
-  mounted:boolean = false;
-
+  position: number;
+  mounted: boolean = false;
+  unidades: number = 1;
 
 
   constructor(public cargarService: CargarService, private router: Router, public comprarService: ComprarService) { }
@@ -37,10 +37,10 @@ export class ColorComponent implements OnInit {
     return this.dato;
   }
 
-  async anyadirACestaDesdeColor(dato) {
-    console.log(dato);
-    let teColor = await this.comprarService.anyadirALaCestaDesdeColor(dato);
+  async anyadirACestaDesdeColor(producto) {
+    console.log(producto);
+    let teColor = await this.comprarService.anyadirALaCesta(producto, this.unidades);
 
-    
+
   }
 }

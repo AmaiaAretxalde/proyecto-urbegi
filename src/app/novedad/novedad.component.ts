@@ -26,6 +26,7 @@ export class NovedadComponent implements OnInit {
   producto: string[] = []
   cesta: string[] = [];
   mounted:boolean = false;
+  unidades:number = 1;
 
 
   @Input() posicion: number;
@@ -61,7 +62,7 @@ export class NovedadComponent implements OnInit {
   async anyadirALaCesta() {
     console.log('añadir')
     console.log(this.producto)
-    await this.comprarService.anyadirALaCesta(this.producto);
+    await this.comprarService.anyadirALaCesta(this.producto, this.unidades);
 
 
   }

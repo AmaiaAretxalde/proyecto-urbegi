@@ -73,7 +73,6 @@ import { PieDePaginaComponent } from './pie-de-pagina/pie-de-pagina.component';
     Error404Component,
     PieDePaginaComponent
 
-
   ],
   imports: [
     BrowserModule,

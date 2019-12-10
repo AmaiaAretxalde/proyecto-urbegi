@@ -12,6 +12,14 @@
     width: 30vw;
 }
 
+.unProducto h3{
+    font-size:14pt;
+}
+
+.unProducto p{
+    font-size:14pt;
+}
+
 .inicioImagenTexto {
     display: flex;
     flex-direction: row;
@@ -29,6 +37,10 @@
 
 }
 
+.productos{
+    margin: 30px;
+}
+
 .textoInicio h1{
     margin: 0px 0px 10px 0px;
     font-size: 115px;
@@ -44,7 +56,6 @@
 .unProducto{
     font-family: 'Montserrat', sans-serif;
     width: 300px;
-    padding: 25px;
 }
 
 .productos{
@@ -55,9 +66,12 @@
 button{
     width: 10vw;
 }
-.productosxColor{
+.productosColor{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 

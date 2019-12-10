@@ -1,18 +1,17 @@
 .registroInicioSesion{
     display:flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    padding-top: 30px;
 }
 
-
+.sub-registroInicioSesion{
+    align-self: center;
+    padding-bottom: 30px;
+}
 
 .registro input{
     border: 0;
     outline: none;
 }
 
-.registro input:active{
-    border-bottom: rosybrown;
-    border-bottom: 3px;
-    outline: none;
-}
+

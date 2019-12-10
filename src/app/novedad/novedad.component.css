@@ -40,19 +40,24 @@
     border-style: none;
     background-color: white;
     width: 30vw;
+    outline: none !important;
 }
 
-.unProducto button{
+.botonComprar{
     border-radius: 4px;
     background-color: #B4BEA5;
     height: 30px;
     font-size: 11pt;
     font-family: 'Montserrat', serif;
     border: none;
-
+    outline: none !important;
 }
 
 .unProducto h3{
+    font-size: 14pt;
+}
+
+.unProducto p{
     font-size: 14pt;
 }
 
@@ -96,6 +101,7 @@
       }
   }
 
+ 
 
 
 

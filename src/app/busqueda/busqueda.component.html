@@ -1,0 +1,8 @@
+<app-menu></app-menu>
+
+<div *ngFor="let te of tesEncontrados">
+    <img src="{{te.mainImage}}" alt="te">
+    <p>{{te.name}}</p>
+    <p>{{te.basePrice}}&euro;</p>
+    <button (click)="anyadirALaCesta(te)">COMPRAR</button>
+</div>

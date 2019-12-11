@@ -15,6 +15,7 @@ import { Encuesta2Component } from './encuesta2/encuesta2.component';
 import { Encuesta3Component } from './encuesta3/encuesta3.component';
 import { CestaComponent } from './cesta/cesta.component';
 import { Error404Component } from './error404/error404.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
 
 
 
@@ -35,7 +36,7 @@ const routes: Routes = [
   {path: 'usuario/encuesta/paso3', component:Encuesta3Component},
   {path: 'producto/:id', component:ProductoComponent},
   {path: 'error404', component:Error404Component},
-  
+  {path: 'busqueda/:nombre', component:BusquedaComponent}
 ];
 
 @NgModule({

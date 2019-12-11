@@ -25,6 +25,11 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.buscador{
+    width:25px;
+    margin-right: 5px;
+}
+
 header{
     width:100%;
     margin:0;

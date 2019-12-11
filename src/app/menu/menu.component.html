@@ -20,6 +20,11 @@
             <li *ngIf="usuario"><strong>BIENVENIDA/O {{nombreMayuscula}}</strong></li>
             <li *ngIf="usuario"><a routerLink="/cesta">CESTA</a></li>
             <li *ngIf="usuario"(click)="logout()" ><a class="enlace">LOGOUT</a></li>
+            <li>
+                <img class="buscador" src="/assets/search.svg"/>
+                <input type="text" placeholder="Encuentra tu té..." [(ngModel)]="buscarTe" >
+                <button (click)="buscarTeFuncion()">BUSCAR</button>
+            </li>
         </ul>
     </div>
 

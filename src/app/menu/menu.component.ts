@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵConsole } from '@angular/core';
 import { navSlide } from 'src/assets/menu';
 import { LogoutService } from '../logout.service';
 import { LoginService } from '../login.service';
 import {UsuarioService} from'../usuario.service';
+import {NgForm} from '@angular/forms';
+import {BuscarService} from '../buscar.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -12,9 +15,11 @@ import {UsuarioService} from'../usuario.service';
 export class MenuComponent implements OnInit {
   usuario: any;
   nombre: string;
-  nombreMayuscula: string
+  nombreMayuscula: string;
+  buscarTe:string;
 
-  constructor(private logoutService: LogoutService, private loginservice: LoginService, private usuarioService:UsuarioService) { }
+
+  constructor(private logoutService: LogoutService, private loginservice: LoginService, private usuarioService:UsuarioService, private buscarService:BuscarService, private router: Router) { }
 
   async ngOnInit() {
     navSlide();
@@ -26,6 +31,7 @@ export class MenuComponent implements OnInit {
     this.usuario = await this.logoutService.logout();
   }
 
+  
   obtenerNombre() {
     this.nombre = this.loginservice.obtenerNombre();
     if(this.nombre !== undefined) {
@@ -33,6 +39,11 @@ export class MenuComponent implements OnInit {
     }
     console.log(this.nombre)
   }
-
+  
+  async buscarTeFuncion(){
+    let buscarElTe = await this.buscarService.buscarTeFuncion(this.buscarTe)
+    console.log(this.buscarTe +' buscar un te')
+    this.router.navigate(['../busqueda', this.buscarTe])
+  }
 
 }

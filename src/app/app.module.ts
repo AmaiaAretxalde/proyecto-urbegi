@@ -26,7 +26,6 @@ import { CestaComponent } from './cesta/cesta.component';
 import { TipoComponent } from './tipo/tipo.component';
 import { RecomendacionComponent } from './recomendacion/recomendacion.component';
 import { InicioUsuarioComponent } from './inicio-usuario/inicio-usuario.component';
-import { MenuUsuarioComponent } from './menu-usuario/menu-usuario.component';
 import { ProductoComponent } from './producto/producto.component';
 import { Encuesta1Component } from './encuesta1/encuesta1.component';
 import { Encuesta2Component } from './encuesta2/encuesta2.component';
@@ -63,7 +62,6 @@ import { PieDePaginaComponent } from './pie-de-pagina/pie-de-pagina.component';
     TipoComponent,
     RecomendacionComponent,
     InicioUsuarioComponent,
-    MenuUsuarioComponent,
     ProductoComponent,
     Encuesta1Component,
     Encuesta2Component,

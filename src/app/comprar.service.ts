@@ -34,4 +34,6 @@ export class ComprarService {
   //   console.log(teAnyadido)
   // }
   
+
+  
 }

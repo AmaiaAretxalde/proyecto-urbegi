@@ -38,7 +38,7 @@ nombre:any;
 
   async anyadirACesta(te) {
     console.log(te);
-    let teColor = await this.comprarService.anyadirALaCesta(te);
+    let teColor = await this.comprarService.anyadirALaCesta(te, te);
     return te;
   }
 

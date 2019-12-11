@@ -1,20 +1,22 @@
 <app-menu></app-menu>
-
-<div class="containerProductos">
-    <div class="producto" *ngFor="let te of cesta">
-        <img src="{{te.producto.mainImage}}" alt="te">
-        <p>{{te.producto.name}}</p>
-        <p>{{te.unidades}} ud(s) </p>
-        <p>{{te.producto.basePrice}}€</p>
-        <button (click) = "eliminarDeCesta(te.producto.id)">Eliminar producto</button>
-        <button (click) = "restarUnidad(te.producto.id)">Restar unidad</button>
+<ng-container *ngIf="cesta.length!==0"> 
+    <div class="containerProductos">
+        <div class="producto" *ngFor="let te of cesta">
+            <img src="{{te.producto.mainImage}}" alt="te">
+            <p>{{te.producto.name}}</p>
+            <p>{{te.unidades}} ud(s) </p>
+            <p>{{te.producto.basePrice}}€</p>
+            <button (click) = "eliminarDeCesta(te.producto.id)">Eliminar producto</button>
+            <button (click) = "restarUnidad(te.producto.id)">Restar unidad</button>
         <button (click) = "sumarUnidad(te.producto.id)">Sumar unidad</button>
     </div>
-
-
-<div>
-    <p>Total a pagar:{{precioTotal}}€</p>
-    <button (click)="guardarPedido()">Pagar</button>
+    <div>
+        <p>Total a pagar:{{precioTotal}}€</p>
+        <button (click)="guardarPedido()">Pagar</button>
+    </div>
 </div>
+</ng-container>
 
-</div>
+<ng-container *ngIf="cesta.length===0">
+        <p>Tu cesta está vacía</p>
+</ng-container>

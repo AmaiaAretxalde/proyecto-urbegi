@@ -9,6 +9,11 @@
 }
 
 
+.enlace{
+    cursor: pointer;
+}
+
+
 .menu {
     display: flex;
     flex-direction: row;

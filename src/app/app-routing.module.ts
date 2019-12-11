@@ -9,7 +9,6 @@ import { TeOolongComponent } from './te-oolong/te-oolong.component';
 import { InfusionesComponent } from './infusiones/infusiones.component';
 import { LoginRegistroComponent } from './login-registro/login-registro.component';
 
-import { InicioUsuarioComponent } from './inicio-usuario/inicio-usuario.component';
 import { ProductoComponent } from './producto/producto.component';
 import { Encuesta1Component } from './encuesta1/encuesta1.component';
 import { Encuesta2Component } from './encuesta2/encuesta2.component';
@@ -35,7 +34,6 @@ const routes: Routes = [
   {path: 'usuario/encuesta/paso1', component:Encuesta1Component},
   {path: 'usuario/encuesta/paso2', component:Encuesta2Component},
   {path: 'usuario/encuesta/paso3', component:Encuesta3Component},
-  {path: 'usuario', component:InicioUsuarioComponent},
   {path: 'producto/:id', component:ProductoComponent},
 
   {path: 'cesta', component:CestaComponent},

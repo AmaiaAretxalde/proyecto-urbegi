@@ -24,7 +24,7 @@ export class LoginComponent{
       location.reload(); 
     } else {
       this.nombre = this.mensaje
-      this.router.navigate(['../usuario'])
+      this.router.navigate(['../'])
     }
   }
 }

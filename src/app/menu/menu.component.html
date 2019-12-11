@@ -6,7 +6,7 @@
         <div>
         <ul class="menu nav-links">
             <li><a routerLink="/">INICIO</a></li>
-            <li><div>TÉ</div>
+            <li><div class="enlace">TÉ</div>
                 <ul>
                     <li class="tipos"><a routerLink="/te-verde">TÉ VERDE</a></li>
                     <li class="tipos"><a routerLink="/te-rojo">TÉ ROJO</a></li>
@@ -16,8 +16,10 @@
                 </ul>
             </li>
             <li><a routerLink="/infusiones">INFUSIONES</a></li>
-
-            <li><a routerLink="/iniciosesion">MI CUENTA/ REGISTRO</a></li>
+            <li *ngIf="!usuario"><a routerLink="/iniciosesion">INICIAR SESIÓN / REGISTRARME</a></li>
+            <li *ngIf="usuario"><strong>BIENVENIDA/O {{nombreMayuscula}}</strong></li>
+            <li *ngIf="usuario"><a routerLink="/cesta">CESTA</a></li>
+            <li *ngIf="usuario"(click)="logout()" ><a class="enlace">LOGOUT</a></li>
         </ul>
     </div>
 

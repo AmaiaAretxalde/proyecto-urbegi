@@ -15,6 +15,8 @@ export class PearsonComponent implements OnInit {
   funcionesOtro: any;
   coeficientesSabores: any[] = [];
   coeficientesFunciones: any[] = [];
+  kAmigosSabores: any[] = [];
+  kAmigosFunciones: any[] = [];
 
   constructor(private usuarioService: UsuarioService) { }
 
@@ -55,6 +57,43 @@ export class PearsonComponent implements OnInit {
       console.log(this.coeficientesSabores)
       console.log(this.coeficientesFunciones)
     })
+
+    this.coeficientesSabores.sort(function (a, b) {
+      if (a.coeficiente > b.coeficiente) {
+        return 1;
+      }
+      if (a.coeficiente < b.coeficiente) {
+        return -1;
+      }
+      // a must be equal to b
+      return 0;
+    });
+
+    this.coeficientesFunciones.sort(function (a, b) {
+      if (a.coeficiente > b.coeficiente) {
+        return 1;
+      }
+      if (a.coeficiente < b.coeficiente) {
+        return -1;
+      }
+      // a must be equal to b
+      return 0;
+    });
+    console.log(this.coeficientesSabores)
+    console.log(this.coeficientesFunciones)
+
+    while (this.coeficientesSabores.length > 4) {
+      this.coeficientesSabores.shift();
+    }
+
+    while (this.coeficientesFunciones.length > 4) {
+      this.coeficientesFunciones.shift();
+    }
+    this.kAmigosSabores = this.coeficientesSabores;
+    this.kAmigosFunciones = this.coeficientesFunciones;
+
+    console.log(this.kAmigosSabores)
+    console.log(this.kAmigosFunciones)
   }
 
 }

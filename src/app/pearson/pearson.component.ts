@@ -17,83 +17,104 @@ export class PearsonComponent implements OnInit {
   coeficientesFunciones: any[] = [];
   kAmigosSabores: any[] = [];
   kAmigosFunciones: any[] = [];
+  k: number = 4;
+  coeficienteGlobal: number = 0;
+  coeficientesGlobales: any[] = [];
+  pedidosAmigo:any;
+  pedidosAmigos: any[] = [];
 
   constructor(private usuarioService: UsuarioService) { }
 
   async ngOnInit() {
+
+    await this.calculokAmigosSabores();
+    await this.calculokAmigosFunciones();
+    await this.calculokMejoresAmigos();
+    this.coeficientesGlobales.map(async (amigo)=>{
+     console.log(amigo.emailUsuario)
+      // this.pedidosAmigo = await this.usuarioService.obtenerPedidosAmigo(amigo.emailUsuario);
+      // console.log(this.pedidosAmigo)
+  //     this.pedidosAmigos.push(this.pedidosAmigo)
+     })
+  //   console.log(this.pedidosAmigos)
+
+   }
+
+  async calculokAmigosSabores() {
     this.misSabores = await this.usuarioService.obtenerPuntuacionSabores();
-    this.misFunciones = await this.usuarioService.obtenerPuntuacionFunciones();
-    console.log(this.misSabores);
-    this.datos = await this.usuarioService.obtenerPuntuacionSaboresOtro();
-    console.log(this.datos)
+    this.datos = await this.usuarioService.obtenerDatosOtro();
     this.datosUsuarios = this.datos.respuesta;
-    console.log(this.datosUsuarios)
     this.datosUsuarios.map((usuario: any) => {
       this.saboresOtro = usuario.sabores.map((sabor: any) => {
         return sabor;
       })
-      this.funcionesOtro = usuario.funciones.map((funcion: any) => {
-        return funcion;
-      })
-      console.log(this.saboresOtro)
-      console.log(this.funcionesOtro)
-
       let numeroSabores: number = 0;
-      let numeroFunciones: number = 0;
+
       for (let i = 0; i < this.misSabores.length; i++) {
         numeroSabores += Math.pow((this.misSabores[i].puntuacion - this.saboresOtro[i].puntuacion), 2);
       }
+      let ds = 1 / (1 + Math.sqrt(numeroSabores))
+      this.coeficientesSabores.push({ nombreUsuario: usuario.nombre, emailUsuario: usuario.email, coeficiente: ds });
+    })
+
+    this.kAmigosSabores = this.coeficientesSabores;
+
+    console.log(this.kAmigosSabores)
+
+  }
+
+  async calculokAmigosFunciones() {
+
+    this.misFunciones = await this.usuarioService.obtenerPuntuacionFunciones();
+
+    this.datos = await this.usuarioService.obtenerDatosOtro();
+    this.datosUsuarios = this.datos.respuesta;
+    this.datosUsuarios.map((usuario: any) => {
+      this.funcionesOtro = usuario.funciones.map((funcion: any) => {
+        return funcion;
+      })
+      let numeroFunciones: number = 0;
       for (let i = 0; i < this.misFunciones.length; i++) {
         numeroFunciones += Math.pow((this.misFunciones[i].puntuacion - this.funcionesOtro[i].puntuacion), 2);
       }
-      console.log(numeroSabores)
-      console.log(numeroFunciones)
-      let ds = 1 / (1 + Math.sqrt(numeroSabores))
       let df = 1 / (1 + Math.sqrt(numeroFunciones))
-      console.log(ds)
-      console.log(df)
-      this.coeficientesSabores.push({ nombreUsuario: usuario.nombre, emailUsuario: usuario.email, coeficiente: ds });
       this.coeficientesFunciones.push({ nombreUsuario: usuario.nombre, emailUsuario: usuario.email, coeficiente: df });
-      console.log(this.coeficientesSabores)
-      console.log(this.coeficientesFunciones)
     })
 
-    this.coeficientesSabores.sort(function (a, b) {
-      if (a.coeficiente > b.coeficiente) {
-        return 1;
-      }
-      if (a.coeficiente < b.coeficiente) {
-        return -1;
-      }
-      // a must be equal to b
-      return 0;
-    });
-
-    this.coeficientesFunciones.sort(function (a, b) {
-      if (a.coeficiente > b.coeficiente) {
-        return 1;
-      }
-      if (a.coeficiente < b.coeficiente) {
-        return -1;
-      }
-      // a must be equal to b
-      return 0;
-    });
-    console.log(this.coeficientesSabores)
-    console.log(this.coeficientesFunciones)
-
-    while (this.coeficientesSabores.length > 4) {
-      this.coeficientesSabores.shift();
-    }
-
-    while (this.coeficientesFunciones.length > 4) {
-      this.coeficientesFunciones.shift();
-    }
-    this.kAmigosSabores = this.coeficientesSabores;
     this.kAmigosFunciones = this.coeficientesFunciones;
 
-    console.log(this.kAmigosSabores)
     console.log(this.kAmigosFunciones)
+
+  }
+
+  calculokMejoresAmigos() {
+    let coeficienteGlobal: number = 0;
+    for (let i = 0; i < this.kAmigosSabores.length; i++) {
+      for (let j = 0; j < this.kAmigosFunciones.length; j++) {
+        if (this.kAmigosFunciones[j].emailUsuario === this.kAmigosSabores[i].emailUsuario) {
+          this.coeficienteGlobal = (this.kAmigosFunciones[j].coeficiente + this.kAmigosSabores[i].coeficiente) / 2;
+          this.coeficientesGlobales.push({ nombreUsuario: this.kAmigosFunciones[j].nombreUsuario, emailUsuario: this.kAmigosFunciones[j].emailUsuario, coeficienteGlobal: this.coeficienteGlobal });
+        }
+      }
+    }
+
+    console.log(this.coeficientesGlobales);
+    
+    this.coeficientesGlobales.sort(function (a, b) {
+      if (a.coeficienteGlobal < b.coeficienteGlobal) {
+        return 1;
+      }
+      if (a.coeficienteGlobal > b.coeficienteGlobal) {
+        return -1;
+      }
+      // a must be equal to b
+      return 0;
+    });
+
+    while (this.coeficientesGlobales.length > this.k) {
+      this.coeficientesGlobales.pop();
+    }
+    console.log(this.coeficientesGlobales);
   }
 
 }

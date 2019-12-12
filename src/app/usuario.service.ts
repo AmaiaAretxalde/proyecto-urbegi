@@ -30,8 +30,8 @@ export class UsuarioService {
     return puntuacionSabores;
   }
 
-  async obtenerPuntuacionSaboresOtro() {
-    this.datosUsuario = await this.http.get('/api/usuario/sabores/resto')
+  async obtenerDatosOtro() {
+    this.datosUsuario = await this.http.get('/api/usuario/datos/resto')
       .toPromise();
     return this.datosUsuario;
   }
@@ -44,11 +44,14 @@ export class UsuarioService {
     return puntuacionFunciones;
   }
 
-  async obtenerPuntuacionFuncionesOtro() {
-    this.datosUsuario = await this.http.get('/api/usuario/funciones/resto')
-      .toPromise();
-    return this.datosUsuario;
-  }
+  // async obtenerPedidosAmigo(email:string) {
+  //   let response: any = await this.http.post('/api/usuario/recomendaciones', {email},{headers:{"Content-Type":"application/json"}})
+  //   .toPromise()
+  //   let pedidosAmigo = response.pedidos;
+  //   console.log(pedidosAmigo);
+  //   return pedidosAmigo;
+  // }
+  
 
   
 

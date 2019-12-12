@@ -36,6 +36,20 @@ export class UsuarioService {
     return this.datosUsuario;
   }
 
+  async obtenerPuntuacionFunciones() {
+    let datos:any = await this.http.get('/api/usuario/funciones')
+      .toPromise();
+    let puntuacionFunciones = datos.respuesta;
+    console.log(puntuacionFunciones);
+    return puntuacionFunciones;
+  }
+
+  async obtenerPuntuacionFuncionesOtro() {
+    this.datosUsuario = await this.http.get('/api/usuario/funciones/resto')
+      .toPromise();
+    return this.datosUsuario;
+  }
+
   
 
 }

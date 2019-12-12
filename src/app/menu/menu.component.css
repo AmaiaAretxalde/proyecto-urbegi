@@ -1,3 +1,4 @@
+
 .logo{
     width:150px;
     display: flex;
@@ -11,6 +12,10 @@
 
 .enlace{
     cursor: pointer;
+}
+
+.tipos{
+    width: 150px;
 }
 
 
@@ -36,14 +41,14 @@ header{
 }
 
 header nav ul{
-    list-style: none;
+    /* list-style: none; */
     text-decoration-color: none;
     color: #B4BEA5;
 }
 
 header nav ul li{
-    display:inline-block;
-    position:relative;
+    /* display:inline-block; */
+    /* position:relative; */
     list-style: none;
     padding: 5px 0px 5px 0px;
     text-decoration-color: none;
@@ -54,17 +59,23 @@ header nav ul li{
 
 header nav ul li a{
     text-decoration: none;
-    display:block;
+display:flex;
+flex-direction: row;
+
     color: #B4BEA5;
 }
 
 header nav ul ul{
  display: none;
- width:100px;
+ width: 100vw;
+ padding-top: 30px;
+
 }
 
 header nav ul li:hover ul{
-    display: block;
+    /* display: block; */
+    display:flex;
+    flex-direction: row;
     position: absolute;
     padding: 0;
     text-decoration: none;

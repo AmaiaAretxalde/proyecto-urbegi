@@ -13,6 +13,7 @@ export class BusquedaComponent implements OnInit {
 tesEncontrados:any = [];
 producto:any;
 nombre:any;
+unidades:number = 1;
 
   constructor( private buscarService:BuscarService, public route:ActivatedRoute, private comprarService:ComprarService) { }
 
@@ -36,9 +37,9 @@ nombre:any;
     console.log(this.tesEncontrados)
   }
 
-  async anyadirACesta(te) {
+  async anyadirACesta(te, unidades) {
     console.log(te);
-    let teColor = await this.comprarService.anyadirALaCesta(te, te);
+    let teColor = await this.comprarService.anyadirALaCesta(te, unidades);
     return te;
   }
 

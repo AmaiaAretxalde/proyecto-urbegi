@@ -28,12 +28,15 @@
 
     <div class="productosColor">
         <div class="productos" *ngFor="let dato of datos">
+            <div class="unProducto">
             <button class="unProducto" (click)="mandarId(dato.id)">
                 <img src="{{dato.mainImage}}" />
-                <h3>{{dato.name.toUpperCase()}}</h3>
-                <p>{{dato.basePrice}}€/ 100gr</p>
             </button>
-            <button (click)="anyadirACestaDesdeColor(dato)">COMPRAR</button>
+                <h3>{{dato.name.toUpperCase()}}</h3>
+                <p>{{dato.basePrice}}€ / 100gr</p>
+                <button class="botonComprar" (click)="anyadirACestaDesdeColor(dato)" (click)="llamarSnackbar()">COMPRAR</button>
+            </div>
+            <div id="snackbar">¡Añadido a tu cesta!</div>
         </div>
     </div>
 </ng-container>

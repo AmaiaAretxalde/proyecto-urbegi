@@ -16,14 +16,19 @@
                 </ul>
             </li>
             <li><a routerLink="/infusiones">INFUSIONES</a></li>
-            <li *ngIf="!usuario"><a routerLink="/iniciosesion">INICIAR SESIÓN / REGISTRARME</a></li>
+            <ng-container *ngIf="!usuario">
+                <li><a routerLink="/iniciosesion">INICIAR SESIÓN / REGISTRARME</a></li>
+            </ng-container>
             <li *ngIf="usuario"><strong>BIENVENIDA/O {{nombreMayuscula}}</strong></li>
             <li *ngIf="usuario"><a routerLink="/cesta">CESTA</a></li>
             <li *ngIf="usuario"(click)="logout()" ><a class="enlace">LOGOUT</a></li>
             <li>
-                <img class="buscador" src="/assets/search.svg"/>
-                <input type="text" placeholder="Encuentra tu té..." [(ngModel)]="buscarTe" >
-                <button (click)="buscarTeFuncion()">BUSCAR</button>
+                <div class="searchBox">
+                <input class="searchInput" type="text" placeholder="Encuentra tu té..." [(ngModel)]="buscarTe" >
+                <button class="searchButton" (click)="buscarTeFuncion()">
+                    <i class="material-icons"> search</i>
+                </button>
+                </div>
             </li>
         </ul>
     </div>

@@ -38,8 +38,8 @@
                 </div>
             </div>
         </div>
-        <div class="abajo">
 
+        <div class="abajo">
             <div class="caracteristicas">
                 <div class="caracteristica">
                     <img class="icono" src="{{iconoAroma}}" />
@@ -57,8 +57,11 @@
             <div class="compra">
                 <h2>{{precio}}€/ 100gr</h2>
                 <input type="number" [(ngModel)]="unidades" placeholder=1 />
-                <button (click)="anyadirACestaDesdeProducto()">AÑADIR A LA CESTA</button>
+                <button (click)="anyadirACestaDesdeProducto()" (click)="llamarSnackbar()" >AÑADIR A LA CESTA</button>
             </div>
         </div>
+        <div id="snackbar">¡Añadido a tu cesta!</div>
     </div>
 </ng-container>
+
+<app-pie-de-pagina></app-pie-de-pagina>

@@ -1,8 +1,17 @@
 <app-menu></app-menu>
 
-<div *ngFor="let te of tesEncontrados">
-    <img src="{{te.mainImage}}" alt="te">
-    <p>{{te.name}}</p>
-    <p>{{te.basePrice}}&euro;</p>
-    <button (click)="anyadirACesta(te, unidades)">COMPRAR</button>
-</div>
+<div class="productosColor">
+        <div class="productos" *ngFor="let te of tesEncontrados">
+            <div class="unProducto">
+            <button class="unProducto" (click)="mandarId(dato.id)">
+                <img src="{{te.mainImage}}" />
+            </button>
+                <h3>{{te.name.toUpperCase()}}</h3>
+                <p>{{te.basePrice}}&euro; / 100gr</p>
+                <button class="botonComprar" (click)="anyadirACesta(te, unidades)" (click)="llamarSnackbar()">COMPRAR</button>
+            </div>
+            <div id="snackbar">¡Añadido a tu cesta!</div>
+        </div>
+    </div>
+
+    <app-pie-de-pagina></app-pie-de-pagina>

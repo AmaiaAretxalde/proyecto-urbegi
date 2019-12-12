@@ -1,23 +1,26 @@
 .img{
     width: 40px;
-    margin: 0 10px;
+    align-self: center;
+
 }
 p{
     display: block;
-    margin:20px;
     text-align: center;
     color: #B4BEA5;
     margin-left: 0;
+    font-family: 'Montserrat', sans-serif;
    
 }
 .sabores{
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
+    align-items: baseline;
 }
 h2{
     color: #B4BEA5;
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
 }
 button{
     background-color: white;
@@ -50,11 +53,58 @@ label{
     background-color:white;
 }
 input{
-    border-style: none; 
-    width: 2vw;
+    border-style: none;
+    width: 6vw;
     margin: 0;
 }
 .sabor{
     display: flex;
     flex-direction: column;
+    margin-right: 50px;
+}
+
+.sabor img{
+    height: 52px;
+}
+
+h2{
+    font-size: 16pt;
+}
+
+button{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12pt;
+    background-color: #b4bea5;
+    color: white;
+    border: none;
+    border-radius: 0;
+}
+
+
+button:hover{
+    background-color: #7D8472;
+}
+
+
+input{
+    -webkit-appearance: none;
+    background-color: #b4bea5;
+    border-radius: 20px;
+    height: 4px;
+    opacity: 0.5;
+}
+
+input:hover{
+    opacity: 1;
+}
+
+input::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    background-color: grey;
+    border-radius: 50%;
+
 }

@@ -1,13 +1,15 @@
 h1{
     color: #B4BEA5;
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
 }
 p{
   display: inline;
-  border-style: ridge;
+  border: solid #B4BEA5;
   border-radius: 55%;
   padding: 20px;
   color: #B4BEA5;
+  font-family: 'Montserrat', sans-serif;
 }
 .pasos{
   display: flex;
@@ -21,6 +23,7 @@ h2{
     display:block;
     text-align: center;
     color: #B4BEA5;
+    font-family: 'Montserrat', sans-serif;
 }
 button{
   background-color: white;
@@ -40,4 +43,20 @@ button{
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+
+
+
+button{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12pt;
+  background-color: #b4bea5;
+  color: white;
+  border: none;
+  border-radius: 0;
+}
+
+
+button:hover{
+  background-color: #7D8472;
 }

@@ -19,9 +19,11 @@ export class PearsonComponent implements OnInit {
   kAmigosFunciones: any[] = [];
   k: number = 4;
   coeficienteGlobal: number = 0;
+  coeficienteTotal: number = 0;
   coeficientesGlobales: any[] = [];
-  pedidosAmigo:any;
+  pedidosAmigo: any;
   pedidosAmigos: any[] = [];
+  kMejoresAmigos: any[] = [];
 
   constructor(private usuarioService: UsuarioService) { }
 
@@ -30,15 +32,8 @@ export class PearsonComponent implements OnInit {
     await this.calculokAmigosSabores();
     await this.calculokAmigosFunciones();
     await this.calculokMejoresAmigos();
-    this.coeficientesGlobales.map(async (amigo)=>{
-     console.log(amigo.emailUsuario)
-      // this.pedidosAmigo = await this.usuarioService.obtenerPedidosAmigo(amigo.emailUsuario);
-      // console.log(this.pedidosAmigo)
-  //     this.pedidosAmigos.push(this.pedidosAmigo)
-     })
-  //   console.log(this.pedidosAmigos)
-
-   }
+    await this.obtenerPedidosAmigo();
+  }
 
   async calculokAmigosSabores() {
     this.misSabores = await this.usuarioService.obtenerPuntuacionSabores();
@@ -64,7 +59,6 @@ export class PearsonComponent implements OnInit {
   }
 
   async calculokAmigosFunciones() {
-
     this.misFunciones = await this.usuarioService.obtenerPuntuacionFunciones();
 
     this.datos = await this.usuarioService.obtenerDatosOtro();
@@ -99,7 +93,7 @@ export class PearsonComponent implements OnInit {
     }
 
     console.log(this.coeficientesGlobales);
-    
+
     this.coeficientesGlobales.sort(function (a, b) {
       if (a.coeficienteGlobal < b.coeficienteGlobal) {
         return 1;
@@ -114,7 +108,49 @@ export class PearsonComponent implements OnInit {
     while (this.coeficientesGlobales.length > this.k) {
       this.coeficientesGlobales.pop();
     }
-    console.log(this.coeficientesGlobales);
+    this.kMejoresAmigos = this.coeficientesGlobales;
+    console.log(this.kMejoresAmigos);
   }
 
+  obtenerPedidosAmigo() {
+    let coeficientes = this.kMejoresAmigos.map((kamigo) => {
+      return kamigo.coeficienteGlobal;
+    })
+
+    this.coeficienteTotal = coeficientes.reduce(function (total: number, actual: number) {
+      total += actual;
+      return total;
+    })
+    console.log(this.coeficienteTotal)
+  
+    this.kMejoresAmigos.map(async (amigo) => {
+      this.pedidosAmigo = await this.usuarioService.obtenerPedidosAmigo(amigo.emailUsuario);
+      this.pedidosAmigo.map((pedido: any) => {
+        let pedidoNormalizado: any = this.normalizarCadaPedido(pedido, amigo);
+        console.log(pedidoNormalizado)
+        this.pedidosAmigos.push((pedidoNormalizado))
+      })
+    })
+    console.log(this.pedidosAmigos)
+  }
+
+  normalizarCadaPedido(pedido: any, amigo: any) {
+
+    let unidadesTotales: number = 0;
+    let pedidoNormalizado: any[] = [];
+    let pesoTotal:number=0;
+  
+    for (let compra in pedido) {
+      unidadesTotales += pedido[compra].unidades;
+    }
+    for (let compra in pedido) {
+      let peso = (pedido[compra].unidades / unidadesTotales);
+      console.log(peso)
+      let pesoPonderado = peso * (amigo.coeficienteGlobal / this.coeficienteTotal)/this.pedidosAmigo.length;
+  
+      pedidoNormalizado.push({ producto: pedido[compra].producto, peso: pesoPonderado });
+    }
+    console.log(pedidoNormalizado)
+    return (pedidoNormalizado);
+  }
 }

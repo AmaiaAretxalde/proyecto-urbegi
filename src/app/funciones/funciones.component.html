@@ -3,41 +3,51 @@
 
     <div class="funciones">
 
-        <label for="estimulante" class="{{classEstimulante}}">
-            <button (click)="cambiarEstimulante()" id="estimulante" hidden></button>
+        <div class="funcion">
             <img class="img" src="/assets/estimulante.svg" alt="estimulante">
             <p>Estimulante</p>
-        </label>
+            <input type="range" min="0" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionEstimulante">
+            <p>{{puntuacionEstimulante}}</p>
+        </div>
 
-        <label for="digestivo" class="{{classDigestivo}}">
-            <button (click)="cambiarDigestivo()" id="digestivo" hidden></button>
+        <div class="funcion">
             <img class="img" src="/assets/digestivo.svg" alt="digestivo">
             <p>Digestivo</p>
-        </label>
+            <input type="range" min="0" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionDigestivo">
+            <p>{{puntuacionDigestivo}}</p>
+        </div>
 
-        <label for="relajante" class="{{classRelajante}}">
+        <div class="funcion">
             <button (click)="cambiarRelajante()" id="relajante" hidden></button>
             <img class="img" src="/assets/relajante.svg" alt="Relajante">
             <p>Relajante</p>
-        </label>
+            <input type="range" min="0" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionRelajante">
+            <p>{{puntuacionRelajante}}</p>
+        </div>
 
-        <label for="antioxidante" class="{{classAntioxidante}}">
+        <div class="funcion">
             <button (click)="cambiarAntioxidante()" id="antioxidante" hidden></button>
             <img class="img" src="/assets/antioxidante.svg" alt="Antioxidante">
             <p>Antioxidante</p>
-        </label>
+            <input type="range" min="0" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionAntioxidante">
+            <p>{{puntuacionAntioxidante}}</p>
+        </div>
 
-        <label for="isotonico" class="{{classIsotonico}}">
+        <div class="funcion">
             <button (click)="cambiarIsotonico()" id="isotonico" hidden></button>
             <img class="img" src="/assets/isotonico.svg" alt="Isotonico">
             <p>Isotonico</p>
-        </label>
+            <input type="range" min="0" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionIsotonico">
+            <p>{{puntuacionIsotonico}}</p>
+        </div>
 
-        <label for="depurativo" class="{{classDepurativo}}">
+        <div class="funcion">
             <button (click)="cambiarDepurativo()" id="depurativo" hidden></button>
             <img class="img" src="/assets/depurativo.svg" alt="Depurativo">
             <p>Depurativo</p>
-        </label>
+            <input type="range" min="0" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionDepurativo">
+            <p>{{puntuacionDepurativo}}</p>
+        </div>
 
     </div>
     <button (click)="guardarFunciones()">Siguiente paso</button>

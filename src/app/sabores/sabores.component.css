@@ -1,12 +1,14 @@
 .img{
     width: 40px;
-    margin: 0 15px;
+    margin: 0 10px;
 }
 p{
-    display: inline;
+    display: block;
     margin:20px;
     text-align: center;
     color: #B4BEA5;
+    margin-left: 0;
+   
 }
 .sabores{
     display: flex;
@@ -29,7 +31,7 @@ button{
     justify-content: space-between;
 }
 label{
-    width: 13vw;
+    width: 15vw;
     margin: 40px;
     border-style: ridge;
     display: flex;
@@ -46,4 +48,13 @@ label{
 }
 .no-activo{
     background-color:white;
+}
+input{
+    border-style: none; 
+    width: 2vw;
+    margin: 0;
+}
+.sabor{
+    display: flex;
+    flex-direction: column;
 }

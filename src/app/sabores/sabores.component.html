@@ -1,38 +1,44 @@
-<h2>¿Qué tipo de sabor prefieres?</h2>
+<h2>¿Qué tipo de sabor prefieres? Puntua entre 1 (mínimo) y 5 (máximo)</h2>
 
 <div class="formulario">
 
     <div class="sabores">
+        <div class="sabor">
+                <img class="img" src="/assets/dulce.svg" alt="Dulce">
+                <p>Dulce</p>
+                <div>
+                    <input type="range" min="0" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionDulce">
+                    <p>{{puntuacionDulce}}</p>
+                </div>
+        </div>
 
-        <label for="dulce" class="{{classDulce}}">
-            <button (click)="cambiarDulce()" id="dulce" hidden></button>
-            <img class="img" src="/assets/dulce.svg" alt="Dulce">
-            <p>Dulce</p>
-        </label>
-
-        <label for="citrico" class="{{classCitrico}}">
-            <button (click)="cambiarCitrico()" class="no-activo" id="citrico" hidden></button>
+        <div class="sabor">
             <img class="img" src="/assets/citric.svg" alt="Cítrico">
             <p>Cítrico</p>
-        </label>
+            <input type="range" min="0" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionCitrico">
+            <p>{{puntuacionCitrico}}</p>
+        </div>
 
-        <label for="floral" class="{{classFloral}}">
-            <button (click)="cambiarFloral()" class="no-activo" id="floral" hidden></button>
+        <div class="sabor">
             <img class="img" src="/assets/floral.svg" alt="Floral">
             <p>Floral</p>
-        </label>
+            <input type="range" min="0" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionFloral">
+            <p>{{puntuacionFloral}}</p>
+        </div>
 
-        <label for="especiado" class="{{classEspeciado}}">
-            <button (click)="cambiarEspeciado()" class="no-activo" id="especiado" hidden></button>
+        <div class="sabor">
             <img class="img" src="/assets/especiado.svg" alt="Especiado">
             <p>Especiado</p>
-        </label>
+            <input type="range" min="0" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionEspeciado">
+            <p>{{puntuacionEspeciado}}</p>
+        </div>
 
-        <label for="fruit" class="{{classFruit}}">
-            <button (click)="cambiarAfrutado()" class="no-activo" id="fruit" hidden></button>
+        <div class="sabor">
             <img class="img" src="/assets/fruit.svg" alt="Afrutado">
             <p>Afrutado</p>
-        </label>
+            <input type="range" min="0" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionFruit">
+            <p>{{puntuacionFruit}}</p>
+        </div>
     </div>
     <div>
 

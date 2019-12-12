@@ -8,11 +8,7 @@ import { Router } from "@angular/router";
   styleUrls: ['./sabores.component.css']
 })
 export class SaboresComponent {
-  dulce: boolean = false;
-  citrico: boolean = false;
-  afrutado: boolean = false;
-  especiado: boolean = false;
-  floral: boolean = false;
+ 
   saboresInicio: any[] = [];
   saboresElegidos: any[] = [];
   nombre: string;
@@ -23,71 +19,22 @@ export class SaboresComponent {
   classFruit: string;
   classFloral: string;
   classEspeciado: string;
+  puntuacionDulce:number;
+  puntuacionCitrico:number;
+  puntuacionFloral:number;
+  puntuacionEspeciado:number;
+  puntuacionFruit:number;
 
   constructor(public loginService: LoginService, private router: Router) { }
 
-  cambiarDulce() {
-    this.dulce = !this.dulce;
-    if (this.dulce) {
-      this.classDulce = "activo";
-    } else {
-      this.classDulce = "no-activo";
-    }
-    console.log(this.dulce)
-    console.log(this.classDulce)
-
-  }
-  cambiarCitrico() {
-    this.citrico = !this.citrico;
-    if (this.citrico) {
-      this.classCitrico = "activo";
-    } else {
-      this.classCitrico = "no-activo";
-    }
-    console.log(this.citrico)
-  }
-  cambiarAfrutado() {
-    this.afrutado = !this.afrutado;
-    if (this.afrutado) {
-      this.classFruit = "activo";
-    } else {
-      this.classFruit = "no-activo";
-    }
-    console.log(this.afrutado)
-  }
-  cambiarEspeciado() {
-    this.especiado = !this.especiado;
-    if (this.especiado) {
-      this.classEspeciado = "activo";
-    } else {
-      this.classEspeciado = "no-activo";
-    }
-    console.log(this.especiado)
-  }
-  cambiarFloral() {
-    this.floral = !this.floral;
-    if (this.floral) {
-      this.classFloral = "activo";
-    } else {
-      this.classFloral = "no-activo";
-    }
-    console.log(this.floral)
-  }
   guardarSabores() {
-    this.saboresInicio = [
-      { booleano: this.dulce, nombre: "dulce" },
-      { booleano: this.citrico, nombre: "citrico" },
-      { booleano: this.floral, nombre: "floral" },
-      { booleano: this.afrutado, nombre: "afrutado" },
-      { booleano: this.especiado, nombre: "especiado" }];
+    this.saboresElegidos = [
+      { nombre: "Dulce", puntuacion: this.puntuacionDulce },
+      { nombre: "Cítrico", puntuacion: this.puntuacionCitrico },
+      { nombre: "Floral", puntuacion: this.puntuacionFloral },
+      { nombre: "Especiado", puntuacion: this.puntuacionEspeciado },
+      { nombre: "Afrutado", puntuacion: this.puntuacionFruit }];
 
-    this.saboresElegidos = this.saboresInicio.map(function (sabor) {
-      if (sabor.booleano) {
-        return ({ nombre: sabor.nombre, puntuacion: 1 });
-      } else {
-        return ({ nombre: sabor.nombre, puntuacion: 0 });
-      }
-    })
     this.registrarSabores();
     this.router.navigate(['../usuario/encuesta/paso2'])
   }

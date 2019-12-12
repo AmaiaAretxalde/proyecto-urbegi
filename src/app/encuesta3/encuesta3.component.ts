@@ -11,7 +11,7 @@ export class Encuesta3Component {
   constructor(private router: Router) { }
 
   irAInicio() {
-    this.router.navigate(['../usuario'])
+    this.router.navigate(['../'])
 
     
   }

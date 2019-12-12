@@ -8,13 +8,12 @@ import {Router} from "@angular/router";
   styleUrls: ['./funciones.component.css']
 })
 export class FuncionesComponent {
-  estimulante: boolean = false;
-  digestivo: boolean = false;
-  relajante: boolean = false;
-  antioxidante: boolean = false;
-  isotonico: boolean = false;
-  depurativo: boolean = false;
-  funcionesInicio:any[]=[];
+  puntuacionEstimulante: number;
+  puntuacionDigestivo: number;
+  puntuacionRelajante: number;
+  puntuacionAntioxidante: number;
+  puntuacionIsotonico: number;
+  puntuacionDepurativo: number;
   funcionesElegidas:any[]=[];
   nombre:string;
   mensaje:string;
@@ -27,77 +26,15 @@ export class FuncionesComponent {
 
   constructor(public loginService: LoginService, private router: Router) { }
 
-  cambiarEstimulante() {
-    this.estimulante = !this.estimulante;
-    if(this.estimulante){
-      this.classEstimulante="activo";
-    }else{
-      this.classEstimulante="no-activo";
-    }
-    console.log(this.estimulante)
-  }
-  cambiarDigestivo() {
-    this.digestivo = !this.digestivo;
-    if(this.digestivo){
-      this.classDigestivo="activo";
-    }else{
-      this.classDigestivo="no-activo";
-    }
-    console.log(this.digestivo)
-  }
-  cambiarRelajante() {
-    this.relajante = !this.relajante;
-    if(this.relajante){
-      this.classRelajante="activo";
-    }else{
-      this.classRelajante="no-activo";
-    }
-    console.log(this.relajante)
-  }
-  cambiarAntioxidante() {
-    this.antioxidante = !this.antioxidante;
-    if(this.antioxidante){
-      this.classAntioxidante="activo";
-    }else{
-      this.classAntioxidante="no-activo";
-    }
-    console.log(this.antioxidante)
-  }
-  cambiarIsotonico() {
-    this.isotonico = !this.isotonico;
-    if(this.isotonico){
-      this.classIsotonico="activo";
-    }else{
-      this.classIsotonico="no-activo";
-    }
-    console.log(this.isotonico)
-  }
-  cambiarDepurativo() {
-    this.depurativo = !this.depurativo;
-    if(this.depurativo){
-      this.classDepurativo="activo";
-    }else{
-      this.classDepurativo="no-activo";
-    }
-    console.log(this.depurativo)
-  }
-
   guardarFunciones(){
-    this.funcionesInicio =[
-      {booleano:this.estimulante, nombre:"estimulante"},
-      {booleano:this.digestivo, nombre:"digestivo"},
-      {booleano:this.relajante, nombre:"relajante"},
-      {booleano:this.antioxidante, nombre:"antioxidante"},
-      {booleano:this.isotonico, nombre:"isotonico"},
-      {booleano:this.depurativo, nombre:"depurativo"}];
-
-    this.funcionesElegidas = this.funcionesInicio.map(function(funcion){
-      if (funcion.booleano) {
-        return ({ nombre: funcion.nombre, puntuacion: 1 });
-      } else {
-        return ({ nombre: funcion.nombre, puntuacion: 0 });
-      }
-    })
+    this.funcionesElegidas =[
+      {nombre:"estimulante", puntuacion:this.puntuacionEstimulante},
+      {nombre:"digestivo", puntuacion:this.puntuacionDigestivo},
+      {nombre:"relajante", puntuacion:this.puntuacionRelajante},
+      {nombre:"antioxidante", puntuacion:this.puntuacionAntioxidante},
+      {nombre:"isotonico", puntuacion:this.puntuacionIsotonico},
+      {nombre:"depurativo", puntuacion:this.puntuacionDepurativo}]
+      
     this.registrarFunciones();
     this.router.navigate(['../usuario/encuesta/paso3'])
   }

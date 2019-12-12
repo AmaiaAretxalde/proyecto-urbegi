@@ -11,19 +11,84 @@ import { Router } from '@angular/router';
 
 export class CestaComponent implements OnInit {
  cesta:any;
- precioTotal:number;
+ precios: any;
+ precioTotal:number = 0;
+ precioTotalRedondo:string;
+ unidades:number= 1;
 
   constructor(public cestaService:CestaService, private route: Router) { }
 
   async ngOnInit() {
     this.cesta = await this.cestaService.obtenerCesta();
-    this.precioTotal = this.cesta.reduce(function(total:any,actual:any){
-      return total += actual.basePrice;
-      }, 0)
+    console.log(this.cesta.length)
+    if(this.cesta.length!==0){
+
+      this.precios = this.cesta.map((te:any)=>{
+        return parseFloat((te.producto.basePrice*te.unidades).toFixed(2));
+      })
+  
+      this.precioTotal = this.precios.reduce(function(total:number, actual:number){
+        total+=actual;
+        return total;
+      })
+    }
+    this.precioTotalRedondo=this.precioTotal.toFixed(2);
+  }
+ 
+  async eliminarDeCesta(id:string){
+    await this.cestaService.eliminarDeCesta(id);
+    this.cesta = await this.cestaService.obtenerCesta();
+    if(this.cesta.length!==0){
+
+      this.precios = this.cesta.map((te:any)=>{
+        return parseFloat((te.producto.basePrice*te.unidades).toFixed(2));
+      })
+  
+      this.precioTotal = this.precios.reduce(function(total:number, actual:number){
+        total+=actual;
+        return total;
+      })
+    }
+    this.precioTotalRedondo=this.precioTotal.toFixed(2);
   }
 
-  async eliminarDeCesta(te){
-    await this.cestaService.eliminarDeCesta(te)
+  async restarUnidad(id:string){
+    await this.cestaService.modificarUnidadDeCesta(id, -this.unidades)
+    this.cesta = await this.cestaService.obtenerCesta();
+    if(this.cesta.length!==0){
+
+      this.precios = this.cesta.map((te:any)=>{
+        return parseFloat((te.producto.basePrice*te.unidades).toFixed(2));
+      })
+  
+      this.precioTotal = this.precios.reduce(function(total:number, actual:number){
+        total+=actual;
+        return total;
+      })
+    }
+    this.precioTotalRedondo=this.precioTotal.toFixed(2);
+  }
+
+  async sumarUnidad(id:string){
+    await this.cestaService.modificarUnidadDeCesta(id, this.unidades)
+    this.cesta = await this.cestaService.obtenerCesta();
+    if(this.cesta.length!==0){
+
+      this.precios = this.cesta.map((te:any)=>{
+        return parseFloat((te.producto.basePrice*te.unidades).toFixed(2));
+      })
+  
+      this.precioTotal = this.precios.reduce(function(total:number, actual:number){
+        total+=actual;
+        return total;
+      })
+    }
+    this.precioTotalRedondo=this.precioTotal.toFixed(2);
+  }
+
+  async guardarPedido(){
+    await this.cestaService.guardarPedido();
+    this.cesta = await this.cestaService.obtenerCesta();
   }
 
 }

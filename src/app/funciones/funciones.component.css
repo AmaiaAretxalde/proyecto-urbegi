@@ -47,4 +47,8 @@ label{
 .no-activo{
     background-color:white;
 }
+.funcion{
+    display: flex;
+    flex-direction: column;
+}
 

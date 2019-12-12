@@ -33,6 +33,8 @@ import { Encuesta3Component } from './encuesta3/encuesta3.component';
 import { Error404Component } from './error404/error404.component';
 import { PieDePaginaComponent } from './pie-de-pagina/pie-de-pagina.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
+import { PearsonComponent } from './pearson/pearson.component';
+
 
 
 
@@ -71,7 +73,9 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
     TipoComponent,
     Error404Component,
     PieDePaginaComponent,
-    BusquedaComponent
+    BusquedaComponent,
+    PearsonComponent
+
 
   ],
   imports: [

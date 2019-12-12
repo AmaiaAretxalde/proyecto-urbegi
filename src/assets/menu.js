@@ -1,7 +1,7 @@
  export const navSlide = () => {
     const burger = document.getElementById('burger');
     const nav = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-links li')
+    const navLinks = document.querySelectorAll('li')
 
     burger.addEventListener('click', () =>{
         console.log('he hecho click');

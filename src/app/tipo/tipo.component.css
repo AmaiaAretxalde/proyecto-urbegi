@@ -1,14 +1,17 @@
 .tipoTe{
     display:flex;
     flex-direction: row;
+    justify-content: space-around;
 }
 
 .tipoTeTexto{
     display:flex;
     flex-direction: column;
-    width: 50vw;;
+    width: 23vw;
     font-family: 'Montserrat', sans-serif;
-    font-size: 12pt;
+    font-size: 10pt;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .tipoTeTexto h1{
@@ -17,12 +20,11 @@
 }
 
 .tipoTe img{
-    width: 50vw;
+    height: 28vw;
 }
 
 .circulo-ure{
     animation:rotar 3s infinite ease-in-out;
-
     transform-origin: center;
   }
 
@@ -43,6 +45,28 @@
           transform: rotate(360deg);
       }
   }
+
+
+  @media screen and (max-width: 850px){
+    .tipoTe{
+        display:flex;
+        flex-direction: column-reverse;
+    }
+
+    .tipoTe img{
+        width: 100vw;
+        height: 350px;
+        object-fit: cover;
+    }
+
+    .tipoTeTexto{
+        width: 90vw;
+        justify-content: center;
+        margin-left: 30px;
+        
+    }
+
+  } 
 
 
 

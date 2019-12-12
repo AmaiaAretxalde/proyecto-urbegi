@@ -25,7 +25,7 @@ import { CestaComponent } from './cesta/cesta.component';
 
 import { TipoComponent } from './tipo/tipo.component';
 import { RecomendacionComponent } from './recomendacion/recomendacion.component';
-import { InicioUsuarioComponent } from './inicio-usuario/inicio-usuario.component';
+
 import { ProductoComponent } from './producto/producto.component';
 import { Encuesta1Component } from './encuesta1/encuesta1.component';
 import { Encuesta2Component } from './encuesta2/encuesta2.component';
@@ -64,7 +64,7 @@ import { PearsonComponent } from './pearson/pearson.component';
 
     TipoComponent,
     RecomendacionComponent,
-    InicioUsuarioComponent,
+
     ProductoComponent,
     Encuesta1Component,
     Encuesta2Component,

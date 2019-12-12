@@ -34,7 +34,9 @@
                 <p>{{precio}}€ / 100gr</p>
             </div>
         </button>
-        <button class="botonComprar" (click)="anyadirALaCesta()">COMPRAR</button>
+        <button class="botonComprar" (click)="anyadirALaCesta()" (click)="llamarSnackbar()">COMPRAR</button>
     </div>
 </ng-container>
+
+<div id="snackbar">¡Añadido a tu cesta!</div>
 

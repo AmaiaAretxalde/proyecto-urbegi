@@ -44,13 +44,13 @@ export class UsuarioService {
     return puntuacionFunciones;
   }
 
-  // async obtenerPedidosAmigo(email:string) {
-  //   let response: any = await this.http.post('/api/usuario/recomendaciones', {email},{headers:{"Content-Type":"application/json"}})
-  //   .toPromise()
-  //   let pedidosAmigo = response.pedidos;
-  //   console.log(pedidosAmigo);
-  //   return pedidosAmigo;
-  // }
+  async obtenerPedidosAmigo(email:string) {
+    let response: any = await this.http.post('/api/usuario/recomendaciones', {email},{headers:{"Content-Type":"application/json"}})
+    .toPromise()
+    let pedidosAmigo = response.pedidos;
+    console.log(pedidosAmigo);
+    return pedidosAmigo;
+  }
   
 
   

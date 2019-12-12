@@ -89,6 +89,7 @@ export class CestaComponent implements OnInit {
   async guardarPedido(){
     await this.cestaService.guardarPedido();
     this.cesta = await this.cestaService.obtenerCesta();
+    this.precioTotalRedondo="0";
   }
 
 }

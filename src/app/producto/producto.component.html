@@ -34,8 +34,9 @@
             <div class="texto">
                 <h3>{{nombre.toUpperCase()}}</h3>
                 <div *ngFor="let dato of longDescription">
-                    <p>{{dato}}</p>
+                    <p >{{dato}}</p>
                 </div>
+                <!--<button>Leer más</button>-->
             </div>
         </div>
 
@@ -56,7 +57,7 @@
             </div>
             <div class="compra">
                 <h2>{{precio}}€/ 100gr</h2>
-                <input type="number" [(ngModel)]="unidades" placeholder=1 />
+                <input type="number" [(ngModel)]="unidades" placeholder=1 min="1"/>
                 <button (click)="anyadirACestaDesdeProducto()" (click)="llamarSnackbar()" >AÑADIR A LA CESTA</button>
             </div>
         </div>

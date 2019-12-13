@@ -2,7 +2,7 @@
 <ng-container class="cesta" *ngIf="cesta.length!==0">
     <div class="total">
         <p>Total a pagar: {{precioTotalRedondo}}&euro;</p>
-        <button (click)="guardarPedido()">PAGAR</button>
+        <button class="botonPagar" (click)="guardarPedido()">PAGAR</button>
     </div>
     <hr>
     <p class="total">Tu pedido:</p>
@@ -10,12 +10,13 @@
         <div class="producto" *ngFor="let te of cesta">
             <img src="{{te.producto.mainImage}}" alt="te">
             <p>{{te.producto.name.toUpperCase()}}</p>
-            <p>{{te.unidades}} ud(s) </p>
             <p>{{te.producto.basePrice}}€ / 100gr</p>
-
-            <button class="boton" (click)="eliminarDeCesta(te.producto.id)">Eliminar producto</button>
-            <button class="boton" (click)="restarUnidad(te.producto.id)">Restar unidad</button>
-            <button class="boton" (click)="sumarUnidad(te.producto.id)">Sumar unidad</button>
+            <div class="unidadesRestarSumarEliminar">
+                <button class="boton sumar" (click)="sumarUnidad(te.producto.id)">+</button>
+                <p>{{te.unidades}} ud(s) </p>
+                <button class="boton restar" (click)="restarUnidad(te.producto.id)">-</button>
+                <button class="boton eliminar" (click)="eliminarDeCesta(te.producto.id)">X</button>
+            </div>
         </div>
     </div>
 </ng-container>

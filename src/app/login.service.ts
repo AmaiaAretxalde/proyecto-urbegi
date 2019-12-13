@@ -53,9 +53,11 @@ export class LoginService {
   }
 
 
-  obtenerNombre(){
-    console.log(this.nombre)
-    return this.nombre;
+  async obtenerNombre(){
+    let respuesta:any = await this.http.get('/api/usuario/nombre')
+      .toPromise()
+    console.log(respuesta.nombre)
+    return respuesta.nombre;
   }
 
 }

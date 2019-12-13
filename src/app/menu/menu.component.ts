@@ -33,8 +33,8 @@ export class MenuComponent implements OnInit {
   }
 
   
-  obtenerNombre() {
-    this.nombre = this.loginservice.obtenerNombre();
+  async obtenerNombre() {
+    this.nombre = await this.loginservice.obtenerNombre();
     if(this.nombre !== undefined) {
       this.nombreMayuscula = this.nombre.toUpperCase();
     }

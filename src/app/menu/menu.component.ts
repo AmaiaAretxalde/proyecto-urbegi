@@ -29,6 +29,7 @@ export class MenuComponent implements OnInit {
 
   async logout() {
     this.usuario = await this.logoutService.logout();
+    this.router.navigate(['../'])
   }
 
   

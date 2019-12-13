@@ -1,6 +1,6 @@
 <app-menu></app-menu>
-<!-- <ng-container *ngIf="cesta.length!==0 && cesta!==undefined">    -->
-     <div class="containerProductos">
+ <ng-container *ngIf="cesta.length!==0 && cesta!==undefined">    
+     <div class="containerProductos" *ngIf="cesta">
         <div class="producto" *ngFor="let te of cesta">
             <img src="{{te.producto.mainImage}}" alt="te">
             <p>{{te.producto.name}}</p>
@@ -15,7 +15,7 @@
             <button (click)="guardarPedido()">Pagar</button>
         </div>
     </div>
-<!-- </ng-container> -->
-<!-- <ng-container *ngIf="cesta.length===0 || cesta===undefined">
+</ng-container> 
+ <ng-container *ngIf="cesta.length===0 || cesta===undefined">
     <p class="vacia">Tu cesta está vacía</p>
-</ng-container> -->
+</ng-container>

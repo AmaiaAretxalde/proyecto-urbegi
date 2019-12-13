@@ -10,8 +10,13 @@ export class CestaService {
   constructor(public http: HttpClient) { }
 
   async obtenerCesta() {
-    this.cesta = await this.http.get('/api/cesta')
+    try {
+      this.cesta = await this.http.get('/api/cesta')
       .toPromise();
+
+    } catch(e)  {
+      console.log(e);
+    }
     console.log(this.cesta);
     return this.cesta;
   }
@@ -31,7 +36,8 @@ export class CestaService {
   }
 
   async guardarPedido() {
-    let pedido:any = await this.http.get('/api/cesta/pedido').toPromise();
+    let pedido = await this.http.get('/api/cesta/pedido')
+    .toPromise();
     console.log(pedido)
     return pedido;
   }

@@ -22,6 +22,7 @@ import { InicioUsuarioComponent } from './inicio-usuario/inicio-usuario.componen
 
 
 
+
 const routes: Routes = [
   {path: '', component:InicioComponent},
   {path: 'inicioUsuario', component:InicioUsuarioComponent},
@@ -30,7 +31,7 @@ const routes: Routes = [
   {path: 'te-negro', component:TeNegroComponent},
   {path: 'te-blanco', component:TeBlancoComponent},
   {path: 'te-oolong', component:TeOolongComponent},
-  {path: 'infusiones', component:InfusionesComponent},
+  // {path: 'infusiones', component:InfusionesComponent, data:{animation:'esDerecha'}},
   {path: 'iniciosesion', component:LoginRegistroComponent},
   {path: 'cesta', component:CestaComponent},
   {path: 'usuario/encuesta/paso1', component:Encuesta1Component},

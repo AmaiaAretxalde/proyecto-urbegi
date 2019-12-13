@@ -52,7 +52,10 @@
     border: none;
     outline: none !important;
     color: white;
-    
+}
+
+.botonComprar:hover{
+  background-color: #7D8472;
 }
 
 .unProducto h3{

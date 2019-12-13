@@ -23,7 +23,9 @@ export class PearsonComponent implements OnInit {
   coeficientesGlobales: any[] = [];
   pedidosAmigo: any;
   pedidosAmigos: any[] = [];
+  pedidosAmigosAgrupados: any[] = [];
   kMejoresAmigos: any[] = [];
+  productosRecomendados: any[] = [];
 
   constructor(private usuarioService: UsuarioService) { }
 
@@ -49,7 +51,7 @@ export class PearsonComponent implements OnInit {
         numeroSabores += Math.pow((this.misSabores[i].puntuacion - this.saboresOtro[i].puntuacion), 2);
       }
       let ds = 1 / (1 + Math.sqrt(numeroSabores))
-      this.coeficientesSabores.push({ nombreUsuario: usuario.nombre, emailUsuario: usuario.email, coeficiente: ds });
+      this.coeficientesSabores.push({ emailUsuario: usuario.email, coeficiente: ds });
     })
 
     this.kAmigosSabores = this.coeficientesSabores;
@@ -72,7 +74,7 @@ export class PearsonComponent implements OnInit {
         numeroFunciones += Math.pow((this.misFunciones[i].puntuacion - this.funcionesOtro[i].puntuacion), 2);
       }
       let df = 1 / (1 + Math.sqrt(numeroFunciones))
-      this.coeficientesFunciones.push({ nombreUsuario: usuario.nombre, emailUsuario: usuario.email, coeficiente: df });
+      this.coeficientesFunciones.push({ emailUsuario: usuario.email, coeficiente: df });
     })
 
     this.kAmigosFunciones = this.coeficientesFunciones;
@@ -87,7 +89,7 @@ export class PearsonComponent implements OnInit {
       for (let j = 0; j < this.kAmigosFunciones.length; j++) {
         if (this.kAmigosFunciones[j].emailUsuario === this.kAmigosSabores[i].emailUsuario) {
           this.coeficienteGlobal = (this.kAmigosFunciones[j].coeficiente + this.kAmigosSabores[i].coeficiente) / 2;
-          this.coeficientesGlobales.push({ nombreUsuario: this.kAmigosFunciones[j].nombreUsuario, emailUsuario: this.kAmigosFunciones[j].emailUsuario, coeficienteGlobal: this.coeficienteGlobal });
+          this.coeficientesGlobales.push({ emailUsuario: this.kAmigosFunciones[j].emailUsuario, coeficienteGlobal: this.coeficienteGlobal });
         }
       }
     }
@@ -112,7 +114,7 @@ export class PearsonComponent implements OnInit {
     console.log(this.kMejoresAmigos);
   }
 
-  obtenerPedidosAmigo() {
+  async obtenerPedidosAmigo() {
     let coeficientes = this.kMejoresAmigos.map((kamigo) => {
       return kamigo.coeficienteGlobal;
     })
@@ -121,36 +123,67 @@ export class PearsonComponent implements OnInit {
       total += actual;
       return total;
     })
-    console.log(this.coeficienteTotal)
-  
-    this.kMejoresAmigos.map(async (amigo) => {
+
+    this.kMejoresAmigos.forEach(async (amigo) => {
       this.pedidosAmigo = await this.usuarioService.obtenerPedidosAmigo(amigo.emailUsuario);
-      this.pedidosAmigo.map((pedido: any) => {
+      this.pedidosAmigo.forEach((pedido: any) => {
         let pedidoNormalizado: any = this.normalizarCadaPedido(pedido, amigo);
-        console.log(pedidoNormalizado)
-        this.pedidosAmigos.push((pedidoNormalizado))
+        pedidoNormalizado.forEach((producto: any) => {
+          this.pedidosAmigos.push({ producto: producto.producto, coeficiente: producto.peso })
+          let estaAnyadido: boolean = false;
+          let posicion = -1;
+          if (this.pedidosAmigosAgrupados.length === 0) {
+             this.pedidosAmigosAgrupados.push({ producto: producto.producto, coeficiente: producto.peso })
+            // estaAnyadido = false;
+          } else {
+            for (let i = 0; i < this.pedidosAmigosAgrupados.length; i++) {
+              if (producto.producto.id === this.pedidosAmigosAgrupados[i].producto.id) {
+                posicion = i;
+                estaAnyadido = true;
+              }
+            }
+            if (estaAnyadido === true) {
+              console.log(posicion)
+              this.pedidosAmigosAgrupados[posicion].coeficiente += producto.peso
+            } 
+            if (estaAnyadido === false) {
+              this.pedidosAmigosAgrupados.push({ producto: producto.producto, coeficiente: producto.peso })
+            }
+          }
+        })
+
+        this.pedidosAmigosAgrupados.sort(function (a, b) {
+          if (a.coeficiente < b.coeficiente) {
+            return 1;
+          }
+          if (a.coeficiente > b.coeficiente) {
+            return -1;
+          }
+          // a must be equal to b
+          return 0;
+        });
+        console.log(this.pedidosAmigosAgrupados)
       })
+
     })
-    console.log(this.pedidosAmigos)
-  }
+  };
 
   normalizarCadaPedido(pedido: any, amigo: any) {
 
     let unidadesTotales: number = 0;
     let pedidoNormalizado: any[] = [];
-    let pesoTotal:number=0;
-  
+
     for (let compra in pedido) {
       unidadesTotales += pedido[compra].unidades;
     }
     for (let compra in pedido) {
       let peso = (pedido[compra].unidades / unidadesTotales);
-      console.log(peso)
-      let pesoPonderado = peso * (amigo.coeficienteGlobal / this.coeficienteTotal)/this.pedidosAmigo.length;
-  
+      let pesoPonderado = peso * (amigo.coeficienteGlobal / this.coeficienteTotal) / this.pedidosAmigo.length;
       pedidoNormalizado.push({ producto: pedido[compra].producto, peso: pesoPonderado });
     }
     console.log(pedidoNormalizado)
     return (pedidoNormalizado);
   }
+
 }
+

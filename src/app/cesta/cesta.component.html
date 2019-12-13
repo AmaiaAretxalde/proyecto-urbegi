@@ -1,5 +1,6 @@
 <app-menu></app-menu>
-<ng-container class="cesta" *ngIf="cesta.length!==0">
+
+<ng-container class="cesta" *ngIf="cesta.length!==0 && cesta!==undefined">
     <div class="total">
         <p>Total a pagar: {{precioTotalRedondo}}&euro;</p>
         <button (click)="guardarPedido()">PAGAR</button>
@@ -19,7 +20,8 @@
         </div>
     </div>
 </ng-container>
-<ng-container *ngIf="cesta.length===0">
+ 
+ <ng-container *ngIf="cesta.length===0 || cesta===undefined">
     <p class="vacia">Tu cesta está vacía</p>
 </ng-container>
 <app-pie-de-pagina></app-pie-de-pagina>

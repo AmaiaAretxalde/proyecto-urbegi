@@ -1,3 +1,21 @@
+.paginaError{
+    display:flex;
+    flex-direction: column;
+}
+
 img{
     width: 95vw;
+}
+
+button:hover{
+   background-color: #7D8472;
+}
+
+button{
+   background-color:  #B4BEA5;
+   font-family: 'Montserrat', sans-serif;
+   font-size: 14pt;
+   align-self: center;
+   width: 100px;
+   border: none;
 }

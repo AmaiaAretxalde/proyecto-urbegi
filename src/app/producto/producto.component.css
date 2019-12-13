@@ -5,10 +5,31 @@ img{
 .texto{
     display: flex;
     flex-direction: column;
-    width: 55vw;
+    width: 30vw;
     padding: 25px;
     font-family: 'Montserrat', sans-serif;
+    font-size: 12pt;
 }
+
+.compra{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.compra button{
+    font-family: 'Montserrat', sans-serif;
+    background-color:  #B4BEA5;
+    font-size: 11pt;
+    color: white;
+    border-radius: 3px;
+    border:none;
+    height: 30px;
+    width: 170px;
+}
+
+.compra button:hover{
+    background-color: #7D8472;
+}
+
 .info{
     display: flex;
     flex-direction: row;
@@ -21,6 +42,8 @@ img{
 .caracteristica{
     display: flex;
     flex-direction: row;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12pt;
 }
 
 .caracteristicas{
@@ -46,7 +69,22 @@ input{
     margin: 25px;
     width: 80px;
     text-align: center;
+    background-color: white;
+    border: solid 4px #B4BEA5;
+    border-radius: 11px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12pt;
+    
+    -webkit-appearance: none;
 }
+
+input::-webkit-inner-spin-button {
+    opacity: 1;
+    color: #B4BEA5;
+    background-color: red;
+  }
+
+  
 button{
     width: 200px;
 }
@@ -119,3 +157,20 @@ button{
     from {bottom: 30px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
   }
+
+
+  @media screen and (max-width: 777px){
+    .info{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .texto{
+    width: 80vw;
+    }
+
+    img{
+        width: 80vw;
+    }
+
+}

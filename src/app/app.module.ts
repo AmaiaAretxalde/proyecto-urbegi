@@ -34,7 +34,8 @@ import { Error404Component } from './error404/error404.component';
 import { PieDePaginaComponent } from './pie-de-pagina/pie-de-pagina.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { PearsonComponent } from './pearson/pearson.component';
-
+import { InicioUsuarioComponent } from './inicio-usuario/inicio-usuario.component';
+// import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 
 
 
@@ -74,7 +75,8 @@ import { PearsonComponent } from './pearson/pearson.component';
     Error404Component,
     PieDePaginaComponent,
     BusquedaComponent,
-    PearsonComponent
+    PearsonComponent,
+    InicioUsuarioComponent
 
 
   ],
@@ -82,7 +84,8 @@ import { PearsonComponent } from './pearson/pearson.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    // BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

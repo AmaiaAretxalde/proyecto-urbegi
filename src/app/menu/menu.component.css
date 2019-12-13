@@ -31,7 +31,7 @@
     margin:0px;
     color: #B4BEA5;
     font-family: 'Montserrat', sans-serif;
-    font-size: 10pt;
+    font-size: 11pt;
 }
 
 .buscador{
@@ -71,7 +71,7 @@ flex-direction: row;
 
 header nav ul ul{
  display: none;
- width: 100vw;
+ width: 50vw;
  padding-top: 30px;
 
 }
@@ -149,7 +149,7 @@ background-color: white;
     }
 
     .menu li{
-        opacity:1;
+        opacity:0;
         animation: navLinkFade 0.5s ease forwards 0.914s;
     }
     

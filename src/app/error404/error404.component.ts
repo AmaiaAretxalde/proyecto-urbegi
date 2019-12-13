@@ -12,4 +12,10 @@ export class Error404Component implements OnInit {
   ngOnInit() {
   }
 
+  volverAtras(){
+    window.history.back();
+    window.history.back();
+    }
+  
+
 }

@@ -6,30 +6,36 @@
     align-items: center;
     position: static;
     margin-top: 100px;
+    background-color: #B4BEA5;
+    color: white;
 }
 
 .almacenar {
     margin-left: 40px;
-    color: rgb(134, 136, 132);
+    color: white;
 }
 
 .abrir {
     margin-left: 40px;
-    color: rgb(134, 136, 132);
+    color: white;
 }
 
 .telefono {
     display: flex;
     width: 60px;
-    color: rgb(134, 136, 132);
+    color: white;
 }
 
 h1 {
-    color: rgb(134, 136, 132);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10pt;
 }
 
 p {
-    color: rgb(134, 136, 132);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10pt;
 }
 
 

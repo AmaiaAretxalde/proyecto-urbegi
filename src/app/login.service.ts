@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class LoginService {
   nombre: string;
   email:string;
+  isAdmin:boolean=false;
   constructor(public http: HttpClient) { }
 
   async comprobarUsuario(email: string, password: string) {
@@ -18,9 +19,15 @@ export class LoginService {
         .toPromise()
       this.nombre = respuesta.nombre
       this.email = respuesta.email;
+      this.isAdmin=respuesta.isAdmin;
+      console.log(respuesta)
       console.log(this.nombre)
+      console.log("-----------------------------------------------------")
+
       return this.nombre;
     } else {
+      this.isAdmin=false;
+
       return response.mensaje;
     }
   }
@@ -66,6 +73,11 @@ export class LoginService {
   obtenerNombre(){
     console.log(this.nombre)
     return this.nombre;
+  }
+
+  checkIsAdmin(){
+    console.log(this)
+    return this.isAdmin;
   }
 
 }

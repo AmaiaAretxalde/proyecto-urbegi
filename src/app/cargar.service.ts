@@ -50,4 +50,13 @@ export class CargarService {
     console.log(this.id)
     return this.id;
   }
+
+  async modificarTe(te, id){
+    let response = await this.http.put('/api/admin/tea/'+id,{te},{headers:{"Content-Type":"application/json"}}).toPromise();
+    return response;
+  }
+  async teAnyadido(te){
+    let response = await this.http.post('/api/admin/tea',{te},{headers:{"Content-Type":"application/json"}}).toPromise();
+    return response;
+  }
 }

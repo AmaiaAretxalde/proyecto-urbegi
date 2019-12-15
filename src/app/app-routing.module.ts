@@ -16,6 +16,8 @@ import { Encuesta3Component } from './encuesta3/encuesta3.component';
 import { CestaComponent } from './cesta/cesta.component';
 import { Error404Component } from './error404/error404.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
+import { InputAdminComponent } from './input-admin/input-admin.component';
+import { ModificarProductoComponent } from './modificar-producto/modificar-producto.component';
 import { InicioUsuarioComponent } from './inicio-usuario/inicio-usuario.component';
 
 
@@ -40,8 +42,30 @@ const routes: Routes = [
   { path: 'usuario/encuesta/paso3', component: Encuesta3Component },
   { path: 'producto/:id', component: ProductoComponent },
   { path: 'error404', component: Error404Component },
-  { path: 'busqueda/:nombre', component: BusquedaComponent }
+  { path: 'busqueda/:nombre', component: BusquedaComponent },
+  {path: '', component:InicioComponent},
+ 
 
+
+  {path: 'te-verde', component:TeVerdeComponent},
+  {path: 'te-rojo', component:TeRojoComponent},
+  {path: 'te-negro', component:TeNegroComponent},
+  {path: 'te-blanco', component:TeBlancoComponent},
+  {path: 'te-oolong', component:TeOolongComponent},
+  {path: 'infusiones', component:InfusionesComponent},
+  {path: 'iniciosesion', component:LoginRegistroComponent},
+  {path: 'cesta', component:CestaComponent},
+  {path: 'usuario/encuesta/paso1', component:Encuesta1Component},
+  {path: 'usuario/encuesta/paso2', component:Encuesta2Component},
+  {path: 'usuario/encuesta/paso3', component:Encuesta3Component},
+  
+  {path: 'input-admin', component:InputAdminComponent},
+
+  {path: 'producto/:id', component:ProductoComponent},
+  {path: 'modificar-producto/:id', component:ModificarProductoComponent},
+
+  {path: 'error404', component:Error404Component},
+  {path: 'busqueda/:nombre', component:BusquedaComponent}
 ];
 
 @NgModule({

@@ -4,32 +4,32 @@
             <img routeLink="/" class="logo" src="/assets/ure.svg" alt="te">
         </div>
         <div>
-            <ul class="menu nav-links">
-                <li><a routerLink="/">INICIO</a></li>
-                <li>
-                    <div class="enlace">TÉ</div>
-                    <ul>
-                        <li class="tipos"><a routerLink="/te-verde">TÉ VERDE</a></li>
-                        <li class="tipos"><a routerLink="/te-rojo">TÉ ROJO</a></li>
-                        <li class="tipos"><a routerLink="/te-negro">TÉ NEGRO</a></li>
-                        <li class="tipos"><a routerLink="/te-blanco">TÉ BLANCO</a></li>
-                        <li class="tipos"><a routerLink="/te-oolong">TÉ OOLONG</a></li>
-                    </ul>
-                </li>
-                <li><a routerLink="/infusiones">INFUSIONES</a></li>
-                <ng-container *ngIf="!usuario">
-                    <li><a routerLink="/iniciosesion">INICIAR SESIÓN / REGISTRARME</a></li>
-                </ng-container>
-                <li *ngIf="usuario"><strong>BIENVENIDA/O {{nombreMayuscula}}</strong></li>
-                <li *ngIf="usuario"><a routerLink="/cesta">CESTA</a></li>
-                <li *ngIf="usuario" (click)="logout()"><a class="enlace">LOGOUT</a></li>
-                <ng-container *ngIf="isAdmin">
+        <ul class="menu nav-links">
+            <li *ngIf="!usuario"><a routerLink="/" routerLinkActive="active" >INICIO</a></li>
+            <li *ngIf="usuario"><a routerLink="/inicioUsuario" routerLinkActive="active" >INICIO</a></li>
+            <li><div class="enlace">TÉ</div>
+                <ul>
+                    <li class="tipos"><a routerLink="/te-verde" routerLinkActive="active">TÉ VERDE</a></li>
+                    <li class="tipos"><a routerLink="/te-rojo" routerLinkActive="active">TÉ ROJO</a></li>
+                    <li class="tipos"><a routerLink="/te-negro" routerLinkActive="active" >TÉ NEGRO</a></li>
+                    <li class="tipos"><a routerLink="/te-blanco"routerLinkActive="active" >TÉ BLANCO</a></li>
+                    <li class="tipos"><a routerLink="/te-oolong"routerLinkActive="active" >TÉ OOLONG</a></li>
+                </ul>
+            </li>
+            <li><a routerLink="/infusiones" routerLinkActive="active">INFUSIONES</a></li>
+            <ng-container *ngIf="!usuario">
+                <li><a routerLink="/iniciosesion" routerLinkActive="active" >INICIAR SESIÓN / REGISTRARME</a></li>
+            </ng-container>
+            <li *ngIf="usuario"><strong>BIENVENIDA/O {{nombreMayuscula}}</strong></li>
+            <li *ngIf="usuario"><a routerLink="/cesta" routerLinkActive="active" >CESTA</a></li>
+          <ng-container *ngIf="isAdmin">
                     <li><a routerLink="/input-admin">AÑADIR TÉ</a></li>
                 </ng-container>
-                <li>
-                    <div class="searchBox">
-                        <input class="searchInput" type="text" placeholder="Encuentra tu té..." [(ngModel)]="buscarTe">
-                        <button class="searchButton" (click)="buscarTeFuncion()">
+            <li *ngIf="usuario"(click)="logout()" ><a class="enlace">LOGOUT</a></li>
+            <li>
+                <div class="searchBox">
+                <input class="searchInput" type="text" placeholder="Encuentra tu té..." [(ngModel)]="buscarTe" >
+                <button class="searchButton" (click)="buscarTeFuncion()">
                     <i class="material-icons"> search</i>
                 </button>
                     </div>

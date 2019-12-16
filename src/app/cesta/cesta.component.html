@@ -15,10 +15,38 @@
             <p>{{te.producto.name.toUpperCase()}}</p>
             <p>{{te.producto.basePrice}}€ / 100gr</p>
             <div class="unidadesRestarSumarEliminar">
-                <button class="boton sumar" (click)="sumarUnidad(te.producto.id)">+</button>
+
+
+                <button class="containerSumar" (click)="sumarUnidad(te.producto.id)">
+                        <div class="circle">
+                        <div class="line una"></div>
+                        <div class="line dos"></div>
+                        </div> 
+                </button>
+            
                 <p>{{te.unidades}} ud(s) </p>
-                <button class="boton restar" (click)="restarUnidad(te.producto.id)">-</button>
-                <button class="boton eliminar" (click)="eliminarDeCesta(te.producto.id)">X</button>
+
+                <button class="containerRestar" (click)="restarUnidad(te.producto.id)">
+
+                        <div class="circle">
+                        <div class="line una"></div>
+                        </div>
+                          
+                </button>
+
+
+
+                <button class="containerQuitar" (click)="eliminarDeCesta(te.producto.id)">
+                        <div class="circle">
+                        <div class="line one"></div>
+                        <div class="line two"></div>
+                        </div>
+                          
+                </button>
+                
+                
+
+                
             </div>
         </div>
         <div id="snackbar">¡Pedido realizado correctamente!</div>

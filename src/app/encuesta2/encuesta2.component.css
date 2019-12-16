@@ -22,4 +22,14 @@ justify-content: space-around;
 background-color: #B4BEA5;
 color: white;
 }
+.recuadro{
+  width: 80vw;
+  border: solid 10px #B4BEA5; 
+  margin: auto;
+  padding: 10px;
+  align-content: center;
+  width: 800px;
+  background-color: white;
+  margin-top:50px;
+}
 

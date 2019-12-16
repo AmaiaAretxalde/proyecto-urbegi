@@ -1,14 +1,14 @@
 img{
-    width: 40vw;
+    width: 35vw;
     padding: 25px;
 }
 .texto{
     display: flex;
     flex-direction: column;
-    width: 30vw;
+    width: 35vw;
     padding: 25px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 12pt;
+    font-size: 11pt;
 }
 
 .compra{
@@ -43,7 +43,7 @@ img{
     display: flex;
     flex-direction: row;
     font-family: 'Montserrat', sans-serif;
-    font-size: 12pt;
+    font-size: 11pt;
 }
 
 .caracteristicas{
@@ -65,6 +65,8 @@ img{
     display: flex;
     flex-direction: column;
 }
+
+
 input{
     margin: 25px;
     width: 80px;

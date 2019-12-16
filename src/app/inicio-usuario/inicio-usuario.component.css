@@ -22,14 +22,7 @@
   }
 
   
-.inicioImagenTexto {
-    display: flex;
-    background-size: cover;
-    background-position-y: center;
-    height: 700px;
-    justify-content: center;
-    background-image: url(https://images.pexels.com/photos/734983/pexels-photo-734983.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-} 
+ 
 .inicioImagenTexto img{
     width: 100vw;
     overflow: hidden;
@@ -63,8 +56,9 @@
 }
 
 .parrafoNavidad img{
-    height: 21vw;
+    height: 15vw;
     width: 50vw;
+    object-position: 50% 42%;
     object-fit: cover;
 }
 
@@ -76,9 +70,10 @@
 }
 
 .textoNavidad h6{
-    font-family: 'Playfair Display', serif;
-    font-size: 20pt;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18pt;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .textoNavidad p{
@@ -93,4 +88,68 @@
 
 .parrafoTextoNavidad{
     width:600px;
+}
+
+
+@media screen and (max-width: 850px){
+  
+    .inicioNovedades{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .textoInicio h1{
+        font-size: 20pt;
+        font-weight: 900;
+        color: #B4BEA5;
+    }
+    .inicioImagenTexto {
+        display: flex;
+        background-size: cover;
+        background-position-y: center;
+        height: 300px;
+        justify-content: center;
+        background-image: url(https://images.pexels.com/photos/734983/pexels-photo-734983.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    } 
+    .parrafoNavidad{
+        display: flex;
+        flex-direction: column;
+        color:#F0EFE2;
+    }
+    .parrafoNavidad img{
+        height: 300px;
+        width: 100vw;
+        object-fit: cover;
+    }
+    .textoNavidad h6{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16pt;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    .textoNavidad p {
+        width: 550px;
+    }
+
+    .textoNavidad{
+        align-items: center;
+        margin:50px;
+    }
+}
+
+@media screen and (max-width: 1250px){
+    .parrafoNavidad{
+        display: flex;
+        flex-direction: column;
+        color:#F0EFE2;
+    }
+    .parrafoNavidad img{
+        height: 300px;
+        width: 100vw;
+        object-position: 50% 37%;
+    }
+    .textoNavidad{
+        margin: 50px;
+    }
+
 }

@@ -56,6 +56,12 @@ input{
     border-style: none;
     width: 6vw;
     margin: 0;
+        -webkit-appearance: none;
+    background-color: #b4bea5;
+    border-radius: 20px;
+    height: 4px;
+    opacity: 0.5;
+
 }
 .sabor{
     display: flex;
@@ -83,15 +89,6 @@ button{
 
 button:hover{
     background-color: #7D8472;
-}
-
-
-input{
-    -webkit-appearance: none;
-    background-color: #b4bea5;
-    border-radius: 20px;
-    height: 4px;
-    opacity: 0.5;
 }
 
 input:hover{

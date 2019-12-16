@@ -24,14 +24,14 @@ import { InicioUsuarioComponent } from './inicio-usuario/inicio-usuario.componen
 
 
 const routes: Routes = [
-  {path: '', component:InicioComponent},
+  {path: '', component:InicioComponent, data: {animation: 'Inicio'}},
   {path: 'inicioUsuario', component:InicioUsuarioComponent},
   {path: 'te-verde', component:TeVerdeComponent},
   {path: 'te-rojo', component:TeRojoComponent},
   {path: 'te-negro', component:TeNegroComponent},
   {path: 'te-blanco', component:TeBlancoComponent},
   {path: 'te-oolong', component:TeOolongComponent},
-  // {path: 'infusiones', component:InfusionesComponent, data:{animation:'esDerecha'}},
+ {path: 'infusiones', component:InfusionesComponent},
   {path: 'iniciosesion', component:LoginRegistroComponent},
   {path: 'cesta', component:CestaComponent},
   {path: 'usuario/encuesta/paso1', component:Encuesta1Component},
@@ -39,7 +39,8 @@ const routes: Routes = [
   {path: 'usuario/encuesta/paso3', component:Encuesta3Component},
   {path: 'producto/:id', component:ProductoComponent},
   {path: 'error404', component:Error404Component},
-  {path: 'busqueda/:nombre', component:BusquedaComponent}
+  {path: 'busqueda/:nombre', component:BusquedaComponent},
+
 ];
 
 @NgModule({

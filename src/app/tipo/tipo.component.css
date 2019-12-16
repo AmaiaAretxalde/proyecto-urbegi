@@ -20,7 +20,11 @@
 }
 
 .tipoTe img{
-    height: 28vw;
+    height: 50vh;
+    width: 40vw;
+    object-fit: cover;
+    border-radius: 4px;
+
 }
 
 .circulo-ure{

@@ -23,3 +23,24 @@ p{
     color: white;
 }
 
+.recuadro{
+    width: 80vw;
+    border: solid 10px #B4BEA5; 
+    margin: auto;
+    padding: 10px;
+    align-content: center;
+    width: 800px;
+    background-color: white;
+
+}
+
+.encuesta{
+    background-image: url(https://i.pinimg.com/originals/8f/44/da/8f44da0e6d4012166088559d5c3d81a6.jpg);
+   width: 100vw;
+   height: 100vh;
+   padding-top: 50px;
+}
+
+body{
+    padding-bottom: 0 !important;
+}

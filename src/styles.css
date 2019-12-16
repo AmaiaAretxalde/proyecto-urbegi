@@ -5,10 +5,6 @@
     outline: none !important;
 }
 
-body {
-    margin: 0;
-}
-
 .text {
     margin-top: 200px;
 }
@@ -19,4 +15,24 @@ body {
 
 .horario {
     margin-top: 90px;
+}
+
+header{
+    padding-top: 20px;
+}
+
+ 
+body{
+    position: relative;
+    margin:0px;
+    padding-bottom: 300px;
+    min-height: 100vh;
+  }
+
+
+  @media screen and (max-width: 850px){
+    body{
+        padding-bottom: 500px;
+        min-height: 100vh;
+    }  
 }

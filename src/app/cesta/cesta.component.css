@@ -32,31 +32,24 @@
     flex-direction: column;
 }
 
-.boton{
-    width: 25px;
-    font-family: 'Montserrat', serif;
-    cursor: pointer;
-    background-color: #B4BEA5;
-    color: white;
-    border-radius: 4px;
-    border: none;
-    font-size: 12pt;
-    align-self: center;
-    margin: 0 10px;
-}
-
-.boton:hover{
-animation: rotar 1s forwards;
-}
 
 @keyframes rotar{
     0%{
-      transform: rotate(0deg);
+      transform: rotate(20deg);
     }
     100%{
-        transform: rotate(180deg);
+        transform: rotate(180deg) ;
     }
 }
+@keyframes rotarRestar{
+    0%{
+      transform: rotate(20deg);
+    }
+    100%{
+        transform: rotate(270deg) ;
+    }
+}
+
 .total {
     text-align: center;
     font-family: 'Montserrat', serif;
@@ -90,6 +83,7 @@ hr{
     margin-top: 50px;
     border: solid 1px;
     color: #B4BEA5;
+    background-color: #B4BEA5;
 }
 
 .unidadesRestarSumarEliminar{
@@ -97,3 +91,107 @@ display: flex;
 flex-direction: row;
 justify-content: center;
 }
+
+
+  .containerQuitar {
+    position: relative;
+    border: none;
+  }
+  .containerSumar {
+    position: relative;
+    border: none;
+    transform: rotate(90deg); 
+    margin-right: 10px;
+  }
+  .containerRestar {
+    position: relative;
+    border: none;
+    transform: rotate(90deg); 
+    margin-left: 10px;
+  }
+
+  .containerQuitar:hover{
+    animation: rotar 1s forwards;
+  }
+  .containerSumar:hover{
+    animation: rotar 1s forwards;
+  }
+  .containerRestar:hover{
+    animation: rotarRestar 1s forwards;
+  }
+  
+  .circle {
+    width: 30px;
+    height: 30px;
+    background-color: floralwhite;
+    border-radius: 25px;
+    margin: auto;
+    position: relative;
+    transition: all .2s;
+  }
+  .circle:hover {
+    background-color: #B4BEA5;
+    cursor: pointer;
+  }
+  .circle:hover > .one {
+    height: 25px;
+    top: 3px;
+    transition: all .5s;
+    background-color: floralwhite;
+  }
+  .circle:hover > .two {
+    height: 25px;
+    top: 3px;
+    transition: all .5s;
+    background-color: floralwhite;
+  }
+  .circle:hover > .una {
+    height: 25px;
+    top: 3px;
+    transition: all .5s;
+    background-color: floralwhite;
+  }
+  .circle:hover > .dos {
+    height: 25px;
+    top: 3px;
+    transition: all .5s;
+    background-color: floralwhite;
+  }
+  
+  .line {
+    height: 20px;
+    width: 3px;
+    border-radius: 2px;
+    background-color:  #B4BEA5;
+    position: absolute;
+    transition: all .5s;
+  }
+  
+  .one {
+    top: 5px;
+    left: 13px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  
+  .two {
+    top: 5px;
+    left: 13px;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  
+  .una {
+    top: 5px;
+    left: 13px;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  
+  .dos {
+    top: 5px;
+    left: 13px;
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+  

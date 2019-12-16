@@ -16,6 +16,7 @@ export class MenuComponent implements OnInit {
   usuario: any;
   nombre: string;
   nombreMayuscula: string;
+  isAdmin: boolean =false
   buscarTe:string;
 
 
@@ -25,15 +26,17 @@ export class MenuComponent implements OnInit {
     navSlide();
     this.obtenerNombre();
     this.usuario = await this.usuarioService.estaLogueado();
+    this.isAdmin=this.loginservice.checkIsAdmin()
   }
 
   async logout() {
     this.usuario = await this.logoutService.logout();
+    this.router.navigate(['../'])
   }
 
   
-  obtenerNombre() {
-    this.nombre = this.loginservice.obtenerNombre();
+  async obtenerNombre() {
+    this.nombre = await this.loginservice.obtenerNombre();
     if(this.nombre !== undefined) {
       this.nombreMayuscula = this.nombre.toUpperCase();
     }

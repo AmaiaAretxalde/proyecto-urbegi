@@ -90,10 +90,19 @@ export class CestaComponent implements OnInit {
     console.log('guardando');
     let a = await this.cestaService.guardarPedido();
     this.cesta = await this.cestaService.obtenerCesta();
-    this.precioTotalRedondo = "0";
+    this.precioTotalRedondo = "0.00";
 
+  }
+  
+  llamarSnackbar(){
+    // Get the snackbar DIV
+    var x = document.getElementById("snackbar");
 
-   
+    // Add the "show" class to DIV
+    x.className = "show";
+  
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
   }
 
 }

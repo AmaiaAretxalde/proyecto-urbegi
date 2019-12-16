@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CargarService } from '../cargar.service';
 import { ComprarService } from '../comprar.service';
+import { ModificarService } from '../modificar.service';
+
+import { LoginService } from '../login.service';
 import { Router } from "@angular/router";
 
 
@@ -26,12 +29,12 @@ export class ProductoComponent implements OnInit {
   color: string;
   src: string;
   mounted:boolean = false;
+  userIsAdmin:boolean = false;
 
   shortDescription:string;
-  
-  
-  constructor(public cargarService: CargarService, public comprarService: ComprarService, private router: Router) { }
-  
+
+  constructor(public cargarService: CargarService, public comprarService: ComprarService,private modificarService:ModificarService,private loginservice: LoginService ,private router: Router) { }
+
 
   async ngOnInit() {
 
@@ -55,8 +58,8 @@ export class ProductoComponent implements OnInit {
       this.iconoColor = this.producto[0].caracteristicas.color.image;
       this.color = this.producto[0].caracteristicas.color.texto;
       this.mounted = true;
-
-
+      this.userIsAdmin= this.loginservice.checkIsAdmin()
+      console.log(this)
       console.log(this.mounted)
     }
   }
@@ -64,6 +67,13 @@ export class ProductoComponent implements OnInit {
   async anyadirACestaDesdeProducto() {
 
     let productoAnyadido=  await this.comprarService.anyadirALaCesta(this.producto[0], this.unidades);
+  }
+
+  async modificarProducto(){
+    
+    this.router.navigate(['modificar-producto/'+ this.id])
+    //this.router.navigate(['/input-admin'])
+
   }
 
   llamarSnackbar(){

@@ -1,0 +1,19 @@
+<div class="inputs">
+    <div class="admin">
+        <h1>AÑADIR TE &nbsp; <img src="./assets/copa.png" />&nbsp;<img src="./assets/copa.png" />&nbsp;<img src="./assets/copa.png" /></h1>
+        <input type="text" style="width:400px;height:30px" name="mainImage" placeholder="MainImage" [(ngModel)]="mainImage" />
+        <input type="text" style="width:400px;height:30px" name="categoria" placeholder="Categoria" [(ngModel)]="categoria" />
+        <input type="text" style="width:400px;height:30px" name="descripcion" placeholder="Descripcion" [(ngModel)]="descripcion" />
+        <input type="text" style="width:400px;height:30px" name="aroma" placeholder="Aroma" [(ngModel)]="aroma" />
+        <input type="text" style="width:400px;height:30px" name="sabor" placeholder="Sabor" [(ngModel)]="sabor" />
+        <input type="text" style="width:400px;height:30px" name="color" placeholder="Color" [(ngModel)]="color" />
+        <input type="text" style="width:400px;height:30px" name="name" placeholder="Name" [(ngModel)]="nombre" />
+        <input type="text" style="width:400px;height:30px" name="stock" placeholder="Stock" [(ngModel)]="stock" />
+        <input type="text" style="width:400px;height:30px" name="basePrice" placeholder="BasePrice" [(ngModel)]="precio" />
+        <textarea style="width:400px;height:300px" name="longDescription" placeholder="LongDescription" [(ngModel)]="longDescription"></textarea>
+
+        <button (click)="teAnyadido()" (click)="llamarSnackbar()">AÑADIR NUEVO TE</button>
+    </div>
+    <div id="snackbar">¡Ha añadido un nuevo producto!</div>
+</div>
+<app-pie-de-pagina></app-pie-de-pagina>

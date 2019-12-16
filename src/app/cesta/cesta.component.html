@@ -3,7 +3,9 @@
 <ng-container class="cesta" *ngIf="cesta.length!==0 && cesta!==undefined">
     <div class="total">
         <p>Total a pagar: {{precioTotalRedondo}}&euro;</p>
-        <button class="botonPagar" (click)="guardarPedido()">PAGAR</button>
+
+        <button class="botonPagar" (click)="guardarPedido()" (click)="llamarSnackbar()">PAGAR</button>
+
     </div>
     <hr>
     <p class="total">Tu pedido:</p>
@@ -47,10 +49,12 @@
                 
             </div>
         </div>
+        <div id="snackbar">¡Pedido realizado correctamente!</div>
     </div>
 </ng-container>
  
  <ng-container *ngIf="cesta.length===0 || cesta===undefined">
     <p class="vacia">Tu cesta está vacía</p>
+    <div id="snackbar">¡Pedido realizado correctamente!</div>
 </ng-container>
 <app-pie-de-pagina></app-pie-de-pagina>

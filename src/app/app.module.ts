@@ -35,7 +35,11 @@ import { PieDePaginaComponent } from './pie-de-pagina/pie-de-pagina.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { PearsonComponent } from './pearson/pearson.component';
 import { InicioUsuarioComponent } from './inicio-usuario/inicio-usuario.component';
+
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { InputAdminComponent } from './input-admin/input-admin.component';
+import { ModificarProductoComponent } from './modificar-producto/modificar-producto.component';
+
 
 
 
@@ -76,7 +80,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     PieDePaginaComponent,
     BusquedaComponent,
     PearsonComponent,
-    InicioUsuarioComponent
+    InicioUsuarioComponent,
+    InputAdminComponent,
+    ModificarProductoComponent,
 
 
   ],

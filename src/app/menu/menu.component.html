@@ -22,6 +22,9 @@
             </ng-container>
             <li *ngIf="usuario"><strong>BIENVENIDA/O {{nombreMayuscula}}</strong></li>
             <li *ngIf="usuario"><a routerLink="/cesta" routerLinkActive="active" >CESTA</a></li>
+          <ng-container *ngIf="isAdmin">
+                    <li><a routerLink="/input-admin">AÑADIR TÉ</a></li>
+                </ng-container>
             <li *ngIf="usuario"(click)="logout()" ><a class="enlace">LOGOUT</a></li>
             <li>
                 <div class="searchBox">
@@ -29,16 +32,16 @@
                 <button class="searchButton" (click)="buscarTeFuncion()">
                     <i class="material-icons"> search</i>
                 </button>
-                </div>
-            </li>
-        </ul>
-    </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
 
-    <div class="burger" id="burger">
-        <div class="linea1"></div>
-        <div class="linea2"></div>
-        <div class="linea3"></div>
-    </div>
+        <div class="burger" id="burger">
+            <div class="linea1"></div>
+            <div class="linea2"></div>
+            <div class="linea3"></div>
+        </div>
     </nav>
-    
+
 </header>

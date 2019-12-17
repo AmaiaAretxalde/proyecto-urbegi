@@ -31,13 +31,11 @@ p{
     align-content: center;
     width: 800px;
     background-color: white;
-
 }
 
 .encuesta{
     background-image: url(https://i.pinimg.com/originals/8f/44/da/8f44da0e6d4012166088559d5c3d81a6.jpg);
-   width: 100vw;
-   height: 100vh;
-   padding-top: 50px;
+    height: 89vh;
+    padding-top: 50px;
 }
 

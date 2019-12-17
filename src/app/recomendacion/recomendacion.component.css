@@ -45,3 +45,8 @@ h1{
     font-size: 18pt;
     color: #7D8472;
 }
+
+.recomendaciones{
+    display:flex;
+    flex-direction: row;
+}

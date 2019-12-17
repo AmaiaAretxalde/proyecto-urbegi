@@ -108,10 +108,7 @@ button{
           transform: rotate(360deg);
       }
   }
-  
-  .carouselTotal{
-    width: 50%;
-  }
+
     .carousel{
       width: 500px;
     }
@@ -137,6 +134,17 @@ button{
 
     .carousel-control-next{
       color: black;
+    }
+
+
+    .carousel-caption button{
+      border-radius: 4px;
+    background-color: #B4BEA5;
+    height: 30px;
+    font-size: 11pt;
+    font-family: 'Montserrat', serif;
+    border: none;
+    color: white;
     }
 
 

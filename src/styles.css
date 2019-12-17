@@ -25,14 +25,12 @@ header{
 body{
     position: relative;
     margin:0px;
-    padding-bottom: 300px;
     min-height: 100vh;
   }
 
 
   @media screen and (max-width: 850px){
     body{
-        padding-bottom: 500px;
         min-height: 100vh;
     }  
 }

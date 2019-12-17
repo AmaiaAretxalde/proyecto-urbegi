@@ -92,3 +92,7 @@ p {
         flex-direction: column;
     }
 }
+
+.footerContainer{
+    height: 96px;
+}

@@ -59,4 +59,10 @@ export class CargarService {
     let response = await this.http.post('/api/admin/tea',{te},{headers:{"Content-Type":"application/json"}}).toPromise();
     return response;
   }
+  async todosLosTes(){
+    let response:any = await this.http.get('/api/cargar/losmasvendidos')
+    .toPromise();
+    console.log(response.datos);
+    return response.datos;
+  }
 }

@@ -41,6 +41,7 @@ import { InputAdminComponent } from './input-admin/input-admin.component';
 import { ModificarProductoComponent } from './modificar-producto/modificar-producto.component';
 import { PruebaComponent } from './prueba/prueba.component';
 import { JaccardComponent } from './jaccard/jaccard.component';
+import { LosmasvendidosComponent } from './losmasvendidos/losmasvendidos.component';
 
 
 
@@ -87,6 +88,7 @@ import { JaccardComponent } from './jaccard/jaccard.component';
     ModificarProductoComponent,
     PruebaComponent,
     JaccardComponent,
+    LosmasvendidosComponent,
 
 
 

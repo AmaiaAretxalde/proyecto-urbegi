@@ -25,6 +25,7 @@ export class JaccardComponent implements OnInit {
   pedidosAmigosAgrupados: any[] = [];
   dato:any;
   unidades: number = 1;
+  mounted:boolean = false;
 
   constructor(private usuarioService: UsuarioService, private cargarService: CargarService, private comprarService: ComprarService, private router: Router) { }
 
@@ -40,6 +41,7 @@ export class JaccardComponent implements OnInit {
 
      let pedidosOrdenados = this.ordenarPedidos(this.pedidosAmigosAgrupados)
      console.log(pedidosOrdenados)
+     this.mounted = true;
 
   }
 
@@ -213,7 +215,7 @@ export class JaccardComponent implements OnInit {
   }
 
 
-  async anyadirALaCesta(producto) {
+  async anyadirACesta(producto:any) {
     console.log('añadir')
     console.log(producto)
     await this.comprarService.anyadirALaCesta(producto, this.unidades);

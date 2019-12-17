@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../usuario.service';
+import { CargarService } from '../cargar.service';
+import { ComprarService } from '../comprar.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-jaccard',
@@ -18,21 +21,32 @@ export class JaccardComponent implements OnInit {
   totalPedidos: string[] = [];
   k: number = 4;
   kAmigos: any[] = [];
+  pedidosAmigos: any[] = [];
+  pedidosAmigosAgrupados: any[] = [];
+  dato:any;
+  unidades: number = 1;
 
-  constructor(private usuarioService: UsuarioService) { }
+  constructor(private usuarioService: UsuarioService, private cargarService: CargarService, private comprarService: ComprarService, private router: Router) { }
 
   async ngOnInit() {
-    let misPedidos:any = await this.obtenerMisPedidos();
-    let pedidosOtros:any = await this.obtenerPedidosOtros();
+    let misPedidos: any = await this.obtenerMisPedidos();
+    let pedidosOtros: any = await this.obtenerPedidosOtros();
 
-     this.kAmigos = this.calculokAmigosPedidos(pedidosOtros);
-     console.log(this.kAmigos)
+    this.kAmigos = this.calculokAmigosPedidos(pedidosOtros);
+    console.log(this.kAmigos)
+
+    this.pedidosAmigosAgrupados = await this.obtenerPedidosAmigos(this.kAmigos)
+    console.log(this.pedidosAmigosAgrupados)
+
+     let pedidosOrdenados = this.ordenarPedidos(this.pedidosAmigosAgrupados)
+     console.log(pedidosOrdenados)
 
   }
 
+
   async obtenerMisPedidos() {
     this.misPedidos = await this.usuarioService.obtenerPedidosUsuario();
-   
+
     this.misPedidos.forEach((pedido) => {
       let estaAnyadido: boolean = false;
       if (this.misPedidosAgrupados.length === 0) {
@@ -59,8 +73,8 @@ export class JaccardComponent implements OnInit {
 
     this.datos = await this.usuarioService.obtenerDatosOtro();
     this.datosUsuarios = this.datos.respuesta;
-  
-      for(let j=0;j<this.datosUsuarios.length;j++){
+
+    for (let j = 0; j < this.datosUsuarios.length; j++) {
       this.pedidosOtro = await this.usuarioService.obtenerPedidosAmigo(this.datosUsuarios[j].email);
       this.productosCompradosPorOtro = [];
       this.pedidosOtro.forEach((pedido) => {
@@ -78,7 +92,7 @@ export class JaccardComponent implements OnInit {
   calculoIndiceJaccard(l1: any, l2: any) {
 
     let l1ul2 = l1.concat(l2);
- 
+
     let l1ul2Unicos = l1ul2.filter(function (value, index, self) {
       return self.indexOf(value) === index;
     });
@@ -94,7 +108,7 @@ export class JaccardComponent implements OnInit {
         }
       }
     })
-   
+
     let numerador = l1l2.length;
     let ij = numerador / denominador;
 
@@ -117,6 +131,92 @@ export class JaccardComponent implements OnInit {
       listadoOrdenado.pop();
     }
     return listadoOrdenado;
+  }
+
+  async obtenerPedidosAmigos(amigos: any) {
+    // amigos.forEach(async (amigo: any) => {
+      for(let j=0;j<amigos.length;j++){
+      let pedidosAmigo = await this.usuarioService.obtenerPedidosAmigo(amigos[j].emailUsuario);
+      pedidosAmigo.forEach((pedido: any) => {
+        let pedidoNormalizado: any = this.normalizarCadaPedido(pedido);
+        pedidoNormalizado.forEach((producto: any) => {
+          this.pedidosAmigos.push({ producto: producto.producto, coeficiente: producto.peso })
+         
+          let estaAnyadido: boolean = false;
+          let posicion = -1;
+          if (this.pedidosAmigosAgrupados.length === 0) {
+            this.pedidosAmigosAgrupados.push({ producto: producto.producto, coeficiente: producto.peso })
+           
+            //estaAnyadido = false;
+          } else {
+            for (let i = 0; i < this.pedidosAmigosAgrupados.length; i++) {
+              if (producto.producto.id === this.pedidosAmigosAgrupados[i].producto.id) {
+                posicion = i;
+                estaAnyadido = true;
+              }
+            }
+            if (estaAnyadido === true) {
+              
+              this.pedidosAmigosAgrupados[posicion].coeficiente += producto.peso
+              
+            }
+            if (estaAnyadido === false) {
+              this.pedidosAmigosAgrupados.push({ producto: producto.producto, coeficiente: producto.peso })
+        
+            }
+          }
+
+        })
+      })
+    }
+    console.log(this.pedidosAmigosAgrupados)
+    return this.pedidosAmigosAgrupados;
+  };
+
+  normalizarCadaPedido(pedido: any) {
+
+    let unidadesTotales: number = 0;
+    let pedidoNormalizado: any[] = [];
+
+    for (let compra in pedido) {
+      unidadesTotales += pedido[compra].unidades;
+    }
+    for (let compra in pedido) {
+      let peso = (pedido[compra].unidades / unidadesTotales);
+
+      pedidoNormalizado.push({ producto: pedido[compra].producto, peso: peso });
+    }
+ 
+    return (pedidoNormalizado);
+  }
+
+  ordenarPedidos(listado: any) {
+    let listadoOrdenado = listado.sort(function (a, b) {
+      if (a.coeficiente < b.coeficiente) {
+        return 1;
+      }
+      if (a.coeficiente > b.coeficiente) {
+        return -1;
+      }
+      // a must be equal to b
+      return 0;
+    });
+
+    return listadoOrdenado;
+  }
+
+  async mandarId(id:string) {
+    this.dato = await this.cargarService.mandarId(id);
+    let ruta = "/producto/" + id;
+    this.router.navigate([ruta]);
+    return this.dato;
+  }
+
+
+  async anyadirALaCesta(producto) {
+    console.log('añadir')
+    console.log(producto)
+    await this.comprarService.anyadirALaCesta(producto, this.unidades);
   }
 
 }

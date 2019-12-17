@@ -40,6 +40,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { InputAdminComponent } from './input-admin/input-admin.component';
 import { ModificarProductoComponent } from './modificar-producto/modificar-producto.component';
 import { PruebaComponent } from './prueba/prueba.component';
+import { JaccardComponent } from './jaccard/jaccard.component';
 
 
 
@@ -85,6 +86,8 @@ import { PruebaComponent } from './prueba/prueba.component';
     InputAdminComponent,
     ModificarProductoComponent,
     PruebaComponent,
+    JaccardComponent,
+
 
 
   ],

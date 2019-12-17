@@ -42,7 +42,7 @@ export class PearsonComponent implements OnInit {
 
   async calculokAmigosSabores() {
     this.misSabores = await this.usuarioService.obtenerPuntuacionSabores();
-    console.log(this.misSabores)
+    // console.log(this.misSabores)
     this.datos = await this.usuarioService.obtenerDatosOtro();
     this.datosUsuarios = this.datos.respuesta;
     this.datosUsuarios.map((usuario: any) => {
@@ -52,6 +52,8 @@ export class PearsonComponent implements OnInit {
       let numeroSabores: number = 0;
 
       for (let i = 0; i < this.misSabores.length; i++) {
+        // console.log(this.misSabores[i], i, usuario.nombre)
+        // console.log(this.saboresOtro[i], i, usuario.nombre)
         numeroSabores += Math.pow((this.misSabores[i].puntuacion - this.saboresOtro[i].puntuacion), 2);
       }
       let ds = 1 / (1 + Math.sqrt(numeroSabores))
@@ -60,13 +62,13 @@ export class PearsonComponent implements OnInit {
 
     this.kAmigosSabores = this.coeficientesSabores;
 
-    console.log(this.kAmigosSabores)
+    // console.log(this.kAmigosSabores)
 
   }
 
   async calculokAmigosFunciones() {
     this.misFunciones = await this.usuarioService.obtenerPuntuacionFunciones();
-console.log(this.misFunciones)
+// console.log(this.misFunciones)
     this.datos = await this.usuarioService.obtenerDatosOtro();
     this.datosUsuarios = this.datos.respuesta;
     this.datosUsuarios.map((usuario: any) => {
@@ -75,6 +77,8 @@ console.log(this.misFunciones)
       })
       let numeroFunciones: number = 0;
       for (let i = 0; i < this.misFunciones.length; i++) {
+        // console.log(this.misFunciones[i], i, usuario.nombre)
+        // console.log(this.funcionesOtro[i], i, usuario.nombre)
         numeroFunciones += Math.pow((this.misFunciones[i].puntuacion - this.funcionesOtro[i].puntuacion), 2);
       }
       let df = 1 / (1 + Math.sqrt(numeroFunciones))
@@ -83,7 +87,7 @@ console.log(this.misFunciones)
 
     this.kAmigosFunciones = this.coeficientesFunciones;
 
-    console.log(this.kAmigosFunciones)
+    // console.log(this.kAmigosFunciones)
 
   }
 
@@ -98,7 +102,7 @@ console.log(this.misFunciones)
       }
     }
 
-    console.log(this.coeficientesGlobales);
+    // console.log(this.coeficientesGlobales);
 
     this.coeficientesGlobales.sort(function (a, b) {
       if (a.coeficienteGlobal < b.coeficienteGlobal) {
@@ -115,7 +119,7 @@ console.log(this.misFunciones)
       this.coeficientesGlobales.pop();
     }
     this.kMejoresAmigos = this.coeficientesGlobales;
-    console.log(this.kMejoresAmigos);
+    // console.log(this.kMejoresAmigos);
   }
 
   async obtenerPedidosAmigo() {
@@ -147,7 +151,7 @@ console.log(this.misFunciones)
               }
             }
             if (estaAnyadido === true) {
-              console.log(posicion)
+              // console.log(posicion)
               this.pedidosAmigosAgrupados[posicion].coeficiente += producto.peso
             } 
             if (estaAnyadido === false) {
@@ -166,7 +170,7 @@ console.log(this.misFunciones)
           // a must be equal to b
           return 0;
         });
-        console.log(this.pedidosAmigosAgrupados)
+        // console.log(this.pedidosAmigosAgrupados)
       })
 
     })
@@ -185,7 +189,7 @@ console.log(this.misFunciones)
       let pesoPonderado = peso * (amigo.coeficienteGlobal / this.coeficienteTotal) / this.pedidosAmigo.length;
       pedidoNormalizado.push({ producto: pedido[compra].producto, peso: pesoPonderado });
     }
-    console.log(pedidoNormalizado)
+    // console.log(pedidoNormalizado)
     return (pedidoNormalizado);
   }
 

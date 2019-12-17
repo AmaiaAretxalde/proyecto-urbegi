@@ -93,7 +93,9 @@ export class CestaComponent implements OnInit {
     console.log('guardando');
     let a = await this.cestaService.guardarPedido();
     this.cesta = await this.cestaService.obtenerCesta();
+    if(this.cesta.length===0 || this.cesta===undefined){
     this.precioTotalRedondo = "0.00";
+    }
 
   }
   

@@ -4,39 +4,109 @@
 
     <div class="sabores">
         <div class="sabor">
-                <img class="img" src="/assets/dulce.svg" alt="Dulce">
-                <p>Dulce</p>
-                <div>
-                    <input type="range" min="1" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionDulce">
-                    <p>{{puntuacionDulce}}</p>
-                </div>
+            <img class="img" src="/assets/dulce.svg" alt="Dulce">
+            <p>Dulce</p>
+            <div>
+                <form>
+                    <p class="clasificacion">
+                        <input id="radio17" type="radio" name="taza" value="5"[(ngModel)]="puntuacionDulce">
+                      <label for="radio17"><i class='fas fa-coffee'></i> </label>
+                      <input id="radio18" type="radio" name="taza" value="4"[(ngModel)]="puntuacionDulce">
+                      <label for="radio18"><i class='fas fa-coffee'></i> </label>
+                      <input id="radio19" type="radio" name="taza" value="3"[(ngModel)]="puntuacionDulce">
+                      <label for="radio19"><i class='fas fa-coffee'></i> </label>
+                      <input id="radio20" type="radio" name="taza" value="2"[(ngModel)]="puntuacionDulce">
+                     <label for="radio20"><i class='fas fa-coffee'></i> </label>
+                       <input id="radio21" type="radio" name="taza" value="1"[(ngModel)]="puntuacionDulce">
+                        <label for="radio21"><i class='fas fa-coffee'></i> </label>
+                    </p>
+                </form>
+                <!-- <input type="range" min="1" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionDulce"> -->
+                <p>{{puntuacionDulce}}</p>
+            </div>
         </div>
 
         <div class="sabor">
             <img class="img" src="/assets/citric.svg" alt="Cítrico">
             <p>Cítrico</p>
-            <input type="range" min="1" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionCitrico">
+            <form>
+                <p class="clasificacion">
+                    <input id="radio12" type="radio" name="taza" value="5"[(ngModel)]="puntuacionCitrico">
+                  <label for="radio12"><i class='fas fa-coffee'></i> </label>
+                  <input id="radio13" type="radio" name="taza" value="4"[(ngModel)]="puntuacionCitrico">
+                  <label for="radio13"><i class='fas fa-coffee'></i> </label>
+                  <input id="radio14" type="radio" name="taza" value="3"[(ngModel)]="puntuacionCitrico">
+                  <label for="radio14"><i class='fas fa-coffee'></i> </label>
+                  <input id="radio15" type="radio" name="taza" value="2"[(ngModel)]="puntuacionCitrico">
+                 <label for="radio15"><i class='fas fa-coffee'></i> </label>
+                   <input id="radio16" type="radio" name="taza" value="1"[(ngModel)]="puntuacionCitrico">
+                    <label for="radio16"><i class='fas fa-coffee'></i> </label>
+                </p>
+            </form>
+            <!-- <input type="range" min="1" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionCitrico"> -->
             <p>{{puntuacionCitrico}}</p>
         </div>
 
         <div class="sabor">
             <img class="img" src="/assets/floral.svg" alt="Floral">
             <p>Floral</p>
-            <input type="range" min="1" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionFloral">
+            <form>
+                <p class="clasificacion">
+                    <input id="radio22" type="radio" name="taza" value="5"[(ngModel)]="puntuacionFloral">
+                  <label for="radio22"><i class='fas fa-coffee'></i> </label>
+                  <input id="radio23" type="radio" name="taza" value="4"[(ngModel)]="puntuacionFloral">
+                  <label for="radio23"><i class='fas fa-coffee'></i> </label>
+                  <input id="radio24" type="radio" name="taza" value="3"[(ngModel)]="puntuacionFloral">
+                  <label for="radio24"><i class='fas fa-coffee'></i> </label>
+                  <input id="radio25" type="radio" name="taza" value="2"[(ngModel)]="puntuacionFloral">
+                 <label for="radio25"><i class='fas fa-coffee'></i> </label>
+                   <input id="radio26" type="radio" name="taza" value="1"[(ngModel)]="puntuacionFloral">
+                    <label for="radio26"><i class='fas fa-coffee'></i> </label>
+                </p>
+            </form>
+            <!-- <input type="range" min="1" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionFloral"> -->
             <p>{{puntuacionFloral}}</p>
         </div>
 
         <div class="sabor">
             <img class="img" src="/assets/especiado.svg" alt="Especiado">
             <p>Especiado</p>
-            <input type="range" min="1" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionEspeciado">
+            <form>
+                <p class="clasificacion">
+                    <input id="radio1" type="radio" name="taza" value="5"[(ngModel)]="puntuacionEspeciado">
+                  <label for="radio1"><i class='fas fa-coffee'></i> </label>
+                  <input id="radio2" type="radio" name="taza" value="4"[(ngModel)]="puntuacionEspeciado">
+                  <label for="radio2"><i class='fas fa-coffee'></i> </label>
+                  <input id="radio3" type="radio" name="taza" value="3"[(ngModel)]="puntuacionEspeciado">
+                  <label for="radio3"><i class='fas fa-coffee'></i> </label>
+                  <input id="radio4" type="radio" name="taza" value="2"[(ngModel)]="puntuacionEspeciado">
+                 <label for="radio4"><i class='fas fa-coffee'></i> </label>
+                   <input id="radio5" type="radio" name="taza" value="1"[(ngModel)]="puntuacionEspeciado">
+                    <label for="radio5"><i class='fas fa-coffee'></i> </label>
+                </p>
+            </form>
+            <!-- <input type="range" min="1" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionEspeciado"> -->
             <p>{{puntuacionEspeciado}}</p>
         </div>
 
         <div class="sabor">
             <img class="img" src="/assets/fruit.svg" alt="Afrutado">
             <p>Afrutado</p>
-            <input type="range" min="1" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionFruit">
+            <form>
+                <p class="clasificacion">
+                    <input id="radio6" type="radio" name="estrellas" value="5"[(ngModel)]="puntuacionFruit">
+                  <label for="radio6"><i class='fas fa-coffee'></i> </label>
+                  <input id="radio7" type="radio" name="estrellas" value="4"[(ngModel)]="puntuacionFruit">
+                  <label for="radio7"><i class='fas fa-coffee'></i> </label>
+                  <input id="radio8" type="radio" name="estrellas" value="3"[(ngModel)]="puntuacionFruit">
+                  <label for="radio8"><i class='fas fa-coffee'></i> </label>
+                  <input id="radio9" type="radio" name="estrellas" value="2"[(ngModel)]="puntuacionFruit">
+                 <label for="radio9"><i class='fas fa-coffee'></i> </label>
+                   <input id="radio10" type="radio" name="estrellas" value="1"[(ngModel)]="puntuacionFruit">
+                    <label for="radio11"><i class='fas fa-coffee'></i> </label>
+                </p>
+            </form>
+            <!-- <input type="range" min="1" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionFruit"> -->
             <p>{{puntuacionFruit}}</p>
         </div>
     </div>
@@ -48,6 +118,8 @@
     <ng-container *ngFor="let sabor of saboresElegidos">
         {{sabor.nombre}}
     </ng-container>
+
+   
 
 </div>
 {{mensaje}}

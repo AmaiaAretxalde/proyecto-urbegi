@@ -8,56 +8,128 @@ import {
     animateChild
 } from '@angular/animations';
 export const slideInAnimation =
-trigger('routeAnimations',[
-    transition('* => Inicio',[
-        query(':enter, :leave',
-            style({position: 'fixed', width: '100%'}),
-            {optional:true}),
-        group([
-            query(':enter',[
-                style({transform: 'translateX(-100%)'}),
-            
-            ], {optional:true}),
-            query(':leave',[
-                style({transform: 'translateX(0%)'}),
-                animate('0.5s ease-in-out',
-                style({transform: 'translateX(100%)'}))
-            ], {optional:true}),
+    trigger('routeAnimations', [
+        transition('* => Inicio', [
+            query(' :enter, :leave',
+                style({ position: 'fixed', width: '100%' }),
+                { optional: true }),
+            group([
+                query(':enter', [
+                    style({ transform: 'translateX(-100%)' }),
+                    animate('0.5s ease-in-out',
+                        style({ transform: 'translateX(0%)' }))
+                ], { optional: true }),
+                query(':leave', [
+                    style({ transform: 'translateX(0%)' }),
+                    animate('0.5s ease-in-out',
+                        style({ transform: 'translateX(100%)' }))
+                ], { optional: true }),
             ])
         ]),
-        transition('Producto => *',[
-            query(':enter, :leave',
-            style({position: 'fixed', width:'100%'}),
-            {optional:true}),
+        transition('* => InicioUsuario', [
+            query(' :enter, :leave',
+                style({ position: 'fixed', width: '100%' }),
+                { optional: true }),
             group([
-                query(':enter',[
-                    style({transform:'translateX(100%)'}),
+                query(':enter', [
+                    style({ transform: 'translateX(-100%)' }),
                     animate('0.5s ease-in-out',
-                    style({transform: 'translateX(0%)'}))
-                ], {optional: true}),
-                query(':leave',[
-                    style({transform: 'translateX(%0)'}),
+                        style({ transform: 'translateX(0%)' }))
+                ], { optional: true }),
+                query(':leave', [
+                    style({ transform: 'translateX(0%)' }),
                     animate('0.5s ease-in-out',
-                    style({ transform: 'translateX(-100%)'}))
-                ], {optional:true}),
+                        style({ transform: 'translateX(100%)' }))
+                ], { optional: true }),
             ])
         ]),
-        transition('* => Inicio',[
-            query(':enter, :leave',
-            style({position: 'fixed', width:'100%'}),
-            {optional:true}),
+        transition('Producto => *', [
+            query(' :enter, :leave',
+                style({ position: 'fixed', width: '100%' }),
+                { optional: true }),
             group([
-                query(':enter',[
-                    style({transform:'translateX(100%)'}),
+                query(':enter', [
+                    style({ transform: 'translateX(-100%)' }),
                     animate('0.5s ease-in-out',
-                    style({transform: 'translateX(0%)'}))
-                ], {optional: true}),
-                query(':leave',[
-                    style({transform: 'translateX(%0)'}),
+                        style({ transform: 'translateX(0%)' }))
+                ], { optional: true }),
+                query(':leave', [
+                    style({ transform: 'translateX(0%)' }),
                     animate('0.5s ease-in-out',
-                    style({ transform: 'translateX(-100%)'}))
-                ], {optional:true}),
+                        style({ transform: 'translateX(100%)' }))
+                ], { optional: true }),
+            ])
+        ]),
+        transition('Inicio => *', [
+            query(' :enter, :leave',
+                style({ position: 'fixed', width: '100%' }),
+                { optional: true }),
+            group([
+                query(':enter', [
+                    style({ transform: 'translateX(100%)' }),
+                    animate('0.5s ease-in-out',
+                        style({ transform: 'translateX(0%)' }))
+                ], { optional: true }),
+                query(':leave', [
+                    style({ transform: 'translateX(0%)' }),
+                    animate('0.5s ease-in-out',
+                        style({ transform: 'translateX(-100%)' }))
+                ], { optional: true }),
+            ])
+        ]),
+        transition('InicioUsuario => *', [
+            query(' :enter, :leave',
+                style({ position: 'fixed', width: '100%' }),
+                { optional: true }),
+            group([
+                query(':enter', [
+                    style({ transform: 'translateX(100%)' }),
+                    animate('0.5s ease-in-out',
+                        style({ transform: 'translateX(0%)' }))
+                ], { optional: true }),
+                query(':leave', [
+                    style({ transform: 'translateX(0%)' }),
+                    animate('0.5s ease-in-out',
+                        style({ transform: 'translateX(-100%)' }))
+                ], { optional: true }),
+            ])
+        ]),
+        transition('Encuesta => *', [
+            query(' :enter, :leave',
+                style({ position: 'fixed', width: '100%' }),
+                { optional: true }),
+            group([
+                query(':enter', [
+                    style({ transform: 'translateX(100%)' }),
+                    animate('0.5s ease-in-out',
+                        style({ transform: 'translateX(0%)' }))
+                ], { optional: true }),
+                query(':leave', [
+                    style({ transform: 'translateX(0%)' }),
+                    animate('0.5s ease-in-out',
+                        style({ transform: 'translateX(-100%)' }))
+                ], { optional: true }),
             ])
         ]),
         
+        
+        
+        transition('* => Producto', [
+            query(' :enter, :leave',
+                style({ position: 'fixed', width: '100%' }),
+                { optional: true }),
+            group([
+                query(':enter', [
+                    style({ transform: 'translateX(100%)' }),
+                    animate('0.5s ease-in-out',
+                        style({ transform: 'translateX(0%)' }))
+                ], { optional: true }),
+                query(':leave', [
+                    style({ transform: 'translateX(0%)' }),
+                    animate('0.5s ease-in-out',
+                        style({ transform: 'translateX(-100%)' }))
+                ], { optional: true }),
+            ])
+        ]),
+
     ])

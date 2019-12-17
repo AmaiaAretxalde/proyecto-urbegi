@@ -3,6 +3,11 @@
     flex-direction: column;
 }
 
+.elMenu{
+    opacity: 0;
+    visibility: hidden;
+}
+
 img{
     width: 95vw;
 }

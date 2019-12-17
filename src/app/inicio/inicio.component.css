@@ -15,6 +15,7 @@
 .inicioImagenTexto img{
     width: 200px;
     overflow: hidden;
+    
 }
 
 .textoInicio{
@@ -22,14 +23,13 @@
     flex-direction: column;
     font-family: 'Playfair Display', serif;
     justify-content: flex-start;
-
-}
-
-.textoInicio h1{
-    font-size: 30pt;
-    font-weight: 900;
+    font-size: 36pt;
     color: #B4BEA5;
+    margin-top: 50px;
+    
+
 }
+
 
 .inicioNovedades{
     display:flex;
@@ -88,9 +88,11 @@
         flex-direction: column;
         justify-content: space-around;
     }
+    .textoInicio{
+        margin-top: 10px;   
+    }
     .textoInicio h1{
         font-size: 20pt;
-        font-weight: 900;
         color: #B4BEA5;
     }
     .inicioImagenTexto {
@@ -114,13 +116,13 @@
     }
     .textoNavidad h6{
         font-family: 'Montserrat', sans-serif;
-        font-size: 16pt;
+        font-size: 14pt;
         margin-bottom: 10px;
         margin-top: 10px;
     }
 
     .textoNavidad p {
-        width: 550px;
+        width: 450px;
         
     }
 

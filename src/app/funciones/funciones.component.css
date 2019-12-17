@@ -29,14 +29,7 @@ button{
     align-items: center;
     justify-content: space-around;
 }
-label{
-    width: 14vw;
-    margin: 40px 18px;
-    border-style: ridge;
-    display: flex;
-    flex-direction: row;
-    border-radius: 35px;
-}
+
 
 .activo{
     background-color: #b4bea5;
@@ -84,11 +77,12 @@ button{
 }
 label{
     width: 15vw;
-    margin: 40px;
+    /* margin: 40px;
     border-style: ridge;
     display: flex;
-    flex-direction: row;
+    flex-direction: row; */
     border-radius: 35px;
+    margin-right: 2px;
 }
 
 input{
@@ -148,3 +142,48 @@ input::-webkit-slider-thumb{
     border-radius: 50%;
 
 }
+
+.funcion p{
+    margin-bottom: 0px;
+}
+
+
+
+#form {
+    width: 250px;
+    margin: 0 auto;
+    height: 50px;
+  }
+  
+  #form p {
+    text-align: center;
+  }
+  
+  #form label {
+    font-size: 20px;
+  }
+  
+  input[type="radio"] {
+    display: none;
+  }
+  
+  label {
+    color: grey;
+  }
+  
+  .clasificacion {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    display: flex;
+    width: 100px;
+    margin-top: 0;
+  }
+  
+  label:hover,
+  label:hover ~ label {
+    color: #b4bea5;
+  }
+  
+  input[type="radio"]:checked ~ label {
+    color: #b4bea5;
+  }

@@ -7,16 +7,18 @@
 .tipoTeTexto{
     display:flex;
     flex-direction: column;
-    width: 23vw;
+    width: 25vw;
     font-family: 'Montserrat', sans-serif;
-    font-size: 10pt;
+    font-size: 11pt;
     align-items: flex-start;
     justify-content: center;
+    margin-top: 10px;
 }
 
 .tipoTeTexto h1{
     font-family: 'Montserrat', sans-serif;
     text-align: center;
+    font-size: 20pt;
 }
 
 .tipoTe img{

@@ -74,22 +74,6 @@ button{
     margin-right: 30px;
 }
 
-
-.circulo-ure{
-    animation:rotar 3s infinite ease-in-out;
-
-    transform-origin: center;
-  }
-
-  .spinner{
-      width: 30vw;
-      text-align: center;
-      position: absolute;
-      top:30%;
-      left:35%;
-      background-size: 100%;
-  }
-
   .productosColor .botonComprar{
     border-radius: 4px;
     background-color: #B4BEA5;
@@ -100,92 +84,7 @@ button{
     color: white;
   }
 
-  @keyframes rotar{
-      80%{
-        transform: rotate(360deg);
-      }
-      100%{
-          transform: rotate(360deg);
-      }
-  }
 
-
-
-  ::-webkit-scrollbar {
-    width: 1px;
-    height: 1px;
-  }
-  
-  ::-webkit-scrollbar-button {
-    width: 1px;
-    height: 1px;
-  }
-  
-  div {
-    box-sizing: border-box;
-  }
-  
-  .carousel{
-    width: 500px;
-  }
-
-  .carousel-caption h3{
-    margin-top: 400px;
-    font-family: 'Montserrat', sans-serif;
-    color:black;
-    font-size: 12pt;
-  }
-
-  .carousel-caption p{
-    font-family: 'Montserrat', sans-serif;
-    color: black;
-  }
-
-  .picsum-img-wrapper img{
-    width: 500px;
-    margin-bottom: 30px;
-  padding-bottom: 64px;
-  align-items: center;
-  }
-
-  .carousel-control-next{
-    color: black;
-  }
-
-  .carousel-caption button{
-    border-radius: 4px;
-  background-color: #B4BEA5;
-  height: 30px;
-  font-size: 11pt;
-  font-family: 'Montserrat', serif;
-  border: none;
-  color: white;
-  }
-
-.carousel-nav-icon {
-    height: 48px;
-    width: 48px;
- }
-
-
-    .col, .col-sm, .col-md {
-       margin: 8px;
-       height: 300px;
-       background-size: cover;
-       background-position: center center;
-    }
- 
-
-    .carousel {
-      margin: 0 auto;
-      width:800px;
-      height: 300px;
-      display: relative;
-    }
-    .carousel button div {
-      display: hidden; /* hide images until carousel prepares them */
-      cursor: pointer; /* not needed if you wrap carousel items in links */
-    }
     .circulo-ure{
         animation:rotar 3s infinite ease-in-out;
     
@@ -209,5 +108,41 @@ button{
               transform: rotate(360deg);
           }
       }
-    
+      .carousel{
+        width: 500px;
+      }
+  
+      .carousel-caption h3{
+        margin-top: 400px;
+        font-family: 'Montserrat', sans-serif;
+        color:black;
+        font-size: 12pt;
+      }
+  
+      .carousel-caption p{
+        font-family: 'Montserrat', sans-serif;
+        color: black;
+      }
+  
+      .picsum-img-wrapper img{
+        width: 500px;
+        margin-bottom: 30px;
+      padding-bottom: 64px;
+      align-items: center;
+      }
+  
+      .carousel-control-next{
+        color: black;
+      }
+  
+  
+      .carousel-caption button{
+        border-radius: 4px;
+      background-color: #B4BEA5;
+      height: 30px;
+      font-size: 11pt;
+      font-family: 'Montserrat', serif;
+      border: none;
+      color: white;
+      }
 

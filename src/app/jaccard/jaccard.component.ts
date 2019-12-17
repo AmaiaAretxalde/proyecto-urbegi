@@ -63,7 +63,7 @@ export class JaccardComponent implements OnInit {
           this.productosCompradosPorOtro.push(pedido[i].producto.id);
         }
       })
-      let ij = this.calculoIndiceJaccard(this.misPedidosAgrupados, this.productosCompradosPorOtro);
+      let ij = await this.calculoIndiceJaccard(this.misPedidosAgrupados, this.productosCompradosPorOtro);
       console.log(this.misPedidosAgrupados)
       console.log(this.productosCompradosPorOtro)
       console.log(ij)
@@ -74,7 +74,7 @@ export class JaccardComponent implements OnInit {
 
   }
 
-  calculoIndiceJaccard(l1: any, l2: any) {
+  async calculoIndiceJaccard(l1: any, l2: any) {
 
     let l1ul2 = l1.concat(l2);
     console.log(l1ul2);

@@ -17,23 +17,26 @@ export class JaccardComponent implements OnInit {
   productosCompradosPorOtro: string[] = [];
   totalPedidos: string[] = [];
   k: number = 4;
-  kAmigos:any[] = [];
+  kAmigos: any[] = [];
 
   constructor(private usuarioService: UsuarioService) { }
 
   async ngOnInit() {
-    await this.obtenerPedidos();
-    this.kAmigos = this.calculokAmigosPedidos(this.pedidosOtroUsuario);
-    console.log(this.kAmigos)
+    let misPedidos:any = await this.obtenerMisPedidos();
+    let pedidosOtros:any = await this.obtenerPedidosOtros();
+    console.log(misPedidos)
+    console.log(pedidosOtros)
+
+     this.kAmigos = this.calculokAmigosPedidos(pedidosOtros);
+     console.log(this.kAmigos)
 
   }
 
-  async obtenerPedidos() {
+  async obtenerMisPedidos() {
     this.misPedidos = await this.usuarioService.obtenerPedidosUsuario();
     console.log(this.misPedidos);
     this.misPedidos.forEach((pedido) => {
       let estaAnyadido: boolean = false;
-      let posicion = -1;
       if (this.misPedidosAgrupados.length === 0) {
         estaAnyadido = false;
       } else {
@@ -51,30 +54,30 @@ export class JaccardComponent implements OnInit {
       }
     })
     console.log(this.misPedidosAgrupados);
+    return this.misPedidosAgrupados;
+  }
+
+  async obtenerPedidosOtros() {
+
     this.datos = await this.usuarioService.obtenerDatosOtro();
     this.datosUsuarios = this.datos.respuesta;
-    this.datosUsuarios.forEach(async (usuario: any) => {
-      this.pedidosOtro = await this.usuarioService.obtenerPedidosAmigo(usuario.email);
+    console.log(this.datosUsuarios);
+      for(let j=0;j<this.datosUsuarios.length;j++){
+      this.pedidosOtro = await this.usuarioService.obtenerPedidosAmigo(this.datosUsuarios[j].email);
       this.productosCompradosPorOtro = [];
-      this.totalPedidos = [];
-      this.pedidosOtro.forEach(pedido => {
-        console.log(pedido)
+      this.pedidosOtro.forEach((pedido) => {
         for (let i = 0; i < pedido.length; i++) {
           this.productosCompradosPorOtro.push(pedido[i].producto.id);
         }
       })
-      let ij = await this.calculoIndiceJaccard(this.misPedidosAgrupados, this.productosCompradosPorOtro);
-      console.log(this.misPedidosAgrupados)
-      console.log(this.productosCompradosPorOtro)
-      console.log(ij)
-      this.pedidosOtroUsuario.push({ emailUsuario: usuario.email, pedidos: this.productosCompradosPorOtro, indice: ij });
-    })
-    console.log(this.pedidosOtroUsuario)
+      let ij = this.calculoIndiceJaccard(this.misPedidosAgrupados, this.productosCompradosPorOtro);
+      this.pedidosOtroUsuario.push({ emailUsuario: this.datosUsuarios[j].email, pedidos: this.productosCompradosPorOtro, indice: ij });
+    }
+    console.log(this.pedidosOtroUsuario);
     return this.pedidosOtroUsuario;
-
   }
 
-  async calculoIndiceJaccard(l1: any, l2: any) {
+  calculoIndiceJaccard(l1: any, l2: any) {
 
     let l1ul2 = l1.concat(l2);
     console.log(l1ul2);
@@ -103,8 +106,8 @@ export class JaccardComponent implements OnInit {
     return ij;
   }
 
-  calculokAmigosPedidos(listado:any[]){
-   listado= listado.sort(function (a, b) {
+  calculokAmigosPedidos(listado: any) {
+    let listadoOrdenado = listado.sort(function (a, b) {
       if (a.indice < b.indice) {
         return 1;
       }
@@ -115,11 +118,11 @@ export class JaccardComponent implements OnInit {
       return 0;
     });
 
-    while (listado.length > this.k) {
-      listado.pop();
+    while (listadoOrdenado.length > this.k) {
+      listadoOrdenado.pop();
     }
-    console.log('el listado ordenado supuestamente: ' , listado)
-    return listado;
+    console.log('el listado ordenado supuestamente: ', listadoOrdenado)
+    return listadoOrdenado;
   }
-}
 
+}

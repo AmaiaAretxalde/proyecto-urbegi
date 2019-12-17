@@ -38,6 +38,7 @@ import { InicioUsuarioComponent } from './inicio-usuario/inicio-usuario.componen
 // import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { InputAdminComponent } from './input-admin/input-admin.component';
 import { ModificarProductoComponent } from './modificar-producto/modificar-producto.component';
+import { JaccardComponent } from './jaccard/jaccard.component';
 
 
 
@@ -82,6 +83,7 @@ import { ModificarProductoComponent } from './modificar-producto/modificar-produ
     InicioUsuarioComponent,
     InputAdminComponent,
     ModificarProductoComponent,
+    JaccardComponent,
 
 
   ],

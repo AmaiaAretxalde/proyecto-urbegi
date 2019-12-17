@@ -51,6 +51,20 @@ export class UsuarioService {
     console.log(pedidosAmigo);
     return pedidosAmigo;
   }
+
+  async obtenerPedidosUsuario() {
+    let response: any = await this.http.get('/api/usuario/productos-comprados')
+    .toPromise()
+    let todosMisPedidos = response.pedidos;
+    let misProductosComprados=[];
+    todosMisPedidos.forEach(pedido => {
+      for(let i=0;i<pedido.length;i++){
+        misProductosComprados.push(pedido[i].producto.id);
+      }
+    });
+    console.log(misProductosComprados);
+    return misProductosComprados;
+  }
   
 
   

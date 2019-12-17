@@ -27,6 +27,7 @@ export class JaccardComponent implements OnInit {
   unidades: number = 1;
   mounted:boolean = false;
 
+
   constructor(private usuarioService: UsuarioService, private cargarService: CargarService, private comprarService: ComprarService, private router: Router) { }
 
   async ngOnInit() {
@@ -36,6 +37,7 @@ export class JaccardComponent implements OnInit {
     this.kAmigos = this.calculokAmigosPedidos(pedidosOtros);
     console.log(this.kAmigos)
 
+
     this.pedidosAmigosAgrupados = await this.obtenerPedidosAmigos(this.kAmigos)
     console.log(this.pedidosAmigosAgrupados)
 
@@ -44,7 +46,6 @@ export class JaccardComponent implements OnInit {
      this.mounted = true;
 
   }
-
 
   async obtenerMisPedidos() {
     this.misPedidos = await this.usuarioService.obtenerPedidosUsuario();
@@ -101,8 +102,6 @@ export class JaccardComponent implements OnInit {
 
     let denominador = l1ul2Unicos.length;
 
-    let l1l2: string[] = [];
-    l1.forEach((pedido: any) => {
 
       for (let j = 0; j < l2.length; j++) {
         if (pedido === l2[j]) {

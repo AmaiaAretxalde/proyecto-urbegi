@@ -20,7 +20,7 @@ import { ColorComponent } from './color/color.component';
 import { EncuestaComponent } from './encuesta/encuesta.component';
 import { SaboresComponent } from './sabores/sabores.component';
 import { FuncionesComponent } from './funciones/funciones.component';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CestaComponent } from './cesta/cesta.component';
 
 import { TipoComponent } from './tipo/tipo.component';
@@ -96,7 +96,8 @@ import { JaccardComponent } from './jaccard/jaccard.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -36,3 +36,17 @@ body{
         min-height: 100vh;
     }  
 }
+
+
+
+.carousel-control-next, .carousel-control-prev{
+    color: black ;
+  }
+
+  .carousel-control-next-icon{
+    background-image: url(assets/next.svg) !important;
+  }
+
+.carousel-control-prev-icon{
+background-image: url(assets/prev.svg) !important;
+}

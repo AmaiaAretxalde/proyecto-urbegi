@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../usuario.service';
-import * as $ from 'jquery';
+
 
 @Component({
   selector: 'app-pearson',
@@ -8,6 +8,7 @@ import * as $ from 'jquery';
   styleUrls: ['./pearson.component.css']
 })
 export class PearsonComponent implements OnInit {
+  images:string[] = ['https://placedog.net/500/280', 'https://placedog.net/400/380', 'https://placedog.net/500/280'];
   misSabores: any;
   misFunciones: any;
   datos: any;
@@ -36,12 +37,6 @@ export class PearsonComponent implements OnInit {
     await this.calculokAmigosFunciones();
     await this.calculokMejoresAmigos();
     await this.obtenerPedidosAmigo();
-    
-    $('.carousel').carousel({
-      interval: 6000,
-      pause: "false"
-    });
-
 
   }
 

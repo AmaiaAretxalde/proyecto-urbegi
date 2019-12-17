@@ -36,3 +36,22 @@
             </div>
         </div>
     </ng-container>
+
+    <ng-container *ngIf="mounted===true">
+    <ngb-carousel >
+        <ng-template ngbSlide *ngFor="let recomendacion of losMasVendidos; index as i;">
+          
+          <div class="picsum-img-wrapper" >
+      
+            <img src={{recomendacion.mainImage}} (click)="mandarId(recomendacion.id)"alt="te">
+          </div>
+      
+          <div class="carousel-caption">
+            <h3>{{recomendacion.name.toUpperCase()}}</h3>
+            <p>{{recomendacion.basePrice}}€/ 100gr</p>
+            <button (click)="anyadirACesta(recomendacion)">COMPRAR</button>
+          </div>
+        </ng-template> 
+      </ngb-carousel>
+    </ng-container>
+      

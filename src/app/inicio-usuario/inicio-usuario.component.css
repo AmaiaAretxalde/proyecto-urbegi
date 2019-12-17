@@ -4,12 +4,11 @@
 
   .circulo-ure{
     animation:rotar 3s infinite ease-in-out;
-
     transform-origin: center;
   }
 
   .spinner{
-      width:100px;
+      width:100%;
   }
 
   @keyframes rotar{
@@ -24,19 +23,20 @@
   .inicioImagenTexto {
     display: flex;
     background-size: cover;
-    background-position-y: bottom;
-    height: 500px;
-    justify-content: center;
-    background-image: url(https://images.unsplash.com/photo-1576344069300-e4273f6dfdf8?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80);
+    background-position-y: center;
+    height: 291px;
+    justify-content: flex-start;
+    background-image: url(https://images.unsplash.com/photo-1499531011814-14b20e46c785?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2126&q=80);
 } 
 
 .textoInicio{
     display: flex;
     flex-direction: column;
+    margin-bottom: 5px;
     font-family: 'Playfair Display', serif;
-    justify-content: space-evenly;
     margin-bottom: 5px;
     align-self: flex-end;
+    padding-left: 20px
  
 }
 
@@ -46,13 +46,6 @@
     overflow: hidden;
 }
 
-.textoInicio{
-    display: flex;
-    flex-direction: column;
-    font-family: 'Playfair Display', serif;
-    justify-content: flex-start;
-    align-items: center;
-}
 
 .textoInicio h1{
     font-size: 30pt;

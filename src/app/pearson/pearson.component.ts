@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../usuario.service';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-pearson',
@@ -35,10 +36,18 @@ export class PearsonComponent implements OnInit {
     await this.calculokAmigosFunciones();
     await this.calculokMejoresAmigos();
     await this.obtenerPedidosAmigo();
+    
+    $('.carousel').carousel({
+      interval: 6000,
+      pause: "false"
+    });
+
+
   }
 
   async calculokAmigosSabores() {
     this.misSabores = await this.usuarioService.obtenerPuntuacionSabores();
+    console.log(this.misSabores)
     this.datos = await this.usuarioService.obtenerDatosOtro();
     this.datosUsuarios = this.datos.respuesta;
     this.datosUsuarios.map((usuario: any) => {
@@ -62,7 +71,7 @@ export class PearsonComponent implements OnInit {
 
   async calculokAmigosFunciones() {
     this.misFunciones = await this.usuarioService.obtenerPuntuacionFunciones();
-
+console.log(this.misFunciones)
     this.datos = await this.usuarioService.obtenerDatosOtro();
     this.datosUsuarios = this.datos.respuesta;
     this.datosUsuarios.map((usuario: any) => {

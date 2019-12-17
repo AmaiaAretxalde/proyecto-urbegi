@@ -35,10 +35,10 @@ button{
 }
 label{
     width: 15vw;
-    margin: 40px;
-    border-style: ridge;
-    display: flex;
-    flex-direction: row;
+    /* margin: 40px; */
+    /* border-style: ridge; */
+    /* display: flex;
+    flex-direction: row; */
     border-radius: 35px;
 }
 
@@ -66,7 +66,7 @@ input{
 .sabor{
     display: flex;
     flex-direction: column;
-    margin-right: 50px;
+    margin: 0px 20px 0px 20px;
 }
 
 .sabor img{
@@ -103,5 +103,48 @@ input::-webkit-slider-thumb{
     cursor: pointer;
     background-color: grey;
     border-radius: 50%;
-
 }
+
+
+
+
+
+
+
+#form {
+    width: 250px;
+    margin: 0 auto;
+    height: 50px;
+  }
+  
+  #form p {
+    text-align: center;
+  }
+  
+  #form label {
+    font-size: 20px;
+  }
+  
+  input[type="radio"] {
+    display: none;
+  }
+  
+  label {
+    color: grey;
+  }
+  
+  .clasificacion {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    display: flex;
+    width: 100px;
+  }
+  
+  label:hover,
+  label:hover ~ label {
+    color: #b4bea5;
+  }
+  
+  input[type="radio"]:checked ~ label {
+    color: #b4bea5;
+  }

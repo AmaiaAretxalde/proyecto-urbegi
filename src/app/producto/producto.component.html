@@ -57,8 +57,6 @@
             </div>
             <div class="compra">
                 <h2>{{precio}}€/ 100gr</h2>
-                <input type="number" [(ngModel)]="unidades" placeholder=1 min="1" />
-                <button (click)="anyadirACestaDesdeProducto()" (click)="llamarSnackbar()">AÑADIR A LA CESTA</button>
                 <input type="number" [(ngModel)]="unidades" placeholder=1 />
                 <button (click)="anyadirACestaDesdeProducto()" (click)="llamarSnackbar()">AÑADIR A LA CESTA</button>
                 <button (click)="modificarProducto()" *ngIf="userIsAdmin">MODIFICAR <i class="fas fa-mug-hot"></i></button>

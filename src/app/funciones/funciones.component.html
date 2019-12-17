@@ -6,14 +6,42 @@
         <div class="funcion">
             <img class="img" src="/assets/estimulante.svg" alt="estimulante">
             <p>Estimulante</p>
-            <input type="range" min="0" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionEstimulante">
+            <form>
+                <p class="clasificacion">
+                    <input id="radio32" type="radio" name="taza" value="5"[(ngModel)]="puntuacionEstimulante">
+                  <label for="radio32"><i class='fas fa-mug-hot'></i> </label>
+                  <input id="radio33" type="radio" name="taza" value="4"[(ngModel)]="puntuacionEstimulante">
+                  <label for="radio33"><i class='fas fa-mug-hot'></i> </label>
+                  <input id="radio34" type="radio" name="taza" value="3"[(ngModel)]="puntuacionEstimulante">
+                  <label for="radio34"><i class='fas fa-mug-hot'></i> </label>
+                  <input id="radio35" type="radio" name="taza" value="2"[(ngModel)]="puntuacionEstimulante">
+                 <label for="radio35"><i class='fas fa-mug-hot'></i> </label>
+                   <input id="radio36" type="radio" name="taza" value="1"[(ngModel)]="puntuacionEstimulante">
+                    <label for="radio36"><i class='fas fa-mug-hot'></i> </label>
+                </p>
+            </form>
+            <!-- <input type="range" min="0" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionEstimulante"> -->
             <p>{{puntuacionEstimulante}}</p>
         </div>
 
         <div class="funcion">
             <img class="img" src="/assets/digestivo.svg" alt="digestivo">
             <p>Digestivo</p>
-            <input type="range" min="0" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionDigestivo">
+            <form>
+                <p class="clasificacion">
+                    <input id="radio22" type="radio" name="taza" value="5"[(ngModel)]="puntuacionDigestivo">
+                  <label for="radio22"><i class='fas fa-mug-hot'></i> </label>
+                  <input id="radio23" type="radio" name="taza" value="4"[(ngModel)]="puntuacionDigestivo">
+                  <label for="radio23"><i class='fas fa-mug-hot'></i> </label>
+                  <input id="radio24" type="radio" name="taza" value="3"[(ngModel)]="puntuacionDigestivo">
+                  <label for="radio24"><i class='fas fa-mug-hot'></i> </label>
+                  <input id="radio25" type="radio" name="taza" value="2"[(ngModel)]="puntuacionDigestivo">
+                 <label for="radio25"><i class='fas fa-mug-hot'></i> </label>
+                   <input id="radio26" type="radio" name="taza" value="1"[(ngModel)]="puntuacionDigestivo">
+                    <label for="radio26"><i class='fas fa-mug-hot'></i> </label>
+                </p>
+            </form>
+            <!-- <input type="range" min="0" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionDigestivo"> -->
             <p>{{puntuacionDigestivo}}</p>
         </div>
 
@@ -21,7 +49,21 @@
             <button (click)="cambiarRelajante()" id="relajante" hidden></button>
             <img class="img" src="/assets/relajante.svg" alt="Relajante">
             <p>Relajante</p>
-            <input type="range" min="0" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionRelajante">
+            <form>
+                <p class="clasificacion">
+                    <input id="radio42" type="radio" name="taza" value="5"[(ngModel)]="puntuacionRelajante">
+                  <label for="radio42"><i class='fas fa-mug-hot'></i> </label>
+                  <input id="radio43" type="radio" name="taza" value="4"[(ngModel)]="puntuacionRelajante">
+                  <label for="radio43"><i class='fas fa-mug-hot'></i> </label>
+                  <input id="radio44" type="radio" name="taza" value="3"[(ngModel)]="puntuacionRelajante">
+                  <label for="radio44"><i class='fas fa-mug-hot'></i> </label>
+                  <input id="radio45" type="radio" name="taza" value="2"[(ngModel)]="puntuacionRelajante">
+                 <label for="radio45"><i class='fas fa-mug-hot'></i> </label>
+                   <input id="radio46" type="radio" name="taza" value="1"[(ngModel)]="puntuacionRelajante">
+                    <label for="radio46"><i class='fas fa-mug-hot'></i> </label>
+                </p>
+            </form>
+            <!-- <input type="range" min="0" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionRelajante"> -->
             <p>{{puntuacionRelajante}}</p>
         </div>
 
@@ -29,7 +71,21 @@
             <button (click)="cambiarAntioxidante()" id="antioxidante" hidden></button>
             <img class="img" src="/assets/antioxidante.svg" alt="Antioxidante">
             <p>Antioxidante</p>
-            <input type="range" min="0" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionAntioxidante">
+            <form>
+                <p class="clasificacion">
+                    <input id="radio52" type="radio" name="taza" value="5"[(ngModel)]="puntuacionAntioxidante">
+                  <label for="radio52"><i class='fas fa-mug-hot'></i> </label>
+                  <input id="radio53" type="radio" name="taza" value="4"[(ngModel)]="puntuacionAntioxidante">
+                  <label for="radio53"><i class='fas fa-mug-hot'></i> </label>
+                  <input id="radio54" type="radio" name="taza" value="3"[(ngModel)]="puntuacionAntioxidante">
+                  <label for="radio54"><i class='fas fa-mug-hot'></i> </label>
+                  <input id="radio55" type="radio" name="taza" value="2"[(ngModel)]="puntuacionAntioxidante">
+                 <label for="radio55"><i class='fas fa-mug-hot'></i> </label>
+                   <input id="radio56" type="radio" name="taza" value="1"[(ngModel)]="puntuacionAntioxidante">
+                    <label for="radio56"><i class='fas fa-mug-hot'></i> </label>
+                </p>
+            </form>
+            <!-- <input type="range" min="0" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionAntioxidante"> -->
             <p>{{puntuacionAntioxidante}}</p>
         </div>
 
@@ -37,7 +93,21 @@
             <button (click)="cambiarIsotonico()" id="isotonico" hidden></button>
             <img class="img" src="/assets/isotonico.svg" alt="Isotonico">
             <p>Isotonico</p>
-            <input type="range" min="0" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionIsotonico">
+            <form>
+                <p class="clasificacion">
+                    <input id="radio62" type="radio" name="taza" value="5"[(ngModel)]="puntuacionIsotonico">
+                  <label for="radio62"><i class='fas fa-mug-hot'></i> </label>
+                  <input id="radio63" type="radio" name="taza" value="4"[(ngModel)]="puntuacionIsotonico">
+                  <label for="radio63"><i class='fas fa-mug-hot'></i> </label>
+                  <input id="radio64" type="radio" name="taza" value="3"[(ngModel)]="puntuacionIsotonico">
+                  <label for="radio64"><i class='fas fa-mug-hot'></i> </label>
+                  <input id="radio65" type="radio" name="taza" value="2"[(ngModel)]="puntuacionIsotonico">
+                 <label for="radio65"><i class='fas fa-mug-hot'></i> </label>
+                   <input id="radio66" type="radio" name="taza" value="1"[(ngModel)]="puntuacionIsotonico">
+                    <label for="radio66"><i class='fas fa-mug-hot'></i> </label>
+                </p>
+            </form>
+            <!-- <input type="range" min="0" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionIsotonico"> -->
             <p>{{puntuacionIsotonico}}</p>
         </div>
 
@@ -45,7 +115,21 @@
             <button (click)="cambiarDepurativo()" id="depurativo" hidden></button>
             <img class="img" src="/assets/depurativo.svg" alt="Depurativo">
             <p>Depurativo</p>
-            <input type="range" min="0" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionDepurativo">
+            <form>
+                <p class="clasificacion">
+                    <input id="radio72" type="radio" name="taza" value="5"[(ngModel)]="puntuacionDepurativo">
+                  <label for="radio72"><i class='fas fa-mug-hot'></i> </label>
+                  <input id="radio73" type="radio" name="taza" value="4"[(ngModel)]="puntuacionDepurativo">
+                  <label for="radio73"><i class='fas fa-mug-hot'></i> </label>
+                  <input id="radio74" type="radio" name="taza" value="3"[(ngModel)]="puntuacionDepurativo">
+                  <label for="radio74"><i class='fas fa-mug-hot'></i> </label>
+                  <input id="radio75" type="radio" name="taza" value="2"[(ngModel)]="puntuacionDepurativo">
+                 <label for="radio75"><i class='fas fa-mug-hot'></i> </label>
+                   <input id="radio76" type="radio" name="taza" value="1"[(ngModel)]="puntuacionDepurativo">
+                    <label for="radio76"><i class='fas fa-mug-hot'></i> </label>
+                </p>
+            </form>
+            <!-- <input type="range" min="0" max="5" value="0" placeholder="0" [(ngModel)]="puntuacionDepurativo"> -->
             <p>{{puntuacionDepurativo}}</p>
         </div>
 

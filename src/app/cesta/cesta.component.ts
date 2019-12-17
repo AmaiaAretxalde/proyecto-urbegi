@@ -29,10 +29,13 @@ export class CestaComponent implements OnInit {
   
       this.precioTotal = this.precios.reduce(function(total:number, actual:number){
         total+=actual;
+        
         return total;
       })
     }
     this.precioTotalRedondo=this.precioTotal.toFixed(2);
+    console.log(this.precioTotal)
+    console.log(this.precioTotalRedondo)
   }
  
   async eliminarDeCesta(id:string){

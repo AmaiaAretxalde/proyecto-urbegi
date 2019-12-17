@@ -26,7 +26,6 @@ export class UsuarioService {
     let datos:any = await this.http.get('/api/usuario/sabores')
       .toPromise();
     let puntuacionSabores = datos.respuesta;
-    console.log(puntuacionSabores);
     return puntuacionSabores;
   }
 
@@ -40,7 +39,6 @@ export class UsuarioService {
     let datos:any = await this.http.get('/api/usuario/funciones')
       .toPromise();
     let puntuacionFunciones = datos.respuesta;
-    console.log(puntuacionFunciones);
     return puntuacionFunciones;
   }
 
@@ -48,7 +46,6 @@ export class UsuarioService {
     let response: any = await this.http.post('/api/usuario/recomendaciones', {email},{headers:{"Content-Type":"application/json"}})
     .toPromise()
     let pedidosAmigo = response.pedidos;
-    console.log(pedidosAmigo);
     return pedidosAmigo;
   }
 
@@ -62,7 +59,6 @@ export class UsuarioService {
         misProductosComprados.push(pedido[i].producto.id);
       }
     });
-    console.log(misProductosComprados);
     return misProductosComprados;
   }
   

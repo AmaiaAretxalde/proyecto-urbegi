@@ -102,6 +102,7 @@ button{
           top:30%;
           left:35%;
           background-size: 100%;
+          z-index: 10;
       }
     
       @keyframes rotar{

@@ -148,7 +148,9 @@ button{
     color: white;
     width: 100px;
     }
-
+    .carousel-caption button:hover{
+      background-color: #7D8472;
+    }
 
 
 

@@ -23,12 +23,14 @@
     background-color: #B4BEA6;
     width: 400px;
     height: 30px;
+    color:white;
 }
 
 .inputs {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    padding-bottom: 50px;
 }
 
 #snackbar {

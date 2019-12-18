@@ -50,7 +50,7 @@
                     <h3>{{recomendacion.producto.name.toUpperCase()}}</h3>
                     <p>{{recomendacion.producto.basePrice}}€/ 100gr</p>
 
-                    <button class="botonComprar" (click)="anyadirACesta(recomendacion.producto)">COMPRAR</button>
+                    <button class="botonComprar" (click)="anyadirACesta(recomendacion.producto)" (click)="llamarSnackbar()">COMPRAR</button>
                 </div>
              </ng-template> 
    

@@ -10,7 +10,7 @@ import { ComprarService } from '../comprar.service';
 })
 export class LosmasvendidosComponent implements OnInit {
   mounted:boolean = false;
-  k:number = 10;
+  k:number = 5;
   losMasVendidos:any[]=[];
   dato:any;
   unidades: number = 1;
@@ -33,7 +33,7 @@ export class LosmasvendidosComponent implements OnInit {
     while (this.losMasVendidos.length > this.k) {
       this.losMasVendidos.pop();
     }
-    console.log (this.losMasVendidos)
+    // console.log (this.losMasVendidos)
     this.mounted = true;
   }
 
@@ -46,8 +46,8 @@ export class LosmasvendidosComponent implements OnInit {
 
 
   async anyadirACesta(producto:any) {
-    console.log('añadir')
-    console.log(producto)
+    // console.log('añadir')
+    // console.log(producto)
     await this.comprarService.anyadirALaCesta(producto, this.unidades);
   }
 

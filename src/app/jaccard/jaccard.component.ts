@@ -26,22 +26,23 @@ export class JaccardComponent implements OnInit {
   dato:any;
   unidades: number = 1;
   mounted:boolean = false;
+  numeroRecomendaciones:number = 8;
 
   constructor(private usuarioService: UsuarioService, private cargarService: CargarService, private comprarService: ComprarService, private router: Router) { }
 
   async ngOnInit() {
     let misPedidos: any = await this.obtenerMisPedidos();
-    console.log(misPedidos)
+    // console.log(misPedidos)
     let pedidosOtros: any = await this.obtenerPedidosOtros();
 
     this.kAmigos = this.calculokAmigosPedidos(pedidosOtros);
-    console.log(this.kAmigos)
+    // console.log(this.kAmigos)
 
     this.pedidosAmigosAgrupados = await this.obtenerPedidosAmigos(this.kAmigos)
-    console.log(this.pedidosAmigosAgrupados)
+    // console.log(this.pedidosAmigosAgrupados)
 
      let pedidosOrdenados = this.ordenarPedidos(this.pedidosAmigosAgrupados)
-     console.log(pedidosOrdenados)
+    //  console.log(pedidosOrdenados)
      this.mounted = true;
 
   }
@@ -172,7 +173,7 @@ export class JaccardComponent implements OnInit {
         })
       })
     }
-    console.log(this.pedidosAmigosAgrupados)
+    // console.log(this.pedidosAmigosAgrupados)
     return this.pedidosAmigosAgrupados;
   };
 
@@ -205,6 +206,10 @@ export class JaccardComponent implements OnInit {
       return 0;
     });
 
+    while (listadoOrdenado.length > this.numeroRecomendaciones) {
+      listadoOrdenado.pop();
+    }
+
     return listadoOrdenado;
   }
 
@@ -217,8 +222,8 @@ export class JaccardComponent implements OnInit {
 
 
   async anyadirACesta(producto:any) {
-    console.log('añadir')
-    console.log(producto)
+    // console.log('añadir')
+    // console.log(producto)
     await this.comprarService.anyadirALaCesta(producto, this.unidades);
   }
 

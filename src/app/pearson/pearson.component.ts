@@ -33,6 +33,7 @@ export class PearsonComponent implements OnInit {
   productosRecomendados: any[] = [];
   dato:any;
   unidades:number = 1;
+  numeroRecomendaciones:number = 8;
 
   constructor(private usuarioService: UsuarioService, private cargarService:CargarService, private router: Router, private comprarService: ComprarService) { }
 
@@ -175,6 +176,9 @@ export class PearsonComponent implements OnInit {
           // a must be equal to b
           return 0;
         });
+        while (this.pedidosAmigosAgrupados.length > this.numeroRecomendaciones) {
+          this.pedidosAmigosAgrupados.pop();
+        }
         // console.log(this.pedidosAmigosAgrupados)
       })
 

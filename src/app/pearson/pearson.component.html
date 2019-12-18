@@ -14,16 +14,19 @@
  <ngb-carousel >
   <ng-template ngbSlide *ngFor="let recomendacion of pedidosAmigosAgrupados; index as i;">
     
-    <div class="picsum-img-wrapper" >
-
-      <img src={{recomendacion.producto.mainImage}} alt="te">
-    </div>
-
-    <div class="carousel-caption">
-      <h3>{{recomendacion.producto.name.toUpperCase()}}</h3>
-      <p>{{recomendacion.producto.basePrice}}€/ 100gr</p>
-      <button class="botonComprar" (click)="anyadirACesta(recomendacion.producto)"(click)="llamarSnackbar()">COMPRAR</button>
-    </div>
+    
+        <div class="picsum-img-wrapper" >
+        <img src={{recomendacion.producto.mainImage}} alt="te">
+      </div>
+      
+      <div class="carousel-caption">
+        
+        <h3>{{recomendacion.producto.name.toUpperCase()}}</h3>
+        
+        <p>{{recomendacion.producto.basePrice}}€/ 100gr</p>
+        <button class="botonComprar" (click)="anyadirACesta(recomendacion.producto)"(click)="llamarSnackbar()">COMPRAR</button>
+      </div>
+    
   </ng-template> 
   <div id="snackbar">¡Añadido a tu cesta!</div>
 </ngb-carousel>

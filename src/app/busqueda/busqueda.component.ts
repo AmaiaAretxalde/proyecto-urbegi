@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {BuscarService} from '../buscar.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ComprarService } from '../comprar.service';
+import { CargarService } from '../cargar.service';
 
 
 @Component({
@@ -14,14 +15,15 @@ tesEncontrados:any = [];
 producto:any;
 nombre:any;
 unidades:number = 1;
+dato:any;
 
-  constructor( private buscarService:BuscarService, public route:ActivatedRoute, private comprarService:ComprarService) { }
+  constructor( private buscarService:BuscarService, public route:ActivatedRoute, private comprarService:ComprarService, private cargarService:CargarService, private router: Router) { }
 
   async ngOnInit() {
     this.route.params.subscribe(async (params) => {
       this.tesEncontrados = [];
       this.nombre = params.nombre;
-      let busquedaTe = await this.buscarService.enviarTesEncontrados();
+      let busquedaTe:any = await this.buscarService.enviarTesEncontrados();
       for(let te of busquedaTe){
         for(let caracteristica in te){
           let caracteristicaT = te[(caracteristica)]
@@ -37,11 +39,19 @@ unidades:number = 1;
     console.log(this.tesEncontrados)
   }
 
-  async anyadirACesta(te, unidades) {
+  async anyadirACesta(te) {
     console.log(te);
-    let teColor = await this.comprarService.anyadirALaCesta(te, unidades);
+    let teColor = await this.comprarService.anyadirALaCesta(te, this.unidades);
     return te;
   }
+
+  async mandarId(id:string) {
+    this.dato = await this.cargarService.mandarId(id);
+    let ruta = "/producto/" + id;
+    this.router.navigate([ruta]);
+    return this.dato;
+  }
+
 
   llamarSnackbar() {
     // Get the snackbar DIV

@@ -206,3 +206,7 @@ button{
     font-size: 18pt;
     color: #7D8472;
 }
+
+.carousel-indicators  li{
+ width: 0;
+}

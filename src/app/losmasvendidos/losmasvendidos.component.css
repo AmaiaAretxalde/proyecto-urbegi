@@ -203,3 +203,7 @@ button{
     border-style: none; 
     background-color: white;
   } */
+
+  .carousel-indicators  li{
+    width: 0;
+   }

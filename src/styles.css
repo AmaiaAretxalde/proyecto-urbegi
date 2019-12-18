@@ -49,4 +49,7 @@ body{
 background-image: url(assets/prev.svg) !important;
 }
 
+.carousel-indicators  li{
+    width: 0px !important;
+   }
 

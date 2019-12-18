@@ -151,6 +151,21 @@ button{
     .carousel-caption button:hover{
       background-color: #7D8472;
     }
+    
+    .carousel-indicators  li{
+      width: 0px;
+     }
+     li{
+      width: 0px;
+     }
+     .ng-star-inserted ol{
+      opacity: 0;
+     }
+    
+   
+    /* .boton-imagen{
+      height: 500px;
+    } */
 
 
 

@@ -22,8 +22,9 @@
     <div class="carousel-caption">
       <h3>{{recomendacion.producto.name.toUpperCase()}}</h3>
       <p>{{recomendacion.producto.basePrice}}€/ 100gr</p>
-      <button>COMPRAR</button>
+      <button class="botonComprar" (click)="anyadirACesta(recomendacion.producto)"(click)="llamarSnackbar()">COMPRAR</button>
     </div>
   </ng-template> 
+  <div id="snackbar">¡Añadido a tu cesta!</div>
 </ngb-carousel>
 

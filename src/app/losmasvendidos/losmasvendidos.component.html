@@ -24,7 +24,7 @@
         </svg>
     </ng-container>
     
-    <ng-container *ngIf="mounted===true">
+    <!-- <ng-container *ngIf="mounted===true">
         <div class="productosColor">
             <div class="productos" *ngFor="let recomendacion of losMasVendidos">
                 <button class="unProducto" (click)="mandarId(recomendacion.id)">
@@ -35,23 +35,24 @@
                 <button (click)="anyadirACesta(recomendacion)">COMPRAR</button>
             </div>
         </div>
-    </ng-container>
+    </ng-container> -->
 
     <ng-container *ngIf="mounted===true">
     <ngb-carousel >
         <ng-template ngbSlide *ngFor="let recomendacion of losMasVendidos; index as i;">
           
           <div class="picsum-img-wrapper" >
-      
+    
             <img src={{recomendacion.mainImage}} (click)="mandarId(recomendacion.id)"alt="te">
           </div>
       
           <div class="carousel-caption">
             <h3>{{recomendacion.name.toUpperCase()}}</h3>
             <p>{{recomendacion.basePrice}}€/ 100gr</p>
-            <button (click)="anyadirACesta(recomendacion)">COMPRAR</button>
+            <button class="botonComprar" (click)="anyadirACesta(recomendacion)"(click)="llamarSnackbar()">COMPRAR</button>
           </div>
         </ng-template> 
       </ngb-carousel>
+      <div id="snackbar">¡Añadido a tu cesta!</div>
     </ng-container>
       

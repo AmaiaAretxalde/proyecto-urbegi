@@ -74,22 +74,6 @@ button{
     margin-right: 30px;
 }
 
-
-.circulo-ure{
-    animation:rotar 3s infinite ease-in-out;
-
-    transform-origin: center;
-  }
-
-  .spinner{
-      width: 30vw;
-      text-align: center;
-      position: absolute;
-      top:30%;
-      left:35%;
-      background-size: 100%;
-  }
-
   .productosColor .botonComprar{
     border-radius: 4px;
     background-color: #B4BEA5;
@@ -100,93 +84,9 @@ button{
     color: white;
   }
 
-  @keyframes rotar{
-      80%{
-        transform: rotate(360deg);
-      }
-      100%{
-          transform: rotate(360deg);
-      }
-  }
 
-
-
-  ::-webkit-scrollbar {
-    width: 1px;
-    height: 1px;
-  }
-  
-  ::-webkit-scrollbar-button {
-    width: 1px;
-    height: 1px;
-  }
-  
-  div {
-    box-sizing: border-box;
-  }
-  
-  .horizontal-scroll-wrapper {
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    width: calc(250px + 1px);
-    max-height: 750px;
-    margin: 0;
-    padding-top: 1px;
-    background: #abc;
-    overflow-y: auto;
-    overflow-x: hidden;
-    -webkit-transform: rotate(-90deg) translateY(-250px);
-            transform: rotate(-90deg) translateY(-250px);
-    -webkit-transform-origin: right top;
-            transform-origin: right top;
-  }
-  .horizontal-scroll-wrapper > div {
-    display: block;
-    padding: 5px;
-    background: #cab;
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
-    -webkit-transform-origin: right top;
-            transform-origin: right top;
-  }
-  
-  .squares {
-    padding: 250px 0 0 0;
-  }
-  .squares > div {
-    width: 250px;
-    height: 250px;
-    margin: 10px 0;
-  }
-  
-
-
-.carousel-nav-icon {
-    height: 48px;
-    width: 48px;
- }
-
-
-    .col, .col-sm, .col-md {
-       margin: 8px;
-       height: 300px;
-       background-size: cover;
-       background-position: center center;
-    }
  
-
-    .carousel {
-      margin: 0 auto;
-      width:800px;
-      height: 300px;
-      display: relative;
-    }
-    .carousel button div {
-      display: hidden; /* hide images until carousel prepares them */
-      cursor: pointer; /* not needed if you wrap carousel items in links */
-    }
+   
     .circulo-ure{
         animation:rotar 3s infinite ease-in-out;
     
@@ -211,3 +111,94 @@ button{
           }
       }
     
+
+      .carousel{
+        width: 500px;
+      }
+  
+      .carousel-caption h3{
+        margin-top: 400px;
+        font-family: 'Montserrat', sans-serif;
+        color:black;
+        font-size: 12pt;
+      }
+  
+      .carousel-caption p{
+        font-family: 'Montserrat', sans-serif;
+        color: black;
+      }
+  
+      .picsum-img-wrapper img{
+        width: 500px;
+        margin-bottom: 30px;
+      padding-bottom: 64px;
+      align-items: center;
+      }
+  
+  
+      .carousel-caption button{
+        border-radius: 4px;
+      background-color: #B4BEA5;
+      height: 30px;
+      font-size: 11pt;
+      font-family: 'Montserrat', serif;
+      border: none;
+      color: white;
+      }
+
+      .carousel-caption button:hover{
+        background-color: #7d8472;
+      }
+
+
+
+
+  #snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #7D8472; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+    font-family: 'Montserrat', serif;
+    font-size:12pt;
+  }
+
+  #snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  /* Animations to fade the snackbar in and out */
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+  /* .invisible{
+    border-style: none; 
+    background-color: white;
+  } */

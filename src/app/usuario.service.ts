@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class UsuarioService {
 
   usuario: any = undefined;
-  datosUsuario:any;
+  datosUsuario: any;
   constructor(private http: HttpClient) { }
 
   async estaLogueado() {
@@ -23,7 +23,7 @@ export class UsuarioService {
   }
 
   async obtenerPuntuacionSabores() {
-    let datos:any = await this.http.get('/api/usuario/sabores')
+    let datos: any = await this.http.get('/api/usuario/sabores')
       .toPromise();
     let puntuacionSabores = datos.respuesta;
     return puntuacionSabores;
@@ -36,33 +36,35 @@ export class UsuarioService {
   }
 
   async obtenerPuntuacionFunciones() {
-    let datos:any = await this.http.get('/api/usuario/funciones')
+    let datos: any = await this.http.get('/api/usuario/funciones')
       .toPromise();
     let puntuacionFunciones = datos.respuesta;
     return puntuacionFunciones;
   }
 
-  async obtenerPedidosAmigo(email:string) {
-    let response: any = await this.http.post('/api/usuario/recomendaciones', {email},{headers:{"Content-Type":"application/json"}})
-    .toPromise()
+  async obtenerPedidosAmigo(email: string) {
+    let response: any = await this.http.post('/api/usuario/recomendaciones', { email }, { headers: { "Content-Type": "application/json" } })
+      .toPromise()
     let pedidosAmigo = response.pedidos;
     return pedidosAmigo;
   }
 
   async obtenerPedidosUsuario() {
     let response: any = await this.http.get('/api/usuario/productos-comprados')
-    .toPromise()
+      .toPromise()
     let todosMisPedidos = response.pedidos;
-    let misProductosComprados=[];
-    todosMisPedidos.forEach(pedido => {
-      for(let i=0;i<pedido.length;i++){
-        misProductosComprados.push(pedido[i].producto.id);
-      }
-    });
+    let misProductosComprados = [];
+    if (todosMisPedidos.length !== 0) {
+      todosMisPedidos.forEach(pedido => {
+        for (let i = 0; i < pedido.length; i++) {
+          misProductosComprados.push(pedido[i].producto.id);
+        }
+      });
+    }
     return misProductosComprados;
   }
-  
 
-  
+
+
 
 }

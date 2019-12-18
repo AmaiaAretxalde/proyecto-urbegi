@@ -5,6 +5,7 @@ import { ComprarService } from '../comprar.service';
 import { CargarService } from '../cargar.service';
 
 
+
 @Component({
   selector: 'app-pearson',
   templateUrl: './pearson.component.html',
@@ -34,7 +35,10 @@ export class PearsonComponent implements OnInit {
   dato:any;
   unidades:number = 1;
 
-  constructor(private usuarioService: UsuarioService, private router: Router, private comprarService: ComprarService, private cargarService:CargarService) { }
+  numeroRecomendaciones:number = 8;
+
+  constructor(private usuarioService: UsuarioService, private cargarService:CargarService, private router: Router, private comprarService: ComprarService) { }
+
 
   async ngOnInit() {
 
@@ -175,6 +179,9 @@ export class PearsonComponent implements OnInit {
           // a must be equal to b
           return 0;
         });
+        while (this.pedidosAmigosAgrupados.length > this.numeroRecomendaciones) {
+          this.pedidosAmigosAgrupados.pop();
+        }
         // console.log(this.pedidosAmigosAgrupados)
       })
 
@@ -210,6 +217,17 @@ export class PearsonComponent implements OnInit {
     console.log('añadir')
     console.log(producto)
     await this.comprarService.anyadirALaCesta(producto, this.unidades);
+  }
+
+  llamarSnackbar(){
+    // Get the snackbar DIV
+    var x = document.getElementById("snackbar");
+
+    // Add the "show" class to DIV
+    x.className = "show";
+  
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
   }
 
 

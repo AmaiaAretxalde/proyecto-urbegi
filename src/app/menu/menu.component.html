@@ -5,6 +5,7 @@
         </div>
         <div>
         <ul class="menu nav-links">
+            <li *ngIf="usuario">¡HOLA {{nombreMayuscula}}!</li>
             <li *ngIf="!usuario"><a routerLink="/" routerLinkActive="active" >INICIO</a></li>
             <li *ngIf="usuario"><a routerLink="/inicioUsuario" routerLinkActive="active" >INICIO</a></li>
             <li><div class="enlace">TÉ</div>
@@ -20,7 +21,6 @@
             <ng-container *ngIf="!usuario">
                 <li><a routerLink="/iniciosesion" routerLinkActive="active" >INICIAR SESIÓN / REGISTRARME</a></li>
             </ng-container>
-            <li *ngIf="usuario"><strong>BIENVENIDA/O {{nombreMayuscula}}</strong></li>
             <li *ngIf="usuario"><a routerLink="/cesta" routerLinkActive="active" >CESTA</a></li>
           <ng-container *ngIf="isAdmin">
                     <li><a routerLink="/input-admin">AÑADIR TÉ</a></li>

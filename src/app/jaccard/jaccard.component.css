@@ -74,6 +74,10 @@ button{
     margin-right: 30px;
 }
 
+.botonComprar{
+  width: 100px;
+}
+
   .productosColor .botonComprar{
     border-radius: 4px;
     background-color: #B4BEA5;

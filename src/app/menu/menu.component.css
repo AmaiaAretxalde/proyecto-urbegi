@@ -48,6 +48,7 @@ header nav ul{
     /* list-style: none; */
     text-decoration-color: none;
     color: #B4BEA5;
+    z-index: 10;
 }
 
 header nav ul li{

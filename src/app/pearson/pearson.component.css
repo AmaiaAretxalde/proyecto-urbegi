@@ -132,11 +132,6 @@ button{
     align-items: center;
     }
 
-    .carousel-control-next{
-      color: black;
-    }
-
-
     .carousel-caption button{
       border-radius: 4px;
     background-color: #B4BEA5;

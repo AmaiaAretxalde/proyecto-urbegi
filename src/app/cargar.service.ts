@@ -62,7 +62,7 @@ export class CargarService {
   async todosLosTes(){
     let response:any = await this.http.get('/api/cargar/losmasvendidos')
     .toPromise();
-    console.log(response.datos);
+    // console.log(response.datos);
     return response.datos;
   }
 }

@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 
 export class CestaComponent implements OnInit {
- cesta:any;
+ cesta:any[] = [];
  precios: any;
  precioTotal:number = 0;
  precioTotalRedondo:string;
@@ -20,6 +20,7 @@ export class CestaComponent implements OnInit {
 
   async ngOnInit() {
     this.cesta = await this.cestaService.obtenerCesta();
+    console.log(this.cesta)
     console.log(this.cesta.length)
     if(this.cesta.length!==0){
 

@@ -89,6 +89,7 @@ input::-webkit-inner-spin-button {
   
 button{
     width: 200px;
+    margin: 1vw;
 }
 .circulo-ure{
     animation:rotar 3s infinite ease-in-out;
@@ -176,3 +177,4 @@ button{
     }
 
 }
+

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../usuario.service';
+import { CargarService } from '../cargar.service';
+import { Router } from '@angular/router';
+import { ComprarService } from '../comprar.service';
 
 
 @Component({
@@ -28,8 +31,10 @@ export class PearsonComponent implements OnInit {
   pedidosAmigosAgrupados: any[] = [];
   kMejoresAmigos: any[] = [];
   productosRecomendados: any[] = [];
+  dato:any;
+  unidades:number = 1;
 
-  constructor(private usuarioService: UsuarioService) { }
+  constructor(private usuarioService: UsuarioService, private cargarService:CargarService, private router: Router, private comprarService: ComprarService) { }
 
   async ngOnInit() {
 
@@ -192,6 +197,32 @@ export class PearsonComponent implements OnInit {
     // console.log(pedidoNormalizado)
     return (pedidoNormalizado);
   }
+
+  async mandarId(id:string) {
+    this.dato = await this.cargarService.mandarId(id);
+    let ruta = "/producto/" + id;
+    this.router.navigate([ruta]);
+    return this.dato;
+  }
+
+
+  async anyadirACesta(producto:any) {
+    console.log('añadir')
+    console.log(producto)
+    await this.comprarService.anyadirALaCesta(producto, this.unidades);
+  }
+
+  llamarSnackbar(){
+    // Get the snackbar DIV
+    var x = document.getElementById("snackbar");
+
+    // Add the "show" class to DIV
+    x.className = "show";
+  
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+  }
+
 
 }
 

@@ -193,3 +193,11 @@ button{
     from {bottom: 30px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
   }
+
+  h1{
+    margin-top: 60px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: -webkit-center;
+    font-size: 18pt;
+    color: #7D8472;
+}

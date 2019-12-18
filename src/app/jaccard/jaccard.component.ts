@@ -31,6 +31,7 @@ export class JaccardComponent implements OnInit {
 
   async ngOnInit() {
     let misPedidos: any = await this.obtenerMisPedidos();
+    console.log(misPedidos)
     let pedidosOtros: any = await this.obtenerPedidosOtros();
 
     this.kAmigos = this.calculokAmigosPedidos(pedidosOtros);

@@ -1,7 +1,7 @@
 <app-menu></app-menu>
 
 <div class="productosColor">
-        <div class="productos" *ngFor="let te of tesEncontrados">
+        <div class="productos" *ngFor="let te of busquedaTe">
             <div class="unProducto">
             <button class="unProducto" (click)="mandarId(te.id)">
                 <img src="{{te.mainImage}}" />

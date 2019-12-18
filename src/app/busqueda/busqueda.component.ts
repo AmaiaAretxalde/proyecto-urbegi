@@ -16,6 +16,7 @@ producto:any;
 nombre:any;
 unidades:number = 1;
 dato:any;
+busquedaTe:any;
 
   constructor( private buscarService:BuscarService, public route:ActivatedRoute, private comprarService:ComprarService, private cargarService:CargarService, private router: Router) { }
 
@@ -23,18 +24,21 @@ dato:any;
     this.route.params.subscribe(async (params) => {
       this.tesEncontrados = [];
       this.nombre = params.nombre;
-      let busquedaTe:any = await this.buscarService.enviarTesEncontrados();
-      for(let te of busquedaTe){
-        for(let caracteristica in te){
-          let caracteristicaT = te[(caracteristica)]
-          if(typeof(caracteristicaT) === "string"){
+      this.busquedaTe = await this.buscarService.enviarTesEncontrados();
 
-            if(caracteristicaT.includes(params.nombre)){
-              this.tesEncontrados.push(te);
-            }
-          }
-        }
-      }
+
+      // for(let te of busquedaTe){
+      //   for(let caracteristica in te){
+      //     let caracteristicaT = te[(caracteristica)]
+      //     if(typeof(caracteristicaT) === "string"){
+
+      //       if(caracteristicaT.includes(params.nombre)){
+      //         this.tesEncontrados.push(te);
+      //       }
+      //     }
+      //   }
+      // }
+      console.log(this.busquedaTe)
     })
     console.log(this.tesEncontrados)
   }

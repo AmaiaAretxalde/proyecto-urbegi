@@ -71,3 +71,11 @@ button:hover{
   background-color: white;
 margin-top: 50px;
 }
+
+
+.encuesta{
+  background-image: url(https://i.pinimg.com/originals/8f/44/da/8f44da0e6d4012166088559d5c3d81a6.jpg);
+  height: 89vh;
+  padding-top: 50px;
+}
+

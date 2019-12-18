@@ -109,14 +109,14 @@
         justify-content: space-around;
     }
     .textoInicio h1{
-        font-size: 20pt;
+        font-size: 14pt;
+        margin: 0;
     }
     .inicioImagenTexto {
         display: flex;
         background-size: cover;
         background-position-y: center;
         height: 300px;
-        justify-content: center;
        
     } 
     .parrafoNavidad{

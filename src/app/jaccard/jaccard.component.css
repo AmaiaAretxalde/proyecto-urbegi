@@ -74,6 +74,10 @@ button{
     margin-right: 30px;
 }
 
+.botonComprar{
+  width: 100px;
+}
+
   .productosColor .botonComprar{
     border-radius: 4px;
     background-color: #B4BEA5;
@@ -98,6 +102,7 @@ button{
           top:30%;
           left:35%;
           background-size: 100%;
+          z-index: 10;
       }
     
       @keyframes rotar{

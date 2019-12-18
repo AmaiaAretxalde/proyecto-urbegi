@@ -91,6 +91,11 @@ button{
   }
   
 
+  .botonComprar{
+    width: 100px;
+  }
+  
+
   .productosColor .botonComprar{
     border-radius: 4px;
     background-color: #B4BEA5;
@@ -141,8 +146,11 @@ button{
     font-family: 'Montserrat', serif;
     border: none;
     color: white;
+    width: 100px;
     }
-
+    .carousel-caption button:hover{
+      background-color: #7D8472;
+    }
 
 
 

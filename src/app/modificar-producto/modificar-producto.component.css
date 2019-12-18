@@ -1,6 +1,6 @@
 .adminMod h1 {
     font-family: 'Playfair Display', serif;
-    color: rgb(134, 136, 132);
+    color: #7D8472;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -10,11 +10,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding-bottom: 100px;
 }
 
 .adminMod input {
     font-family: 'Montserrat', sans-serif;
     font-size: 12pt;
+    border: none;
 }
 
 .adminMod button {
@@ -26,6 +28,7 @@
     background-color: #B4BEA6;
     width: 400px;
     height: 30px;
+    color:white;
 }
 
 .inputs {
@@ -356,4 +359,9 @@ a:-webkit-any-link {
         width: 150px;
         padding: 0 6px;
     }
+}
+
+
+textarea{
+ font-family: 'Montserrat', sans-serif; ;
 }

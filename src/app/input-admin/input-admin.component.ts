@@ -48,7 +48,7 @@ export class InputAdminComponent implements OnInit {
     }
     console.log(te);
 
-   let response:any= await this.cargarService.teAnyadido(te,);
+   let response:any= await this.cargarService.teAnyadido(te);
    console.log(response);
   }
 

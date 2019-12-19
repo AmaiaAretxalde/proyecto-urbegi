@@ -44,7 +44,8 @@ export class InputAdminComponent implements OnInit {
       sabor: this.sabor,
       color: this.color,
       stock: this.stock,
-      basePrice: this.precio
+      basePrice: this.precio,
+      id: this.id
     }
     console.log(te);
 

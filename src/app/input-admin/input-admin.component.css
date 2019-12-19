@@ -350,3 +350,7 @@ a:-webkit-any-link {
         padding: 0 6px;
     }
 }
+
+textarea{
+    font-family: 'Montserrat', sans-serif;
+}
